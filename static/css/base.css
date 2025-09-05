@@ -1,0 +1,20 @@
+
+:root {
+  --color-pink: #DEB1A9;      /* soft blush pink */
+  --color-brown: #56423E;     /* warm earthy brown */
+  --color-mauve: #BEA6A1;     /* muted mauve */
+  --color-sage: #B3C09F;      /* light sage green */
+  --color-olive: #7E8B6C;     /* deeper olive green */
+}
+
+body {
+    background-color: var(--color-mauve);
+}
+
+.navbar {
+    background-color: var(--color-sage);
+}
+
+.navbar a {
+    color: var(--color-brown);
+}
