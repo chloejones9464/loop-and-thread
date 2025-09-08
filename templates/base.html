@@ -17,6 +17,8 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!--Main CSS link-->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}
+    {% endblock %}
 </head>
 
 
@@ -57,16 +59,14 @@
       </div>
     </nav>
 
+    {% if messages %}
+        <div class="message-container"></div>
+    {% endif %}
+
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    <div>
-        <div class="row">
-            <img src="{% static 'images/loop-and-thread-logo.webp' %}" alt="Loop and Thread logo">
-        </div>
-    </div>
-    
+    {% block content %}    
     {% endblock %}
 
     {% block postloadjs %}

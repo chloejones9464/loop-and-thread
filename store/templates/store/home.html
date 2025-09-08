@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <h2>Handmade Warmth, From Hook to Heart.</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}

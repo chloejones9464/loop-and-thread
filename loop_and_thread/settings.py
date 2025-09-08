@@ -37,14 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sites",
     # Allauth requirements
     'allauth',
     'allauth.account',
     # Allauth socialaccount(if needed)
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.amazon',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
     # Project apps
     'store',
     'patterns',
@@ -99,7 +97,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/success'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'loop_and_thread.wsgi.application'
 
