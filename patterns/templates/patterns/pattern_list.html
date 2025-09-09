@@ -31,7 +31,7 @@
                     <p class="mb-0"><strong>Price:</strong> £{{ pattern.price }}</p>
                 </div>
                 <div class="card-footer bg-white text-center">
-                    <a href="" class="btn btn-primary btn-sm">View Pattern</a>
+                    <a href="{% url 'pattern_detail' pattern.pk %}" class="btn view-button btn-sm">View Pattern</a>
                 </div>
                 </div>
             </div>

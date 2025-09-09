@@ -2,48 +2,38 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/pattern_details.css' %}">
+<link rel="stylesheet" href="{% static 'css/pattern_detail.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="container justify-content-center">
-        <div>
-            <div class="row">
-                <section id="home-hero">
-                    <h2>Handmade Warmth, From Hook to Heart</h2>              
-                </section>
-            </div>
-        </div>
-    </div>
-
     <section class="container py-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h4 m-0">Latest Patterns</h2>
-        <a class="btn btn-outline-primary btn-sm" href="{% url 'pattern_list' %}">View all</a>
-    </div>
-
-    <div class="row">
-        {% for pattern in latest_patterns %}
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card h-100 shadow-sm">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center mb-3">
+                    <h1 class="h4 m-0">{{ pattern.title }}</h1>
+                </div>
             {% if pattern.cover_image %}
-                <img src="{{ pattern.cover_image.url }}" class="card-img-top" alt="{{ pattern.title }}">
+                <img src="{{ pattern.cover_image.url }}" alt="{{ pattern.title }}" class="img-fluid rounded shadow-sm">
+            {% else %}
+                <div class="border rounded d-flex align-items-center justify-content-center" style="aspect-ratio: 4/3;">
+                <span class="text-muted">No image</span>
+                </div>
             {% endif %}
-            <div class="card-body">
-                <h5 class="card-title">{{ pattern.title }}</h5>
-                <p class="card-text">{{ pattern.summary }}</p>
-                <p class="mb-0"><strong>Difficulty:</strong> {{ pattern.difficulty }}</p>
-                <p class="mb-0"><strong>Price:</strong> £{{ pattern.price }}</p>
             </div>
-            <div class="card-footer bg-white text-center">
-                <a href="" class="btn btn-primary btn-sm">View Pattern</a>
-            </div>
+
+            <div class="col-md-6">
+                {% if pattern.summary %}
+                    <p class="lead">{{ pattern.summary }}</p>
+                {% endif %}
+
+                <p class="mb-1"><strong>Difficulty:</strong> {{ pattern.difficulty }}</p>
+                <p class="mb-3"><strong>Price:</strong> £{{ pattern.price|floatformat:2 }}</p>
+
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-sm add-basket">Add to Basket</a>
+                    <a href="{% url 'pattern_list' %}" class="btn bk-button btn-sm">← Back to Patterns</a>
+                </div>
             </div>
         </div>
-        {% empty %}
-        <p class="text-muted">No patterns yet — check back soon!</p>
-        {% endfor %}
-    </div>
     </section>
-
 {% endblock %}

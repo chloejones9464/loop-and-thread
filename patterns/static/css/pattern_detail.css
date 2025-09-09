@@ -33,3 +33,29 @@ h2 {
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4); /* makes text readable */
     z-index: 1; /* ensures it sits above background */
 }
+
+.add-basket,
+.view-button {
+    background-color: #56423E;
+    border: #3a2d2a solid 1px;
+    color: #ffffff;
+}
+
+.add-basket:hover,
+.view-button:hover {
+    background-color: #725853;
+    border: #5c4743 solid 1px;
+    color: #ffffff;
+}
+
+.bk-button {
+    background-color: #53504f;
+    border: #161212 solid 1px;
+    color: #ffffff;
+}
+
+.bk-button:hover {
+    background-color: #222120;
+    border: #161212 solid 1px;
+    color: #ffffff;
+}

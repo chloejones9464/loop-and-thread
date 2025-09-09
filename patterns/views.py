@@ -20,6 +20,10 @@ def pattern_list(request):
             )
 
 
-# def pattern_detail(request, slug):
-#     pattern = get_object_or_404(Pattern, slug=slug)
-#     return render(request, "patterns/pattern_detail.html", {"pattern": pattern})
+def pattern_detail(request, pk):
+    pattern = get_object_or_404(Pattern, pk=pk)
+    return render(
+                request,
+                "patterns/pattern_detail.html",
+                {"pattern": pattern},
+                )
