@@ -1,8 +1,6 @@
 from django.urls import path
-from . import views
-
-app_name = "patterns"
+from .views import pattern_list
 
 urlpatterns = [
-    path("", views.pattern_list, name="list"),
-]
+        path("", pattern_list, name="pattern_list"),
+    ]

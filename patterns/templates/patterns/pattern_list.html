@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/pattern_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container justify-content-center">
+        <div>
+            <div class="row">
+                <section id="home-hero">
+                    <h2 class="display-3">All Patterns</h2>              
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <section class="container py-4">
+        <div class="row">
+            {% for pattern in patterns %}
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                {% if pattern.cover_image %}
+                    <img src="{{ pattern.cover_image.url }}" class="card-img-top" alt="{{ pattern.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ pattern.title }}</h5>
+                    <p class="card-text">{{ pattern.summary }}</p>
+                    <p class="mb-0"><strong>Difficulty:</strong> {{ pattern.difficulty }}</p>
+                    <p class="mb-0"><strong>Price:</strong> £{{ pattern.price }}</p>
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <a href="" class="btn btn-primary btn-sm">View Pattern</a>
+                </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-muted">No patterns yet — check back soon!</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% if is_paginated %}
+        <nav class="mt-4 d-flex justify-content-between align-items-center">
+            <div>
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-secondary" href="?page={{ page_obj.previous_page_number }}">‹ Prev</a>
+            {% else %}
+                <span class="btn btn-outline-secondary disabled">‹ Prev</span>
+            {% endif %}
+            </div>
+
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            <div>
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-secondary" href="?page={{ page_obj.next_page_number }}">Next ›</a>
+            {% else %}
+                <span class="btn btn-outline-secondary disabled">Next ›</span>
+            {% endif %}
+            </div>
+        </nav>
+    {% endif %}
+
+
+{% endblock %}
