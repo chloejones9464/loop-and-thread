@@ -1,0 +1,79 @@
+#home-hero {
+    background-image: url('../images/hero-image.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 140px;    
+    display: flex;
+    align-items: center;          
+    justify-content: center;      
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+#home-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(107, 78, 113, 0.384); /* lavender w/ transparency */
+    z-index: 0; /* sits behind the text */
+}
+
+h2 {
+    font-family: "Crafty Girls", cursive;
+    font-size: 2.5rem;
+    color: #ffffff; /* white text so it stands out */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4); /* makes text readable */
+    z-index: 1; /* ensures it sits above background */
+}
+
+.form-bg-color {
+    background-color: #7e8b6c;
+    border-radius: 5px;
+}
+
+.password-link {
+    background-color: #56423E;
+    border: #3a2d2a solid 1px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.password-link:hover {
+    background-color: #725853;
+    border: #5c4743 solid 1px;
+    color: #ffffff;
+}
+
+.login-btn {
+    background-color: #B3C09F;
+    border: #88917a solid 1px;
+    color: #000000;
+}
+
+.login-btn:hover {
+    background-color: #9ba78a;
+    border: #88917a solid 1px;
+    color: #000000;
+}
+
+#id_password_helptext {
+    display: none;
+}
+
+.create-account-link {
+    color: #5a634d;
+}
+
+.create-account-link:hover {
+    color: #6c775d;
+}
+
+/* from crispy forms docs */
+.asteriskField {
+    display: none;
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load allauth account %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static './css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container justify-content-center">
+        <div>
+            <div class="row">
+                <section id="home-hero">
+                    <h2 class="display-3">Log out</h2>              
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 justify-content-center">
+        <div class="col-10 col-sm-7 col-md-6 col-lg-5">
+            <div class="form-bg-color p-4 shadow-sm">
+            <p class="text-center mb-4">Are you sure you want to log out?</p>
+
+            <form method="post" action="{% url 'account_logout' %}" class="d-flex justify-content-center gap-2">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Log out</button>
+                <a href="{% url 'home' %}" class="btn login-btn">Cancel</a>
+            </form>
+            </div>
+
+            <p class="text-center mt-3">
+            Changed your mind? <a class="create-account-link" href="{% url 'home' %}">Go home</a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}

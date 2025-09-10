@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'allauth.account',
     # Allauth socialaccount(if needed)
     'allauth.socialaccount',
+    # Crispy forms
+    'crispy_forms',
+    'crispy_bootstrap5',
     # Project apps
     'store',
     'patterns',
@@ -87,6 +90,9 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -97,7 +103,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 
 WSGI_APPLICATION = 'loop_and_thread.wsgi.application'
 
