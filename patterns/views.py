@@ -18,6 +18,17 @@ def pattern_list(request):
         qs = qs.filter(
             Q(title__icontains=query) | Q(description__icontains=query)
         )
+    
+    sort = request.GET.get("sort", "")
+    direction = request.GET.get("direction", "")
+
+    if sort in ["price", "title", "created_at"]:
+        if direction == "desc":
+            sortkey = f"-{sort}"
+        else:
+            sortkey = sort
+        qs = qs.order_by(sortkey)
+
 
     paginator = Paginator(qs, 6)
     page_number = request.GET.get("page")
