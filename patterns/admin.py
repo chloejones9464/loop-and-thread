@@ -1,14 +1,15 @@
 from django.contrib import admin
-from .models import Pattern, PatternCategory
+from .models import Pattern, Category
 
 
-@admin.register(PatternCategory)
-class PatternCategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+    )
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ["name"]
 
 
-@admin.register(Pattern)
 class PatternAdmin(admin.ModelAdmin):
     list_display = (
         "title",
@@ -21,3 +22,7 @@ class PatternAdmin(admin.ModelAdmin):
     list_filter = ("is_published", "difficulty", "category")
     search_fields = ("title", "summary", "description")
     prepopulated_fields = {"slug": ("title",)}
+
+
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Pattern, PatternAdmin)

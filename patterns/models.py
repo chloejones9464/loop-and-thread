@@ -5,12 +5,13 @@ from django.utils.text import slugify
 User = get_user_model()
 
 
-class PatternCategory(models.Model):
+class Category(models.Model):
+    class Meta:
+        verbose_name_plural = 'Categories'
+        ordering = ["name"]
+
     name = models.CharField(max_length=80, unique=True)
     slug = models.SlugField(max_length=100, unique=True, blank=True)
-
-    class Meta:
-        ordering = ["name"]
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -30,7 +31,7 @@ class Pattern(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True, blank=True)
     category = models.ForeignKey(
-        PatternCategory,
+        Category,
         on_delete=models.SET_NULL,
         null=True,
         related_name="patterns"

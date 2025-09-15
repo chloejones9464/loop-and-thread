@@ -6,17 +6,17 @@ from .models import Profile
 
 
 @login_required
-def profile(request):
-    profile, _ = Profile.objects.get_or_create(user=request.user)
+def account(request):
+    account, _ = Profile.objects.get_or_create(user=request.user)
 
     if request.method == "POST":
-        form = ProfileForm(request.POST, instance=profile)
+        form = ProfileForm(request.POST, instance=account)
         if form.is_valid():
             form.save()
-            messages.success(request, "Profile updated.")
-            return redirect("profile")
+            messages.success(request, "Account updated.")
+            return redirect("account")
         messages.error(request, "Please fix the errors below.")
     else:
-        form = ProfileForm(instance=profile)
+        form = ProfileForm(instance=account)
 
-    return render(request, "account/profile.html", {"form": form})
+    return render(request, "account/account.html", {"form": form})
