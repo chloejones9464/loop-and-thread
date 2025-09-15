@@ -1,23 +1,39 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Pattern
 from django.core.paginator import Paginator
+from django.db.models import Q
+from django.contrib import messages
 
 
 def pattern_list(request):
-    patterns = Pattern.objects.all().order_by("-id")
-    paginator = Paginator(patterns, 6)  # 6 per page
+    qs = Pattern.objects.order_by("-id")
 
-    page_number = request.GET.get('page')
+    query = request.GET.get("q", "").strip()
+
+    if "q" in request.GET:
+        if not query:
+            messages.error(request, "You didn't enter anything to search")
+            return redirect("pattern_list")
+
+        qs = qs.filter(
+            Q(title__icontains=query) | Q(description__icontains=query)
+        )
+
+    paginator = Paginator(qs, 6)
+    page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
+
     return render(
-                request,
-                "patterns/pattern_list.html",
-                {
-                    "patterns": page_obj,
-                    'page_obj': page_obj,
-                    'is_paginated': page_obj.has_other_pages(),
-                },
-            )
+        request,
+        "patterns/pattern_list.html",
+        {
+
+            "page_obj": page_obj,
+            "patterns": page_obj,
+            "is_paginated": page_obj.has_other_pages(),
+            "search_term": query,
+        },
+    )
 
 
 def pattern_detail(request, pk):

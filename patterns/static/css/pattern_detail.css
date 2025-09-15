@@ -59,3 +59,22 @@ h2 {
     border: #161212 solid 1px;
     color: #ffffff;
 }
+
+#search-bar {
+    border: #56423E solid 1px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    flex: 1;
+    padding: 0.5rem 1rem;
+}
+
+.search-bar button {
+    border: none;
+    background: #c3a6a0;
+    padding: 0 1rem;
+    cursor: pointer;
+}
