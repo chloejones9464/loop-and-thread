@@ -10,7 +10,7 @@
         <div class="row g-4 align-items-center">
             <div class="col-md-6">
                 <div class="d-flex justify-content-center mb-3">
-                    <h1 class="h4 m-0">{{ pattern.title }}</h1>
+                    <h1 class="h2 m-0">{{ pattern.title }}</h1>
                 </div>
             {% if pattern.cover_image %}
                 <img src="{{ pattern.cover_image.url }}" alt="{{ pattern.title }}" class="img-fluid rounded shadow-sm">
@@ -23,9 +23,12 @@
 
             <div class="col-md-6">
                 {% if pattern.summary %}
-                    <p class="lead">{{ pattern.summary }}</p>
+                    <p class="lead text-center">{{ pattern.summary }}</p>
                 {% endif %}
-
+                {% if pattern.description %}
+                    <p class="text-center">{{ pattern.description }}</p>
+                {% endif %}
+                <hr>
                 <p class="mb-1"><strong>Difficulty:</strong> {{ pattern.difficulty }}</p>
                 <p class="mb-3"><strong>Price:</strong> £{{ pattern.price|floatformat:2 }}</p>
 

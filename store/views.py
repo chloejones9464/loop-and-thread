@@ -1,4 +1,3 @@
-# views.py
 from django.shortcuts import render
 from patterns.models import Pattern
 

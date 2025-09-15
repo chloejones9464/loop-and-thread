@@ -6,7 +6,7 @@ from django.contrib import messages
 
 
 def pattern_list(request):
-    qs = Pattern.objects.order_by("-id")
+    qs = Pattern.objects.all()
 
     query = request.GET.get("q", "").strip()
 
@@ -29,8 +29,7 @@ def pattern_list(request):
             sortkey = sort
         qs = qs.order_by(sortkey)
 
-
-    paginator = Paginator(qs, 6)
+    paginator = Paginator(qs, 8)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/bag.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">Basket</div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive"></div>
+                {% else %}
+                    <p class="lead">There's nothing in your basket!</p>
+                    <a href="{% url 'pattern_list' %}" class="btn bk-button btn-sm">Keep Shopping</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

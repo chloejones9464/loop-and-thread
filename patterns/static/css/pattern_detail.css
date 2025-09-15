@@ -78,3 +78,9 @@ h2 {
     padding: 0 1rem;
     cursor: pointer;
 }
+
+.card-img-top {
+    height: 269px;       
+    object-fit: cover;   
+    width: 100%;         
+}

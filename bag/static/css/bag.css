@@ -1,0 +1,11 @@
+.bk-button {
+    background-color: #53504f;
+    border: #161212 solid 1px;
+    color: #ffffff;
+}
+
+.bk-button:hover {
+    background-color: #222120;
+    border: #161212 solid 1px;
+    color: #ffffff;
+}
