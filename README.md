@@ -60,7 +60,42 @@ paste here you user story | what is visible to the user and what action they sho
 - and attach screenshot
 
 ## Bugs
-List of bugs and how did you fix them
+
+**TemplateDoesNotExist: `base.html`**  
+  - *Cause*: The `base.html` file was not placed in the correct templates directory or not properly referenced.  
+  - *Fix*: Created a `templates` folder at the project level, added `DIRS` in `settings.py`, and confirmed the correct template path.  
+
+**Reverse URL error (`NoReverseMatch`)**  
+  - *Cause*: Used `{% url 'pattern_list' %}` without having the correct `app_name` or namespace defined in `urls.py`.  
+  - *Fix*: Added `app_name = 'patterns'` in the app’s `urls.py` and updated all `{% url %}` references.  
+
+**Navbar logo not displaying**  
+  - *Cause*: Incorrect path to static files.  
+  - *Fix*: Confirmed logo placement inside `static/images/` and updated the template with `{% static 'images/logo.png' %}`.  
+
+**Favicon not appearing in browser tab**  
+  - *Cause*: Multiple favicon sizes weren’t properly referenced.  
+  - *Fix*: Added all favicon sizes to `static/images/` and referenced them correctly in `base.html`.  
+
+**Account migrations error (`table "account_emailaddress" already exists`)**  
+  - *Cause*: Duplicate migrations from re-running `makemigrations` on the Allauth `account` app.  
+  - *Fix*: Reset migration files and re-applied clean migrations.  
+
+**CountryField error (`BlankChoiceIterator` object has no attribute `__len__`)**  
+  - *Cause*: Incorrect field configuration for `CountryField`.  
+  - *Fix*: Updated model to use `CountryField(blank_label="Country *", null=False, blank=False)`.  
+
+**Hero image not centered**  
+  - *Cause*: Background image CSS not set correctly.  
+  - *Fix*: Used `background-position: center; background-size: cover;` in CSS.  
+
+**Search bar border radius issue**  
+  - *Cause*: Border radius only applied to one element (input vs. button).  
+  - *Fix*: Grouped input + button inside a flex container and applied consistent border radius.  
+
+**Pattern card images displaying different sizes**  
+  - *Cause*: Uploaded images had inconsistent aspect ratios.  
+  - *Fix*: Applied CSS with `aspect-ratio` and `object-fit: cover` for uniform card sizing.  
 
 ## Deployment
 

@@ -32,10 +32,15 @@
                 <p class="mb-1"><strong>Difficulty:</strong> {{ pattern.difficulty }}</p>
                 <p class="mb-3"><strong>Price:</strong> £{{ pattern.price|floatformat:2 }}</p>
 
-                <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm add-basket">Add to Basket</a>
-                    <a href="{% url 'pattern_list' %}" class="btn bk-button btn-sm">← Back to Patterns</a>
-                </div>
+                <form class="form" action="{% url 'add_to_bag' item_id=pattern.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="d-flex gap-2">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button type="submit" class="btn add-basket btn-sm">Add to Basket</button>
+                        <a href="{% url 'pattern_list' %}" class="btn bk-button btn-sm">← Back to Patterns</a>
+                    </div>
+                </form>
+
             </div>
         </div>
     </section>
