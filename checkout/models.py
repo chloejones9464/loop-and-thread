@@ -73,7 +73,7 @@ class OrderLineItem(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        """Calculate line total, then save, then update parent order."""
+        """Calculate and update line total for Loop & Thread checkout."""
         self.lineitem_total = self.pattern.price
         super().save(*args, **kwargs)
         self.order.update_total()
@@ -84,4 +84,4 @@ class OrderLineItem(models.Model):
         order.update_total()
 
     def __str__(self):
-        return f"{self.pattern} on order {self.order.order_number}"
+        return f"Loop & Thread Line Item for order {self.order.order_number}"

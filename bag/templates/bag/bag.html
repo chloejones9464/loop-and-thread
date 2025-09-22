@@ -55,6 +55,9 @@
                             </tbody>
                         </table>
                         <p class="fw-bold text-end">Total: £{{ total }}</p>
+                        <a href="{% url 'checkout' %}" class="btn proceed-to-order rounded-pill px-4 py-2">
+                            Proceed to Checkout <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 {% else %}
                     <p class="lead">There's nothing in your basket!</p>

@@ -82,6 +82,10 @@ TEMPLATES = [
                 # Allauth requirement
                 'django.template.context_processors.request',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

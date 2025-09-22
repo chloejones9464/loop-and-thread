@@ -9,3 +9,15 @@
     border: #161212 solid 1px;
     color: #ffffff;
 }
+
+.proceed-to-order {
+    background-color: #56423E;
+    border: #3a2d2a solid 1px;
+    color: #ffffff;
+}
+
+.proceed-to-order:hover {
+    background-color: #725853;
+    border: #5c4743 solid 1px;
+    color: #ffffff;
+}
