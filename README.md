@@ -97,6 +97,11 @@ paste here you user story | what is visible to the user and what action they sho
   - *Cause*: Uploaded images had inconsistent aspect ratios.  
   - *Fix*: Applied CSS with `aspect-ratio` and `object-fit: cover` for uniform card sizing.  
 
+**Stripe Card Element not mounting**  
+- *Cause*: Script used jQuery (`$`) to access keys, but jQuery was not included, causing a `ReferenceError`.  
+- *Fix*: Added jQuery via CDN in `base.html`, ensuring `$` is defined and the Stripe Card Element mounts correctly.  
+
+
 ## Deployment
 
 #### Creating Repository on GitHub

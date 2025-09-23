@@ -50,3 +50,9 @@
     border: #161212 solid 1px;
     color: #ffffff;
 }
+
+#card-element {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+}
