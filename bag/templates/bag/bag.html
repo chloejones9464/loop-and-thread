@@ -17,47 +17,49 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive">
-                        <table class="table table-striped align-middle">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Pattern</th>
-                                    <th>Price</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for entry in bag_items %}
-                                    <tr>
-                                        <td>
-                                            {% if entry.pattern.cover_image %}
-                                                <img src="{{ entry.pattern.cover_image.url }}" 
-                                                    alt="{{ entry.pattern.title }} pattern image" 
-                                                    style="max-width: 80px; height: auto;">
-                                            {% else %}
-                                                <img src="{% static 'images/no-image.png' %}" 
-                                                    alt="No image" 
-                                                    style="max-width: 80px; height: auto;">
-                                            {% endif %}
-                                        </td>
-                                        <td>{{ entry.pattern.title }}</td>
-                                        <td>£{{ entry.pattern.price }}</td>
-                                        <td>
-                                            <form method="post" action="{% url 'remove_from_bag' item_id=entry.item_id %}">
-                                                {% csrf_token %}
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                        <p class="fw-bold text-end">Total: £{{ total }}</p>
-                        <a href="{% url 'checkout' %}" class="btn proceed-to-order rounded-pill px-4 py-2">
-                            Proceed to Checkout <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
+                    {% for entry in bag_items %}
+                        <div class="basket-item card shadow-sm mb-3">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-3 col-md-2">
+                                    {% if entry.pattern.cover_image %}
+                                        <img src="{{ entry.pattern.cover_image.url }}" 
+                                            alt="{{ entry.pattern.title }} pattern image" 
+                                            class="img-fluid rounded-start">
+                                    {% else %}
+                                        <img src="{% static 'images/no-image.png' %}" 
+                                            alt="No image" 
+                                            class="img-fluid rounded-start">
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card-body py-2">
+                                        <h6 class="card-title mb-1">{{ entry.pattern.title }}</h6>
+                                        <p class="card-text text-muted mb-0">£{{ entry.pattern.price }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 text-end pe-3">
+                                    <form method="post" action="{% url 'remove_from_bag' item_id=entry.item_id %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm">Remove</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="basket-summary card mt-4 p-3 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold">Total:</span>
+                            <span class="fw-bold">£{{ total }}</span>
+                        </div>
+                        <div class="text-end mt-3">
+                            <a href="{% url 'checkout' %}" class="btn proceed-to-order rounded-pill px-4 py-2">
+                                Proceed to Checkout <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
                 {% else %}
                     <p class="lead">There's nothing in your basket!</p>

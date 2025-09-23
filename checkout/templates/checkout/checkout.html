@@ -2,102 +2,102 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="container">
+    <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="display-4">Basket</h2>
-            <hr>
+        <h2 class="display-4">Checkout</h2>
+        <hr>
         </div>
     </div>
 
     <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
         {% csrf_token %}
-        <div class="row">
-            <!-- Left column: Form -->
-            <div class="col-12 col-lg-6">
-                <p>To complete your order, please fill out this form:</p>
 
-                <fieldset class="px-2 mb-4">
-                    <legend>Your Details</legend>
-                    {{ order_form.full_name|as_crispy_field }}
-                    {{ order_form.email|as_crispy_field }}
-                </fieldset>
+        <div class="row g-4">
+        <div class="col-12 col-lg-6">
+            <p>To complete your order, please fill out this form:</p>
 
-                <fieldset class="px-2 mb-4">
-                    <legend>Billing Details</legend>
-                    {{ order_form.phone_number|as_crispy_field }}
-                    {{ order_form.country|as_crispy_field }}
-                    {{ order_form.postcode|as_crispy_field }}
-                    {{ order_form.town_or_city|as_crispy_field }}
-                    {{ order_form.street_address1|as_crispy_field }}
-                    {{ order_form.street_address2|as_crispy_field }}
-                    {{ order_form.county|as_crispy_field }}
-                </fieldset>
+            <fieldset class="px-2 mb-4">
+            <legend>Your Details</legend>
+            {{ order_form.full_name|as_crispy_field }}
+            {{ order_form.email|as_crispy_field }}
+            </fieldset>
+
+            <fieldset class="px-2 mb-4">
+            <legend>Billing Details</legend>
+            {{ order_form.phone_number|as_crispy_field }}
+            {{ order_form.country|as_crispy_field }}
+            {{ order_form.postcode|as_crispy_field }}
+            {{ order_form.town_or_city|as_crispy_field }}
+            {{ order_form.street_address1|as_crispy_field }}
+            {{ order_form.street_address2|as_crispy_field }}
+            {{ order_form.county|as_crispy_field }}
+            </fieldset>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="order-summary card border-0 shadow-sm mb-4 rounded-4">
+            <div class="card-header bg-light border-0 rounded-top-4 py-3">
+                <h5 class="mb-0 fw-bold">Your Order <span class="text-muted">({{ pattern_count }})</span></h5>
+            </div>
+            <div class="card-body">
+                {% for entry in bag_items %}
+                <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+                    <div class="d-flex align-items-center">
+                    {% if entry.pattern.cover_image %}
+                        <img src="{{ entry.pattern.cover_image.url }}" alt="{{ entry.pattern.title }} pattern image"
+                            class="me-3 rounded" style="max-width:70px;height:auto;">
+                    {% else %}
+                        <img src="{% static 'images/no-image.png' %}" alt="No image"
+                            class="me-3 rounded" style="max-width:70px;height:auto;">
+                    {% endif %}
+                    <div>
+                        <p class="mb-1 fw-semibold">{{ entry.pattern.title }}</p>
+                        <small class="text-muted">£{{ entry.pattern.price }}</small>
+                    </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted">Your bag is empty.</p>
+                {% endfor %}
+
+                <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                <span class="fw-semibold">Total:</span>
+                <span class="fw-bold fs-5 text-success">£{{ grand_total|floatformat:2 }}</span>
+                </div>
+            </div>
             </div>
 
-            <!-- Right column: Order summary -->
-            <div class="col-12 col-lg-6">
-                <div class="order-summary card shadow-sm mb-4">
-                    <div class="card-header bg-light">
-                        <h5 class="mb-0">Your Order</h5>
-                    </div>
-                    <div class="card-body">
-                        {% for entry in bag_items %}
-                            <div class="d-flex align-items-center mb-3">
-                                {% if entry.pattern.cover_image %}
-                                    <img src="{{ entry.pattern.cover_image.url }}" alt="{{ entry.pattern.title }} pattern image"
-                                        style="max-width: 80px; height: auto;" class="me-3">
-                                {% else %}
-                                    <img src="{% static 'images/no-image.png' %}" alt="No image"
-                                        style="max-width: 80px; height: auto;" class="me-3">
-                                {% endif %}
-                                <div>
-                                    <p class="mb-1 fw-semibold">{{ entry.pattern.title }}</p>
-                                    <p class="mb-0 text-muted">£{{ entry.pattern.price }}</p>
-                                </div>
-                            </div>
-                        {% empty %}
-                            <p class="text-muted">Your bag is empty.</p>
-                        {% endfor %}
+            <fieldset class="mb-4">
+            <legend>Payment Details</legend>
+            <div id="card-element"></div>
+            <div class="text-danger" id="card-errors" role="alert"></div>
+            </fieldset>
 
-                        <div class="d-flex justify-content-between mt-3">
-                            <span class="fw-semibold">Total:</span>
-                            <span class="fw-bold">£{{ grand_total|floatformat:2 }}</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="checkout-actions text-end">
+            <a href="{% url 'view_bag' %}"
+                class="btn bk-button rounded-pill me-2 d-inline-flex align-items-center px-3 py-2">
+                <i class="fas fa-chevron-left me-2"></i>
+                <span class="fw-semibold">Adjust Bag</span>
+            </a>
 
-                <fieldset>
-                    <legend>Payment Details</legend>
-                    <div id="card-element"></div>
-                    <div class="text-danger" id="card-errors" role="alert"></div>
-                </fieldset>
+            <button id="submit-button"
+                    class="btn btn-success rounded-pill d-inline-flex align-items-center px-4 py-2">
+                <i class="fas fa-lock me-2"></i>
+                <span class="fw-bold">Complete Order</span>
+            </button>
 
-                <div class="checkout-actions text-end mt-5">
-                    <a href="{% url 'view_bag' %}"
-                        class="btn bk-button rounded-pill me-2 d-inline-flex align-items-center px-3 py-2 ">
-                        <i class="fas fa-chevron-left me-2"></i>
-                        <span class="fw-semibold">Adjust Bag</span>
-                    </a>
-
-                    <button id="submit-button"
-                        class="btn btn-success rounded-pill d-inline-flex align-items-center px-4 py-2">
-                        <i class="fas fa-lock me-2"></i>
-                        <span class="fw-bold">Complete Order</span>
-                    </button>
-
-                    <p class="text-muted small mt-3 d-flex align-items-center">
-                        <i class="fas fa-exclamation-circle text-warning me-2"></i>
-                        Your card will be charged
-                        <strong class="ms-1">£{{ grand_total|floatformat:2 }}</strong>
-                    </p>
-                </div>
+            <p class="text-muted small mt-3 d-flex align-items-center justify-content-end">
+                <i class="fas fa-exclamation-circle text-warning me-2"></i>
+                Your card will be charged <strong class="ms-1">£{{ grand_total|floatformat:2 }}</strong>
+            </p>
             </div>
         </div>
+        </div>
     </form>
-</div>
+    </div>
 {% endblock %}
