@@ -101,7 +101,6 @@ paste here you user story | what is visible to the user and what action they sho
 - *Cause*: Script used jQuery (`$`) to access keys, but jQuery was not included, causing a `ReferenceError`.  
 - *Fix*: Added jQuery via CDN in `base.html`, ensuring `$` is defined and the Stripe Card Element mounts correctly.  
 
-
 ## Deployment
 
 #### Creating Repository on GitHub
