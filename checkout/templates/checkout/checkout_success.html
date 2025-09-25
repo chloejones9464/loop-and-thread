@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="display-4">Thanks for your order</h2>
+                <hr>
+                <p class="lead">Please find your order information below. You'll be sent a confirmation to <strong>{{ order.email }}</strong>.</p>
+            </div>
+        </div>
+
+        <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
+            {% csrf_token %}
+            <div class="col-12 col-lg-6">
+                <div class="order-summary card border-0 shadow-sm mb-4 rounded-4">
+                    <div class="card-header bg-light border-0 rounded-top-4 py-3">
+                        <h5 class="mb-0 fw-bold">Your Order Details</h5>
+                    </div>
+
+                </div>
+                    <a href="#"class="btn bk-button rounded-pill me-2 d-inline-flex align-items-center px-3 py-2">
+                        <span class="fw-semibold">My Orders</span>
+                    </a>
+                    <a href="{% url 'pattern_list' %}"class="btn bk-button rounded-pill me-2 d-inline-flex align-items-center px-3 py-2">
+                        <span class="fw-semibold">Back to Patterns</span>
+                    </a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
