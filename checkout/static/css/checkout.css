@@ -56,3 +56,8 @@
     border-radius: 20px;
     padding: 20px;
 }
+
+/* Slight changes to checkout_success.html */
+.card-header code { color: var(--bs-secondary-color, #6c757d); }
+.table tfoot th { font-size: 1.05rem; }
+.table tbody tr:not(:last-child) td { border-bottom-color: rgba(0,0,0,.05); }
