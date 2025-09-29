@@ -57,6 +57,22 @@
     padding: 20px;
 }
 
+.loading-spinner {
+    position: fixed;      
+    inset: 0;              
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(202,214,183,.8);
+    z-index: 9999;
+    backdrop-filter: blur(1px);
+}
+
+.loading-spinner .spinner-grow {
+    width: 3rem; height: 3rem;
+}
+
+
 /* Slight changes to checkout_success.html */
 .card-header code { color: var(--bs-secondary-color, #6c757d); }
 .table tfoot th { font-size: 1.05rem; }
