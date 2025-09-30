@@ -29,7 +29,7 @@ As the owner, I want to add patterns so that they appear in the shop. | https://
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a visitor, I want to filter and sort results so that I can narrow down choices. | https://github.com/chloejones9464/loop-and-thread/issues/17 | ![Filter and sort(mobile)](assets/documentation/search-filter-sort-mobile.webp) ![Filter and sort(tablet)](assets/documentation/search-filter-sort-tablet.webp) ![Filter and sort(desktop)](assets/documentation/search-filter-sort-desktop.webp)
-As a visitor, I want to search by keyword so that I can find patterns quickly. | https://github.com/chloejones9464/loop-and-thread/issues/16 | [![Keyword search(mobile)](https://img.youtube.com/vi//0.jpg)]() [![Keyword search(tablet)](https://img.youtube.com/vi//0.jpg)]() [![Keyword search(desktop)](https://img.youtube.com/vi/8qDnbg_ZBNI/0.jpg)](https://youtu.be/8qDnbg_ZBNI) 
+As a visitor, I want to search by keyword so that I can find patterns quickly. | https://github.com/chloejones9464/loop-and-thread/issues/16 | [![Keyword search(mobile)](https://img.youtube.com/vi/dQ90HrkoYWY/0.jpg)](https://youtube.com/shorts/dQ90HrkoYWY) [![Keyword search(tablet)](https://img.youtube.com/vi/32LzrR3s36E/0.jpg)](https://youtu.be/32LzrR3s36E) [![Keyword search(desktop)](https://img.youtube.com/vi/8qDnbg_ZBNI/0.jpg)](https://youtu.be/8qDnbg_ZBNI) 
 
 
 ## Epic 5 - Cart & Checkout
@@ -67,22 +67,22 @@ As the owner, I want secure handling of payments and downloads so that user data
 ## Epic 10 - Browsing
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a visitor, I want to view a home page so that I can quickly see featured patterns. | https://github.com/chloejones9464/loop-and-thread/issues/10 | [![Browse home page(mobile)](https://img.youtube.com/vi/_gmBNP5dnQ8/0.jpg)](https://youtube.com/shorts/_gmBNP5dnQ8)
+As a visitor, I want to view a home page so that I can quickly see featured patterns. | https://github.com/chloejones9464/loop-and-thread/issues/10 | [![Browse home page(mobile)](https://img.youtube.com/vi/_gmBNP5dnQ8/0.jpg)](https://youtube.com/shorts/_gmBNP5dnQ8) [![Browse home page(tablet)](https://img.youtube.com/vi/JRekA3acQx0/0.jpg)](https://youtu.be/JRekA3acQx0) [![Browse home page(desktop)](https://img.youtube.com/vi/R7c8BQApeLQ/0.jpg)](https://youtu.be/R7c8BQApeLQ) 
 
 ## Epic 11 - Profiles
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a user, I want to manage my profile so that checkout is faster. | https://github.com/chloejones9464/loop-and-thread/issues/13 | ![Manage profile(desktop)]()
+As a user, I want to manage my profile so that checkout is faster. | https://github.com/chloejones9464/loop-and-thread/issues/13 | ![Manage profile(mobile)]() ![Manage profile(tablet)]() ![Manage profile(desktop)]()
 
 
 ## Epic 12 - Admin
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As the owner, I want a dashboard so that I can manage catalogue. | https://github.com/chloejones9464/loop-and-thread/issues/25 | ![Admin Dashboard(desktop)]()
+As the owner, I want a dashboard so that I can manage catalogue. | https://github.com/chloejones9464/loop-and-thread/issues/25 | ![Admin Dashboard(mobile)]() ![Admin Dashboard(tablet)]() ![Admin Dashboard(desktop)]()
 
 
 ## Epic 13 - Checkout
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a shopper, I want to securely enter my details and pay for my order so that I can complete my purchase with confidence. | https://github.com/chloejones9464/loop-and-thread/issues/39 |
-As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |
+As a shopper, I want to securely enter my details and pay for my order so that I can complete my purchase with confidence. | https://github.com/chloejones9464/loop-and-thread/issues/39 | [![Checkout App(mobile)](https://img.youtube.com/vi/op0X40OQkeU/0.jpg)](https://youtube.com/shorts/op0X40OQkeU) [![Checkout App(tablet)](https://img.youtube.com/vi/MDsZSpiR0-I/0.jpg)](https://youtu.be/MDsZSpiR0-I) [![Checkout App(desktop)](https://img.youtube.com/vi/ReUeXXWSIxA/0.jpg)](https://youtu.be/ReUeXXWSIxA)
+As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |![Successful Checkout(mobile)]() ![Successful Checkout(tablet)]() ![Successful Checkout(desktop)]()

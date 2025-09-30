@@ -1,3 +1,8 @@
+# Loop and Thread
+(image) <br>
+**Loop & Thread** is a cozy and user-friendly e-commerce platform designed for crochet enthusiasts to discover, purchase, and download beautiful handmade crochet patterns. The goal of the project is to provide a seamless browsing and shopping experience, allowing users to explore a curated selection of patterns, manage their accounts, and complete secure purchases with ease. Built with Django and following best practices in full-stack development, Loop & Thread focuses on creating a warm, welcoming space that blends creativity with functionality, celebrating the craft of crochet while offering a smooth and engaging user experience from start to finish.
+
+
 ## Table Of Contents:
 1. [Design & Planning](#design-&-planning)
     * [User Stories](#user-stories)
@@ -265,6 +270,30 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
+<summary>My account(owner)</summary>
+
+![My account(owner)]()
+</details>
+
+<details>
+<summary>My account(customer)</summary>
+
+![My account(customer)]()
+</details>
+
+<details>
+<summary>Checkout page</summary>
+
+![Checkout page]()
+</details>
+
+<details>
+<summary>Checkout success page</summary>
+
+![Checkout success page]()
+</details>
+
+<details>
 <summary>Add pattern</summary>
 
 ![Add pattern]()
@@ -278,6 +307,14 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 ### CI Python Linter
+<details>
+<summary>Accounts</summary>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
 
 <details>
 <summary>admin.py</summary>
@@ -304,15 +341,15 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
-<summary>settings.py</summary>
-
-![settings.py  linter]()
-</details>
-
-<details>
 <summary>signals.py</summary>
 
 ![signals.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
 </details>
 
 <details>
@@ -322,9 +359,125 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
-<summary>urls.py project-level</summary>
+<summary>views.py</summary>
 
-![urls.py project-level linter]()
+![views.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
+<summary>Bag</summary>
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>forms.py</summary>
+
+![forms.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>contexts.py</summary>
+
+![contexts.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
+<summary>Checkout</summary>
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>forms.py</summary>
+
+![forms.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>signals.py</summary>
+
+![signals.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
 </details>
 
 <details>
@@ -334,9 +487,126 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
-<summary>manage.py</summary>
+<summary>webhooks.py</summary>
 
-![manage.py linter]()
+![webhooks.py linter]()
+</details>
+
+<details>
+<summary>webhook_handler.py</summary>
+
+![webhook_handler.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
+<summary>Patterns</summary>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
+<summary>Store</summary>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
+<summary>Loop and Thread</summary>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
 </details>
 
 <details>
@@ -351,6 +621,29 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 ![asgi.py linter]()
 </details>
 
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>settings.py</summary>
+
+![settings.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
+<summary>manage.py</summary>
+
+![manage.py linter]()
+</details>
+
+<hr>
 
 
 ### Manual Testing user stories or/and features
