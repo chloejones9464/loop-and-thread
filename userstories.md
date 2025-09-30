@@ -1,0 +1,88 @@
+# User Stories
+
+## Epic 1 - Navigation
+
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a visitor, I want to browse all patterns so that I can explore options. | https://github.com/chloejones9464/loop-and-thread/issues/11 | ![All Patterns(mobile)](assets/documentation/all-patterns-mobile.webp) ![All Patterns(tablet)](assets/documentation/all-patterns-tablet.webp) ![All Patterns(desktop)](assets/documentation/all-patterns-desktop.webp)
+
+
+## Epic 2 - Accounts
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a visitor, I want to log in so that I can purchase and access downloads. | https://github.com/chloejones9464/loop-and-thread/issues/33 | ![Log in page(mobile)](assets/documentation/login-mobile.webp) ![Log in page(tablet)](assets/documentation/login-tablet.webp) ![Log in page(desktop)](assets/documentation/login-desktop.webp)
+As a user I want to sign out so that no-one can access my account | https://github.com/chloejones9464/loop-and-thread/issues/34 | ![Logout page(mobile)](assets/documentation/logout-mobile.webp) ![Logout page(tablet)](assets/documentation/logout-tablet.webp) ![Logout page(desktop)](assets/documentation/logout-desktop.webp)
+As a visitor, I want to sign up so that I can purchase and access downloads. | https://github.com/chloejones9464/loop-and-thread/issues/32 | [![Sign up(mobile)](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)](https://youtube.com/shorts/pGRuWh_NY2Y?feature=share) [![Sign up(tablet)](https://img.youtube.com/vi/h9R5xvuW6GA/0.jpg)](https://youtu.be/h9R5xvuW6GA)
+[![Sign up(desktop)](https://img.youtube.com/vi/lj2aEO433bw/0.jpg)](https://youtu.be/lj2aEO433bw)
+
+
+
+## Epic 3 - Catalogue Management
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As the owner, I want to be able to delete patterns so that i can remove patterns from the shop. | https://github.com/chloejones9464/loop-and-thread/issues/36 | ![Delete Pattern(desktop)]()
+As the owner, I want to edit patterns so that they appear in the shop. | https://github.com/chloejones9464/loop-and-thread/issues/35 | ![Edit Pattern(desktop)]()
+As the owner, I want to add patterns so that they appear in the shop. | https://github.com/chloejones9464/loop-and-thread/issues/14 | ![Add Pattern(desktop)]()
+
+
+## Epic 4 - Search, filter & sort
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a visitor, I want to filter and sort results so that I can narrow down choices. | https://github.com/chloejones9464/loop-and-thread/issues/17 | ![Filter and sort(mobile)](assets/documentation/search-filter-sort-mobile.webp) ![Filter and sort(tablet)](assets/documentation/search-filter-sort-tablet.webp) ![Filter and sort(desktop)](assets/documentation/search-filter-sort-desktop.webp)
+As a visitor, I want to search by keyword so that I can find patterns quickly. | https://github.com/chloejones9464/loop-and-thread/issues/16 | [![Keyword search(mobile)](https://img.youtube.com/vi//0.jpg)]() [![Keyword search(tablet)](https://img.youtube.com/vi//0.jpg)]() [![Keyword search(desktop)](https://img.youtube.com/vi/8qDnbg_ZBNI/0.jpg)](https://youtu.be/8qDnbg_ZBNI) 
+
+
+## Epic 5 - Cart & Checkout
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a visitor, I want to add patterns to a cart so that I can purchase them. | https://github.com/chloejones9464/loop-and-thread/issues/18 | [![Add to cart(mobile)](https://img.youtube.com/vi/8qgQqIKNt4k/0.jpg)](https://youtube.com/shorts/8qgQqIKNt4k) ![Add to cart(tablet)](assets/documentation/add-to-cart-tablet.webp) ![Add to cart(desktop)](assets/documentation/add-to-cart-desktop.webp)
+
+## Epic 6 - Digital Delivery(is time allows)
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a buyer, I want access to my purchased PDFs so that I can download them anytime. | https://github.com/chloejones9464/loop-and-thread/issues/20 |
+As a buyer, I want to receive download links in email so that I can access them later. | https://github.com/chloejones9464/loop-and-thread/issues/21 |
+
+
+## Epic 7 - Social Feedback(if time allows)
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a buyer, I want to leave reviews so that others can make informed choices. | https://github.com/chloejones9464/loop-and-thread/issues/23 |
+As a user, I want to favourite patterns so that I can find them later. | https://github.com/chloejones9464/loop-and-thread/issues/22 |
+
+
+## Epic 8 - Orders
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a user, I want to see my past orders so that I can re-download purchased patterns. | https://github.com/chloejones9464/loop-and-thread/issues/24 | ![Orders(desktop)]()
+
+
+## Epic 9 - Testing for README
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a visitor, I want the site to be accessible so that everyone can use it. | https://github.com/chloejones9464/loop-and-thread/issues/26 | Responsiveness throughout this page
+As the owner, I want secure handling of payments and downloads so that user data is protected. | https://github.com/chloejones9464/loop-and-thread/issues/27 | 
+
+
+## Epic 10 - Browsing
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a visitor, I want to view a home page so that I can quickly see featured patterns. | https://github.com/chloejones9464/loop-and-thread/issues/10 | [![Browse home page(mobile)](https://img.youtube.com/vi/_gmBNP5dnQ8/0.jpg)](https://youtube.com/shorts/_gmBNP5dnQ8)
+
+## Epic 11 - Profiles
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a user, I want to manage my profile so that checkout is faster. | https://github.com/chloejones9464/loop-and-thread/issues/13 | ![Manage profile(desktop)]()
+
+
+## Epic 12 - Admin
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As the owner, I want a dashboard so that I can manage catalogue. | https://github.com/chloejones9464/loop-and-thread/issues/25 | ![Admin Dashboard(desktop)]()
+
+
+## Epic 13 - Checkout
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a shopper, I want to securely enter my details and pay for my order so that I can complete my purchase with confidence. | https://github.com/chloejones9464/loop-and-thread/issues/39 |
+As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |

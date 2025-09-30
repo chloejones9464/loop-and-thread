@@ -21,43 +21,363 @@
 ## Design & Planning:
 
 ### User Stories
-Write your user stories in this section
+[Here](userstories.md) you'll find the user stories for my project.
+
+This page contains links to my user stories in my GitHub project and will have corresponding screenshots/screen recordings of the completed tasks.
 ### Wireframes
-Attach wireframes in this section
+[Click here](wireframes.md) to view all the wireframes for this project.
+
 ### Typography
 Explain font you've used for your project
 ### Colour Scheme
-Screenshoot of the colour scheme for your project
+
+I used the page's Eye Dropper extention to find a color that I could bounce off.
+
+<details>
+<summary>Eye Dropper screenshot</summary>
+
+![Eye Dropper screenshot](assets/documentation/eyedropper.webp)
+</details>
+
+<br>
+
+Then from that selection I used Colorspace to create a palette for my site.
+
+<details>
+<summary>Colorspace</summary>
+
+- I went with this color scheme for a more classy look. My past project had a bonkers feel to them so I've tamed it down with this one. I wanted a cozy and comfy color pallet for this website as I feel that crocheting has that effect(on me anyways).
+
+![Colorspace](assets/documentation/colorspace.webp)
+</details>
 
 ## Features:
-Explain your features on the website,(navigation, pages, links, forms.....)
+Here are the feature for the website. Very minimal as I wanted to create a website that was easy to use and easy to look at.
 ### Navigation
-### Footer
+Navigation is simple but effective. There is a link for the Home page, the customer/owner account and the basket.
+<details>
+<summary>Mobile navigation</summary>
+For a mobile, I've placed a burger menu that drops down to reveal the menu content.
+
+![Mobile Navigation](assets/documentation/mobile-navbar.webp)
+</details>
+
+<details>
+<summary>Desktop navigation</summary>
+
+![Desktop navigation](assets/documentation/desktop-navbar.webp)
+</details>
+
 ### Other features
+#### Forms
+<details>
+<summary>Log in(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+![Log in mobile](assets/documentation/login-mobile.webp)
+
+- Tablet
+
+![Log in tablet](assets/documentation/login-tablet.webp)
+
+- Desktop
+
+![Log in desktop](assets/documentation/login-desktop.webp)
+</details>
+
+<details>
+<summary>Sign up(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Sign up mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)](https://youtube.com/shorts/pGRuWh_NY2Y?feature=share)
+
+- Tablet
+
+[![Sign up tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)](https://youtu.be/OWnNetD_iQ4)
+
+- Desktop
+
+[![Sign up desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)](https://youtu.be/phCWSdKeGRY)
+</details>
+
+<details>
+<summary>Account(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Account mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+
+- Tablet
+
+[![Account tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+
+- Desktop
+
+[![Account desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
+</details>
+
+<details>
+<summary>Add Pattern(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Add Pattern mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+
+- Tablet
+
+[![Add Pattern tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+
+- Desktop
+
+[![Add Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
+</details>
+
+<details>
+<summary>Edit Pattern(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Edit Pattern mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+
+- Tablet
+
+[![Edit Pattern tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+
+- Desktop
+
+[![Edit Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
+</details>
+
+<details>
+<summary>Delete Pattern(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Delete Pattern mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+
+- Tablet
+
+[![Delete Pattern tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+
+- Desktop
+
+[![Delete Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
+</details>
+
 ## Technologies Used
-List of technologies used for your project...
-HTML
-CSS
-Bootstrap
-Github
-Django
-Python
+Technologies |
+--- |
+HTML |
+CSS |
+Bootstrap |
+Github |
+Django |
+Python |
 ## Testing
-Important part of your README!!!
+TESTING! This will always be the core of my anxiety and I'm positive that I'm not the only one! <br> Let dive in....!
 ### Google's Lighthouse Performance
 Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
-Check compatability with different browsers
+<details>
+<summary>Chrome</summary>
+
+![Chrome]()
+</details>
+
+<details>
+<summary>Safari</summary>
+
+![Safari]()
+</details>
+
+<details>
+<summary>Firefox</summary>
+
+![Firefox]()
+</details>
+
+<details>
+<summary>Opera</summary>
+
+![Opera]()
+</details>
+
 ### Responsiveness
-Screenshots of the responsivness, pick few devices (from 320px top 1200px)
+I've displayed the responsiveness of this site in my [user stories](userstories.md), head over to see them!
+
 ### Code Validation
-Validate your code HTML, CSS (all pages/files need to be validated!!!), display screenshots
+
+
+<details>
+<summary>Logged in(customer) home page</summary>
+
+![Logged in(customer) home page]()
+</details>
+
+<details>
+<summary>Logged out home page</summary>
+
+![Logged out home page]()
+</details>
+
+<details>
+<summary>Logged in(owner) home page</summary>
+
+![Logged in(owner) home page]()
+</details>
+
+<details>
+<summary>Log in page</summary>
+
+![Log in page]()
+</details>
+
+<details>
+<summary>Log out page</summary>
+
+![Log out page]()
+</details>
+
+<details>
+<summary>Sign up page</summary>
+
+![Sign up page]()
+</details>
+
+<details>
+<summary>Pattern detail page</summary>
+
+![Pattern detail page]()
+</details>
+
+<details>
+<summary>My patterns(customer)</summary>
+
+![My patterns]()
+</details>
+
+<details>
+<summary>My patterns(owner)</summary>
+
+![My patterns(owner)]()
+</details>
+
+<details>
+<summary>Add pattern</summary>
+
+![Add pattern]()
+
+</details>
+
+<details>
+<summary>CSS</summary>
+
+![CSS]()
+</details>
+
+### CI Python Linter
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>forms.py</summary>
+
+![forms.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>settings.py</summary>
+
+![settings.py  linter]()
+</details>
+
+<details>
+<summary>signals.py</summary>
+
+![signals.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>urls.py project-level</summary>
+
+![urls.py project-level linter]()
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter]()
+</details>
+
+<details>
+<summary>manage.py</summary>
+
+![manage.py linter]()
+</details>
+
+<details>
+<summary>wsgi.py</summary>
+
+![wsgi.py linter]()
+</details>
+
+<details>
+<summary>asgi.py</summary>
+
+![asgi.py linter]()
+</details>
+
+
+
 ### Manual Testing user stories or/and features
-Test all your user stories, you an create table 
-User Story |  Test | Pass
---- | --- | :---:
-paste here you user story | what is visible to the user and what action they should perform | &check;
-- and attach screenshot
+User Story Title | User Story |  Test | Pass
+--- | --- | --- | :---:
+Add Patterns | As the **owner**, I want **to add patterns** so that **they appear in the shop.** || &check;
+Manage Profile | As a **user**, I want **to manage my profile** so that **checkout is faster.** ||&check;
+Browse Home Page | As a **visitor**, I want **to view a home page** so that **I can quickly see featured patterns.** ||&check;
+Browse All Patterns | As a **visitor**, I want **to browse all patterns** so that **I can explore options.** ||&check;
+Mobile Menu (Burger + Drawer) | As a **mobile visitor**, I want **a collapsible menu** so that **I can navigate to key pages on small screens.** ||&check;
+Checkout app | As a **shopper**, I want **to securely enter my details and pay for my order** so that **I can complete my purchase with confidence.** ||&check;
+Keyword Search | As a **visitor**, I want **to search by keyword** so that **I can find patterns quickly.** ||&check;
+Filter & Sort | As a **visitor**, I want **to filter and sort results** so that **I can narrow down choices.** ||&check;
+Add to Cart | As a **visitor**, I want **to add patterns to a cart** so that **I can purchase them.** ||&check;
+Primary Navigation(Desktop) | As a **visitor**, I want **to use a navigation menu** so that **I can access Shop, Categories, and Sign in/up easily.** ||&check;
+Sign up page | As a **visitor**, I want **to sign up** so that **I can purchase and access downloads.** ||&check;
+Log in page | As a **visitor**, I want **to log in** so that **I can purchase and access downloads.** ||&check;
+Log out | As a **user**, I want **to sign out** so that **no-one can access my account**||&check;
+Accessibility & Responsiveness | As a **visitor**, I want **the site to be accessible** so that **everyone can use it.**||&check;
+Order History | As a **user**, I want **to see my past orders** so that **I can re-download purchased patterns.**||&check;
+Security & Privacy | As the **owner**, I want **secure handling of payments and downloads** so that **user data is protected.**||&check;
+Successful Checkout | As a **shopper**, I want **to complete a secure checkout and pay for my crochet pattern(s)** so that **I receive my order confirmation and access to my purchase.**||&check;
+Delete Pattern | As the **owner**, I want **to be able to delete patterns** so that **I can remove patterns from the shop.**||&check;
+Edit Pattern | As the **owner**, I want **to edit patterns** so that **they appear in the shop.**||&check;
+Admin Dashboard | As the **owner**, I want **a dashboard** so that **I can manage catalogue.**||&check;
+
+
 
 ## Bugs
 
@@ -108,11 +428,55 @@ paste here you user story | what is visible to the user and what action they sho
 - Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository from template**.
 - Once the repository was created, I clicked the green **gitpod** button to create a workspace in gitpod so that I could write the code for the site.
 #### Deloying on Github
-The site was deployed to Github Pages using the following method:
-- Go to the Github repository.
-- Navigate to the 'settings' tab.
-- Using the 'select branch' dropdown menu, choose 'main'.
-- Click 'save'.
+#### Creating Repository on GitHub
+- First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
+
+- Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository from template**.
+
+#### Deloying on Heroku
+The site was deployed to Heroku using the following method:
+
+##### Preparation
+- Go to [Heroku](https://www.heroku.com/) (for me, Heroku Student) and sign in.
+
+- Create a Heroku app with a **unique name**. Choose the correct region (e.g. Europe).
+
+- In the app’s **Settings**, under **Config Vars**, add the keys(and your own values): <br>
+  - DISABLE_COLLECTSTATIC
+  - DATABASE_URL
+  - CLOUDINARY_URL
+
+- Install Gunicorn (your web server): <br>
+  - pip install gunicorn~=20.1
+
+- Freeze it into your requirements.txt:<br>
+  - pip freeze > requirements.txt
+
+- Create a Procfile in the root of your project and add:<br>
+  - web: gunicorn your_project_name.wsgi <br>
+
+Replace your_project_name with the name of the folder that contains settings.py.
+- In settings.py:
+  - Set DEBUG = False
+  - Add your Heroku app to ALLOWED_HOSTS, e.g.: <br>
+  ALLOWED_HOSTS = ['your-app-name.herokuapp.com']
+
+- Save all changes and push your code to GitHub:<br>
+  - git add .
+  - git commit -m "Prepare for Heroku deployment"
+  - git push
+
+##### Ready to deploy
+- In your Heroku app, go to the **Deploy** tab.
+
+- Under **Deployment Method**, select **GitHub** and search for your repository.
+- Connect the GitHub repo to the app.
+
+- Scroll down to **Manual Deploy**, select the main branch and click **Deploy Branch**.
+
+- Once complete, click “**Open App**” to view your live site.
+
+- Voila! You can hit the Open app and there's your shiny new site in all it's glory.
 
 ## Credits
 List of used resources for your website (text, images, snippets of code, projects....)
