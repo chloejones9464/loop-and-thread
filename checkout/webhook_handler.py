@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+import stripe
 
 
 class StripeWH_Handler:
@@ -14,10 +15,21 @@ class StripeWH_Handler:
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-        '''Handling payment_intent.succeeded webhook events'''
+        pi = event.data.object
+        pi = stripe.PaymentIntent.retrieve(
+            pi.id,
+            expand=["payment_method", "latest_charge"]
+        )
+
+        pm_billing = pi.payment_method.billing_details
+        charge_billing = pi.latest_charge.billing_details
+        print("PM billing:", pm_billing)
+        print("Charge billing:", charge_billing)
+
         return HttpResponse(
-            content=f'Webhook received : {event['type']}',
-            status=200)
+            content=f'Webhook received : {event["type"]}',
+            status=200
+        )
 
     def handle_payment_intent_failed(self, event):
         '''Handling payment_intent.failed webhook events'''
