@@ -1,38 +1,121 @@
 from django.http import HttpResponse
+from decimal import Decimal
+from .models import Order, OrderLineItem
+from patterns.models import Pattern
+import time
+import json
 import stripe
 
 
 class StripeWH_Handler:
-    '''Handling webhooks'''
-
     def __init__(self, request):
         self.request = request
 
     def handle_event(self, event):
-        '''Handling webhook events'''
         return HttpResponse(
-            content=f'Unhandled webhook received : {event['type']}',
-            status=200)
-
-    def handle_payment_intent_succeeded(self, event):
-        pi = event.data.object
-        pi = stripe.PaymentIntent.retrieve(
-            pi.id,
-            expand=["payment_method", "latest_charge"]
+            content=f"Unhandled webhook received : {event['type']}",
+            status=200
         )
 
-        pm_billing = pi.payment_method.billing_details
-        charge_billing = pi.latest_charge.billing_details
-        print("PM billing:", pm_billing)
-        print("Charge billing:", charge_billing)
+    def handle_payment_intent_succeeded(self, event):
+        intent = event['data']['object']
+        pid = intent['id']
+
+        bag_json = intent.get('metadata', {}).get('bag', '{}')
+        bag = json.loads(bag_json)
+        save_info = intent.get('metadata', {}).get('save_info')
+
+        stripe_charge = stripe.Charge.retrieve(intent['latest_charge'])
+        billing = stripe_charge['billing_details']
+        amount_decimal = Decimal(stripe_charge['amount']) / Decimal('100')
+        order_total_amount = amount_decimal.quantize(Decimal('0.01'))
+
+        order_exists = False
+        attempt = 1
+        while attempt <= 5:
+            try:
+                order = Order.objects.get(
+                    full_name__iexact=billing.get('name', ''),
+                    email__iexact=billing.get('email', ''),
+                    phone_number__iexact=(
+                        billing.get('phone', '')
+                    ),
+                    country__iexact=(
+                        billing.get('address', {}).get('country', '')
+                    ),
+                    postcode__iexact=(
+                        billing.get('address', {})
+                        .get('postal_code', '')
+                    ),
+                    town_or_city__iexact=(
+                        billing.get('address', {})
+                        .get('city', '')
+                    ),
+                    street_address1__iexact=billing.get('address', {}).get(
+                        'line1', ''
+                    ),
+                    street_address2__iexact=billing.get('address', {}).get(
+                        'line2', ''
+                    ),
+                    county__iexact=billing.get('address', {}).get(
+                        'state', ''
+                    ),
+                    order_total=order_total_amount,
+                    original_bag=bag_json,
+                    stripe_pid=pid,
+                )
+                order_exists = True
+                break
+            except Order.DoesNotExist:
+                attempt += 1
+                time.sleep(1)
+
+        if order_exists:
+            return HttpResponse(
+                content=(
+                    f"Webhook received : {event['type']} | "
+                    "Order already in database"
+                ),
+                status=200
+            )
+
+        try:
+            order = Order.objects.create(
+                full_name=billing.get('name', ''),
+                email=billing.get('email', ''),
+                phone_number=billing.get('phone', ''),
+                country=billing.get('address', {}).get('country', ''),
+                postcode=billing.get('address', {}).get('postal_code', ''),
+                town_or_city=billing.get('address', {}).get('city', ''),
+                street_address1=billing.get('address', {}).get('line1', ''),
+                street_address2=billing.get('address', {}).get('line2', ''),
+                county=billing.get('address', {}).get('state', ''),
+                original_bag=bag_json,
+                stripe_pid=pid,
+            )
+
+            for item_id_str, item_data in bag.items():
+                pattern = Pattern.objects.get(pk=int(item_id_str))
+                OrderLineItem.objects.create(order=order, pattern=pattern)
+
+        except Exception as e:
+            if 'order' in locals():
+                order.delete()
+            return HttpResponse(
+                content=f"Webhook received : {event['type']} | ERROR: {e}",
+                status=500
+            )
 
         return HttpResponse(
-            content=f'Webhook received : {event["type"]}',
+            content=(
+                f"Webhook received : {event['type']} | "
+                "SUCCESS: Created order in webhook"
+            ),
             status=200
         )
 
     def handle_payment_intent_failed(self, event):
-        '''Handling payment_intent.failed webhook events'''
         return HttpResponse(
-            content=f'Webhook received : {event['type']}',
-            status=200)
+            content=f"Webhook received : {event['type']}",
+            status=200
+        )
