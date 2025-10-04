@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/bag.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+        <a href="{% url 'orders_list' %}" class="btn bk-button mb-3">&larr; Back to orders</a>
+
+        <h2 class="mb-1 d-flex align-items-center gap-2">Order: <span class="fw-normal">{{ order.order_number }}</span>
+        <span class="badge rounded-pill bg-success-subtle text-success-emphasis">Paid</span>
+        </h2>
+        <p class="text-muted small mb-1">Date: {{ order.date|date:"Y-m-d H:i" }}</p>
+        <p class="text-muted small mb-3">Total: <strong>£{{ order.order_total|floatformat:2 }}</strong></p>
+
+        <div class="form-bg-color shadow-sm rounded-4 overflow-hidden">
+        <ul class="list-group list-group-flush">
+            {% for li in order.lineitems.all %}
+            <li class="list-group-item py-3">
+                <div class="d-flex align-items-center">
+                {% if li.pattern.cover_image %}
+                    <img src="{{ li.pattern.cover_image.url }}" alt="{{ li.pattern.title }}"
+                        class="rounded-3 me-3 pattern-cover-image">
+                {% else %}
+                    <div class="me-3 text-muted">—</div>
+                {% endif %}
+                <span class="flex-grow-1">{{ li.pattern.title }}</span>
+                <span class="fw-semibold" style="font-variant-numeric: tabular-nums;">
+                    £{{ li.lineitem_total|floatformat:2 }}
+                </span>
+                <span><button type="button" class="btn btn-sm download-btn">Download file</button></span>
+                </div>
+            </li>
+            {% empty %}
+            <li class="list-group-item text-muted">No line items found.</li>
+            {% endfor %}
+        </ul>
+            <div class="p-3 border-top">
+                <h2 class="h6">Billing / Address</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                    <p class="mb-3"><strong>Name:</strong> {{ order.full_name }}</p>
+                    <p class="mb-3"><strong>Email:</strong> {{ order.email }}</p>
+                    <p class="mb-3"><strong>Phone:</strong> {{ order.phone_number }}</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="mb-1"><strong>Address:</strong></p>
+                    <address class="mb-0">
+                        {{ order.street_address1 }}{% if order.street_address2 %}, {{ order.street_address2 }}{% endif %}<br>
+                        {{ order.town_or_city }}{% if order.county %}, {{ order.county }}{% endif %}<br>
+                        {{ order.postcode }}{% if order.country %}, {{ order.country }}{% endif %}
+                    </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

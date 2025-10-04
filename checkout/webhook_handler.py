@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.conf import settings
 from decimal import Decimal
 from .models import Order, OrderLineItem
 from patterns.models import Pattern
@@ -10,6 +11,7 @@ import stripe
 class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
+        stripe.api_key = settings.STRIPE_SECRET_KEY
 
     def handle_event(self, event):
         return HttpResponse(

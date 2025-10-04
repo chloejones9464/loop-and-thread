@@ -64,3 +64,23 @@
     border: #5c4743 solid 1px;
     color: #ffffff;
 }
+
+.pattern-cover-image {
+    width:64px;
+    height:64px;
+    object-fit:cover;
+}
+
+.download-btn {
+    margin-left: 20px;
+    background-color: #6b4e71;
+    border: #5c3e5f solid 1px;
+    color: #ffffff;
+}
+
+.download-btn:hover {
+    margin-left: 20px;
+    background-color: #936b9b;
+    border: #5c3e5f solid 1px;
+    color: #ffffff;
+}

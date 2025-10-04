@@ -15,6 +15,7 @@ from .forms import OrderForm
 from patterns.models import Pattern
 from .models import Order, OrderLineItem
 from bag.contexts import bag_contents
+from accounts.models import Profile
 
 
 @require_POST
@@ -25,7 +26,10 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user,
+            'username': (
+                request.user.username
+                if request.user.is_authenticated else ""
+            ),
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -35,16 +39,51 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+
+    initial = {}
+    profile = None
+    if request.user.is_authenticated:
+        try:
+            profile = request.user.profile
+        except Profile.DoesNotExist:
+            profile = None
+
+        if profile:
+            initial = {
+                'full_name': (
+                    getattr(profile, 'default_full_name', None)
+                    or getattr(profile, 'default_display_name', '')
+                    or request.user.get_full_name()
+                    or getattr(profile, 'display_name', '')
+                ),
+                'email': request.user.email,
+                'phone_number': profile.default_phone_number,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
+                'town_or_city': profile.default_town_or_city,
+                'county': profile.default_county,
+                'postcode': profile.default_postcode,
+                'country': profile.default_country,
+            }
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     bag = request.session.get('bag', {})
+    if not bag:
+        messages.error(request, "There's nothing in your bag!")
+        return redirect(reverse('patterns'))
+
+    current_bag = bag_contents(request)
+    total = current_bag['grand_total']
+    stripe_total = int(round(total * 100))
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+        automatic_payment_methods={'enabled': True},
+    )
 
     if request.method == 'POST':
-        if not bag:
-            messages.error(request, "There's nothing in your bag!")
-            return redirect(reverse('patterns'))
-
         form_data = {
             'full_name': request.POST.get('full_name', ''),
             'email': request.POST.get('email', ''),
@@ -63,7 +102,10 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            if request.user.is_authenticated:
+                order.user_profile = request.user.profile
             order.save()
+
             for item_id in bag.keys():
                 try:
                     pattern = Pattern.objects.get(pk=item_id)
@@ -83,44 +125,29 @@ def checkout(request):
                     pattern=pattern,
                     lineitem_total=pattern.price,
                 )
+
             request.session['save_info'] = 'save-info' in request.POST
             request.session['bag'] = {}
             return redirect(reverse(
                 'checkout_success',
                 args=[order.order_number]
-                ))
+                )
+            )
         else:
             messages.error(
                 request,
                 (
                     "There was an error with your form. "
-                    "Please double-check your information."
+                    "Please double-check your "
+                    "information."
                 )
             )
-            return redirect(reverse('checkout'))
-
-    if not bag:
-        messages.error(request, "There's nothing in your bag!")
-        return redirect(reverse('patterns'))
-
-    current_bag = bag_contents(request)
-    total = current_bag['grand_total']
-    stripe_total = int(round(total * 100))
-
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-        automatic_payment_methods={'enabled': True},
-    )
-
-    order_form = OrderForm()
+            order_form = OrderForm(form_data)
+    else:
+        order_form = OrderForm(initial=initial)
 
     if not stripe_public_key:
-        messages.warning(
-            request,
-            ("Stripe public key is missing — did you set it in env.py?")
-        )
+        messages.warning(request, "Stripe public key is missing — did you set it in env.py?")
 
     return render(request, 'checkout/checkout.html', {
         'order_form': order_form,
@@ -144,5 +171,4 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
-    
     return render(request, template, context)
