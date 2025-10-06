@@ -34,8 +34,10 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'loop-and-thread-c07cf46398e8.herokuapp.com',
+    'herokuapp.com',
 ]
+
+CSRF_TRUSTED_ORIGINS = ["https://*.herokuapp.com"]
 
 
 # Application definition
