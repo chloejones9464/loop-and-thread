@@ -1,1 +1,1 @@
-web: gunicorn loop-and-thread.wsgi
+web: gunicorn loop_and_thread.wsgi
