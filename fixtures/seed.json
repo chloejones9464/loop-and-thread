@@ -1,0 +1,64 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$fMcQuAOgkSAk5e2Lfha5ca$unVCmA3DYfg09UtZew+RkamcM57MEvhm92PcwesIT+w=",
+    "last_login": "2025-10-06T15:25:41.781Z",
+    "is_superuser": false,
+    "username": "Brandon",
+    "first_name": "",
+    "last_name": "",
+    "email": "brandon@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-10-06T15:25:41.046Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$tSs6hgJntVPhJhTuIJtzar$N5brVG4WFcKRXUN8lheSA7GqqmCsuxztk1sIXjP4Gec=",
+    "last_login": "2025-10-06T15:54:43.958Z",
+    "is_superuser": true,
+    "username": "jonesc3",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-06T15:54:28.292Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "patterns.category",
+  "pk": 1,
+  "fields": {
+    "name": "Squares",
+    "slug": "squares"
+  }
+},
+{
+  "model": "patterns.pattern",
+  "pk": 1,
+  "fields": {
+    "title": "Classic Granny Square",
+    "slug": "classic-granny-square",
+    "category": 1,
+    "summary": "A timeless crochet granny square pattern, perfect for blankets and projects.",
+    "description": "Learn how to crochet a classic granny square using US terms. This easy pattern works in the round with double crochet clusters and chain spaces. Use multiple colors for a patchwork effect, or a single color for a modern look. Great for beginners!",
+    "difficulty": "easy",
+    "price": "1.00",
+    "cover_image": "",
+    "file": "patterns/files/granny-square.png",
+    "created_by": 2,
+    "is_published": true,
+    "created_at": "2025-10-06T16:14:39.766Z"
+  }
+}
+]
