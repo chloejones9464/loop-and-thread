@@ -714,6 +714,34 @@ Admin Dashboard | As the **owner**, I want **a dashboard** so that **I can manag
 - *Cause*: Script used jQuery (`$`) to access keys, but jQuery was not included, causing a `ReferenceError`.  
 - *Fix*: Added jQuery via CDN in `base.html`, ensuring `$` is defined and the Stripe Card Element mounts correctly.  
 
+**Sign-up form submits but no user/redirect**
+- *Cause*: Template didn’t render form errors; allauth set to production `(ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE=True`, `ACCOUNT_EMAIL_VERIFICATION='mandatory')` blocked dev flow.
+- *Fix*: Show `{{ form.errors }}` / `{{ form.non_field_errors }}` in `signup.html`. For dev, set `ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE=False and ACCOUNT_EMAIL_VERIFICATION='none'`.
+
+**Profile auto-creation failing on signup**
+- *Cause*: Signal still created `Profile(default_user=instance)` after renaming field to `user`, causing `TypeError`.
+- *Fix*: Use a single `post_save` receiver: `Profile.objects.get_or_create(user=instance)` in `accounts/signals.py`; load via `AccountsConfig.ready()`; ensure `INSTALLED_APPS` uses `accounts.apps.AccountsConfig`.
+
+**Admin crash: `list_display` references old field**
+- *Cause*: `accounts/admin.py` still used `default_user` in `list_display`.
+- *Fix*: Update to `user`; for an email column use a helper (e.g., `def user_email(self, obj): return obj.user.email`).
+
+**Checkout form not pre-populating**
+- *Cause*: Built `initial` from `Profile` but didn’t pass it on GET; invalid POST redirected (lost bound data/errors).
+- *Fix*: On GET use `OrderForm(initial=initial)`; on invalid POST re-render with `OrderForm(request.POST)` and show errors.
+
+**NameError: name '`view`' is not defined in `patterns/urls.py`**
+- *Cause*: Typo using `view.manage_patterns` instead of `views.manage_patterns`.
+- *Fix*: Import `views` (plural) or import the functions directly and reference them correctly.
+
+**Cover image not rendering in templates**
+- *Cause*: Using a text container instead of `<img>`; missing `.url`; media not served in dev.
+- *Fix*: Use `<img src="{{ obj.cover_image.url }}">`.
+
+**Profile relation field mismatch**
+- *Cause*: Model used `default_user` instead of standard user `OneToOneField`, breaking `request.user.profile` and admin filters.
+- *Fix*: Rename field to `user = OneToOneField(User, related_name='profile', on_delete=models.CASCADE)` via migration; update references from `default_user` → `user`.
+
 ## Deployment
 
 #### Creating Repository on GitHub

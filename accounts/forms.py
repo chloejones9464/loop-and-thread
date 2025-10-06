@@ -39,7 +39,7 @@ class ProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop("user", None)
         if self.user is None:
-            self.user = kwargs.pop("default_user", None)
+            self.user = kwargs.pop("user", None)
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False

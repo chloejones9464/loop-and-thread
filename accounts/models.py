@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
-    default_user = models.OneToOneField(
+    user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
         related_name='profile',
@@ -41,13 +41,16 @@ class Profile(models.Model):
     default_county = models.CharField(max_length=80, null=True, blank=True)
 
     def __str__(self):
-        return self.display_name or self.user.get_username()
+        return (
+            self.user.get_full_name()
+            or self.user.get_username()
+        )
 
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """ Create or update the user profile """
     if created:
-        Profile.objects.create(default_user=instance)
+        Profile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.profile.save()

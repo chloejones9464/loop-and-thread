@@ -12,8 +12,7 @@ User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a visitor, I want to log in so that I can purchase and access downloads. | https://github.com/chloejones9464/loop-and-thread/issues/33 | ![Log in page(mobile)](assets/documentation/login-mobile.webp) ![Log in page(tablet)](assets/documentation/login-tablet.webp) ![Log in page(desktop)](assets/documentation/login-desktop.webp)
 As a user I want to sign out so that no-one can access my account | https://github.com/chloejones9464/loop-and-thread/issues/34 | ![Logout page(mobile)](assets/documentation/logout-mobile.webp) ![Logout page(tablet)](assets/documentation/logout-tablet.webp) ![Logout page(desktop)](assets/documentation/logout-desktop.webp)
-As a visitor, I want to sign up so that I can purchase and access downloads. | https://github.com/chloejones9464/loop-and-thread/issues/32 | [![Sign up(mobile)](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)](https://youtube.com/shorts/pGRuWh_NY2Y?feature=share) [![Sign up(tablet)](https://img.youtube.com/vi/h9R5xvuW6GA/0.jpg)](https://youtu.be/h9R5xvuW6GA)
-[![Sign up(desktop)](https://img.youtube.com/vi/lj2aEO433bw/0.jpg)](https://youtu.be/lj2aEO433bw)
+As a visitor, I want to sign up so that I can purchase and access downloads. | https://github.com/chloejones9464/loop-and-thread/issues/32 | [![Sign up(mobile)](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)](https://youtube.com/shorts/pGRuWh_NY2Y?feature=share) [![Sign up(tablet)](https://img.youtube.com/vi/h9R5xvuW6GA/0.jpg)](https://youtu.be/h9R5xvuW6GA)[![Sign up(desktop)](https://img.youtube.com/vi/lj2aEO433bw/0.jpg)](https://youtu.be/lj2aEO433bw)
 
 
 
@@ -54,7 +53,7 @@ As a user, I want to favourite patterns so that I can find them later. | https:/
 ## Epic 8 - Orders
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a user, I want to see my past orders so that I can re-download purchased patterns. | https://github.com/chloejones9464/loop-and-thread/issues/24 | ![Orders(desktop)]()
+As a user, I want to see my past orders so that I can re-download purchased patterns. | https://github.com/chloejones9464/loop-and-thread/issues/24 | [![Orders(desktop)](https://img.youtube.com/vi/4_eU-BduKR4/0.jpg)](https://youtu.be/4_eU-BduKR4)
 
 
 ## Epic 9 - Testing for README
@@ -85,4 +84,4 @@ As the owner, I want a dashboard so that I can manage catalogue. | https://githu
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a shopper, I want to securely enter my details and pay for my order so that I can complete my purchase with confidence. | https://github.com/chloejones9464/loop-and-thread/issues/39 | [![Checkout App(mobile)](https://img.youtube.com/vi/op0X40OQkeU/0.jpg)](https://youtube.com/shorts/op0X40OQkeU) [![Checkout App(tablet)](https://img.youtube.com/vi/MDsZSpiR0-I/0.jpg)](https://youtu.be/MDsZSpiR0-I) [![Checkout App(desktop)](https://img.youtube.com/vi/ReUeXXWSIxA/0.jpg)](https://youtu.be/ReUeXXWSIxA)
-As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |![Successful Checkout(mobile)]() ![Successful Checkout(tablet)]() ![Successful Checkout(desktop)]()
+As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |[![Successful Checkout(mobile)](https://img.youtube.com/vi/Gt3Bo5EPw3U/0.jpg)](https://youtube.com/shorts/Gt3Bo5EPw3U?feature=share) ![Successful Checkout(tablet)](assets/documentation/checkout-success-tablet.webp) ![Successful Checkout(desktop)](assets/documentation/checkout-success-desktop.webp)

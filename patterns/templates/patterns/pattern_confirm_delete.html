@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pattern_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <a href="{% url 'patterns_manage' %}" class="btn btn-outline-secondary mb-3">&larr; Back</a>
+  <div class="card p-4 shadow-sm">
+    <h1 class="h5">Delete pattern</h1>
+    <p>Are you sure you want to delete <strong>{{ pattern.title }}</strong>?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button class="btn btn-danger">Yes, delete</button>
+      <a href="{% url 'patterns_manage' %}" class="btn btn-outline-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
