@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
 
@@ -75,3 +77,24 @@ class Pattern(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Favorite(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='favorites'
+    )
+    pattern = models.ForeignKey(
+        Pattern,
+        on_delete=models.CASCADE,
+        related_name='favorites'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'pattern')
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.user.username} ❤ {self.pattern.title}"

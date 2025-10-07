@@ -85,3 +85,32 @@ User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a shopper, I want to securely enter my details and pay for my order so that I can complete my purchase with confidence. | https://github.com/chloejones9464/loop-and-thread/issues/39 | [![Checkout App(mobile)](https://img.youtube.com/vi/op0X40OQkeU/0.jpg)](https://youtube.com/shorts/op0X40OQkeU) [![Checkout App(tablet)](https://img.youtube.com/vi/MDsZSpiR0-I/0.jpg)](https://youtu.be/MDsZSpiR0-I) [![Checkout App(desktop)](https://img.youtube.com/vi/ReUeXXWSIxA/0.jpg)](https://youtu.be/ReUeXXWSIxA)
 As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |[![Successful Checkout(mobile)](https://img.youtube.com/vi/Gt3Bo5EPw3U/0.jpg)](https://youtube.com/shorts/Gt3Bo5EPw3U?feature=share) ![Successful Checkout(tablet)](assets/documentation/checkout-success-tablet.webp) ![Successful Checkout(desktop)](assets/documentation/checkout-success-desktop.webp)
+
+
+## Epic 14 - Favourite patterns
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a registered user, I want to favourite a pattern so that I can quickly find and revisit the patterns I like. | https://github.com/chloejones9464/loop-and-thread/issues/49 | ![Favourite patterns(mobile)]() ![Favourite patterns(tablet)]() ![Favourite patterns(desktop)]()
+As a registered user, I want to remove a pattern from my favourites so that my saved list stays relevant and clutter-free. | https://github.com/chloejones9464/loop-and-thread/issues/50 |![Unfavourite a Pattern(mobile)]() ![Unfavourite a Pattern(tablet)]() ![Unfavourite a Pattern(desktop)]()
+
+
+## Epic 15 - Leave Review
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a customer who has purchased a pattern, I want to leave a rating and review so that other shoppers can trust real, verified feedback. | https://github.com/chloejones9464/loop-and-thread/issues/23 | ![Add a Review (purchasers only)(mobile)]() ![Add a Review (purchasers only)(tablet)]() ![Add a Review (purchasers only)(desktop)]()
+As a registered user, I want to edit my review so that I can correct mistakes or update my feedback after posting. | https://github.com/chloejones9464/loop-and-thread/issues/47 |![Edit a Review(mobile)]() ![Edit a Review(tablet)]() ![Edit a Review(desktop)]()
+As a registered user, I want to delete my review so that I can remove feedback I no longer want to share. | https://github.com/chloejones9464/loop-and-thread/issues/48 |![Delete a Review(mobile)]() ![Delete a Review(tablet)]() ![Delete a Review(desktop)]()
+
+
+## Epic 16 - Wishlist
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a registered user, I want a wishlist where I can save patterns/products and add them to my bag directly so that I can compare items, come back later, and checkout quickly. | https://github.com/chloejones9464/loop-and-thread/issues/51 | ![Add Wishlist (purchasers only)(mobile)]() ![Add Wishlist (purchasers only)(tablet)]() ![Add Wishlist (purchasers only)(desktop)]()
+
+## Epic 17 - News
+User Story | Link to GitHub | Screenshot/Video of User Story
+--- | --- | ---
+As a staff user, I want to create a news post so that I can share updates and announcements on the site. | https://github.com/chloejones9464/loop-and-thread/issues/52 | ![Add Wishlist (purchasers only)(mobile)]() ![Add Wishlist (purchasers only)(tablet)]() ![Add Wishlist (purchasers only)(desktop)]()
+As a registered user, I want a wishlist where I can save patterns/products and add them to my bag directly so that I can compare items, come back later, and checkout quickly. | https://github.com/chloejones9464/loop-and-thread/issues/51 | ![Add Wishlist (purchasers only)(mobile)]() ![Add Wishlist (purchasers only)(tablet)]() ![Add Wishlist (purchasers only)(desktop)]()
+As a staff user, I want to edit an existing news post so thatAs a staff user, I want to edit an existing news post so that I can correct errors or update information. | https://github.com/chloejones9464/loop-and-thread/issues/53 | ![Edit News (purchasers only)(mobile)]() ![Edit News (purchasers only)(tablet)]() ![Edit News (purchasers only)(desktop)]()
+As a staff user, I want to delete a news post so that I can remove outdated or incorrect announcements. | https://github.com/chloejones9464/loop-and-thread/issues/54 | ![Delete News (purchasers only)(mobile)]() ![Delete News (purchasers only)(tablet)]() ![Delete News (purchasers only)(desktop)]()

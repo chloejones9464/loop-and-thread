@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Pattern
+from .models import Pattern, Favourite
+from django.http import JsonResponse
 from .forms import PatternForm
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 
 
 def pattern_list(request):
@@ -145,3 +147,46 @@ def delete_pattern(request, pk):
         "patterns/pattern_confirm_delete.html",
         {"pattern": pattern}
     )
+
+
+@login_required
+@require_POST
+def toggle_favourite(request, pattern_id):
+    pattern = get_object_or_404(Pattern, pk=pattern_id)
+    fav, created = Favourite.objects.get_or_create(
+        user=request.user,
+        pattern=pattern
+    )
+
+    if created:
+        messages.success(request, "Added to favourites.")
+        favourited = True
+    else:
+        fav.delete()
+        messages.success(request, "Removed from favourites.")
+        favourited = False
+
+    if request.headers.get("x-requested-with") == "XMLHttpRequest":
+        return JsonResponse({
+            "favourited": favourited,
+            "count": pattern.favourites.count(),
+            "pattern_id": pattern.id,
+        })
+
+    next_url = request.POST.get("next")
+    if not next_url:
+        if hasattr(pattern, "get_absolute_url"):
+            next_url = pattern.get_absolute_url()
+        else:
+            next_url = "/"
+    return redirect(next_url)
+
+
+@login_required
+def my_favourites(request):
+    items = (
+        Favourite.objects
+        .filter(user=request.user)
+        .select_related("pattern")
+    )
+    return render(request, "patterns/my_favourites.html", {"items": items})

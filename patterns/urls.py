@@ -8,5 +8,10 @@ urlpatterns = [
         path("manage/", views.manage_patterns, name="patterns_manage"),
         path("add/", views.add_pattern, name="pattern_add"),
         path("<int:pk>/edit/", views.edit_pattern, name="pattern_edit"),
-        path("<int:pk>/delete/", views.delete_pattern, name="pattern_delete"),
+        path(
+            "favourites/toggle/<int:pattern_id>/",
+            views.toggle_favourite,
+            name="toggle_favourite"
+        ),
+        path("favourites/", views.my_favourites, name="my_favourites"),
     ]
