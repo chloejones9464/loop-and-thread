@@ -16,7 +16,7 @@
     {% csrf_token %}
     {{ form|crispy }}
     <div class="d-flex gap-2 mt-3">
-      <button class="btn btn-primary">{% if mode == 'add' %}Create{% else %}Save changes{% endif %}</button>
+      <button class="btn add-basket">{% if mode == 'add' %}Create{% else %}Save changes{% endif %}</button>
       <a class="btn btn-outline-secondary" href="{% url 'patterns_manage' %}">Cancel</a>
     </div>
   </form>
