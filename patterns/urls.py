@@ -9,9 +9,9 @@ urlpatterns = [
         path("add/", views.add_pattern, name="pattern_add"),
         path("<int:pk>/edit/", views.edit_pattern, name="pattern_edit"),
         path(
-            "favourites/toggle/<int:pattern_id>/",
-            views.toggle_favourite,
-            name="toggle_favourite"
+            "favorites/toggle/<int:pattern_id>/",
+            views.toggle_favorite,
+            name="toggle_favorite"
         ),
-        path("favourites/", views.my_favourites, name="my_favourites"),
+        path("favorites/", views.my_favorites, name="my_favorites"),
     ]

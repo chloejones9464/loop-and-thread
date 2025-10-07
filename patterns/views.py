@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Pattern, Favourite
+from .models import Pattern, Favorite
 from django.http import JsonResponse
 from .forms import PatternForm
 from django.core.paginator import Paginator
@@ -11,6 +11,13 @@ from django.views.decorators.http import require_POST
 
 def pattern_list(request):
     qs = Pattern.objects.all()
+
+    favorite_ids = set()
+    if request.user.is_authenticated:
+        favorite_ids = set(
+            Favorite.objects.filter(user=request.user)
+                            .values_list("pattern_id", flat=True)
+        )
 
     query = request.GET.get("q", "").strip()
 
@@ -46,6 +53,7 @@ def pattern_list(request):
             "patterns": page_obj,
             "is_paginated": page_obj.has_other_pages(),
             "search_term": query,
+            "favorite_ids": favorite_ids,
         },
     )
 
@@ -151,42 +159,34 @@ def delete_pattern(request, pk):
 
 @login_required
 @require_POST
-def toggle_favourite(request, pattern_id):
+def toggle_favorite(request, pattern_id):
     pattern = get_object_or_404(Pattern, pk=pattern_id)
-    fav, created = Favourite.objects.get_or_create(
-        user=request.user,
-        pattern=pattern
+    fav, created = Favorite.objects.get_or_create(
+        user=request.user, pattern=pattern
     )
 
     if created:
-        messages.success(request, "Added to favourites.")
-        favourited = True
+        messages.success(request, "Added to favorites.")
+        favorited = True
     else:
         fav.delete()
-        messages.success(request, "Removed from favourites.")
-        favourited = False
+        messages.success(request, "Removed from favorites.")
+        favorited = False
 
-    if request.headers.get("x-requested-with") == "XMLHttpRequest":
-        return JsonResponse({
-            "favourited": favourited,
-            "count": pattern.favourites.count(),
-            "pattern_id": pattern.id,
-        })
+    count = Favorite.objects.filter(pattern=pattern).count()
 
-    next_url = request.POST.get("next")
-    if not next_url:
-        if hasattr(pattern, "get_absolute_url"):
-            next_url = pattern.get_absolute_url()
-        else:
-            next_url = "/"
-    return redirect(next_url)
+    if request.headers.get("x-requested-with") != "XMLHttpRequest":
+        return redirect(request.POST.get("next") or "/")
+
+    return JsonResponse({"ok": True, "favorited": favorited, "count": count})
 
 
 @login_required
-def my_favourites(request):
+def my_favorites(request):
     items = (
-        Favourite.objects
+        Favorite.objects
         .filter(user=request.user)
         .select_related("pattern")
+        .order_by("-created_at")
     )
-    return render(request, "patterns/my_favourites.html", {"items": items})
+    return render(request, "patterns/my_favorites.html", {"items": items})
