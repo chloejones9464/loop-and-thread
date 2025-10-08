@@ -28,6 +28,7 @@ urlpatterns = [
     path('profile/', include('accounts.urls')),
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
+    path('news/', include('news.urls')),
 ]
 
 if settings.DEBUG:

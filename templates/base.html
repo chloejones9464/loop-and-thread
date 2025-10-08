@@ -51,6 +51,7 @@
                     <li><a class="dropdown-item" href="{% url 'account' %}">Account</a></li>
                     <li><a class="dropdown-item" href="{% url 'orders_list' %}">My Orders</a></li>
                     <li><a class="dropdown-item" href="{% url 'my_favorites' %}">My Favorites</a></li>
+                    <li><a class="dropdown-item" href="{% url 'news_list' %}">Loop and Thread News</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
                   </ul>
@@ -62,6 +63,9 @@
             {% elif user.is_authenticated and user.is_superuser %}
                 <li class="nav-item">
                 <a class="nav-link" href="{% url 'patterns_manage' %}">Manage Patterns</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'news_list' %}">Manage News</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
