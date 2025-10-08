@@ -84,3 +84,10 @@ h2 {
     object-fit: cover;   
     width: 100%;         
 }
+
+.fav-btn { 
+    line-height: 1; 
+}
+.fav-btn .fa-heart { 
+    font-size: 1.1rem; 
+}

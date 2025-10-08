@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/pattern_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mb-0">My Favorites</h1>
+        <a class="btn btn-outline-secondary" href="{% url 'pattern_list' %}">Browse all patterns</a>
+    </div>
+
+    {% if items %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3" data-my-favorites-list>
+        {% for fav in items %}
+            {% with pattern=fav.pattern %}
+            <div class="col">
+            <div class="card h-100 shadow-sm">
+                <a href="{% url 'pattern_detail' pattern.pk %}">
+                {% if pattern.cover_image %}
+                    <img src="{{ pattern.cover_image.url }}" class="card-img-top" alt="{{ pattern.title }}">
+                {% else %}
+                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ pattern.title }}">
+                {% endif %}
+                </a>
+
+                <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h5 class="card-title mb-1">{{ pattern.title }}</h5>
+
+                    {# Heart toggle (AJAX) #}
+                    <form method="post"
+                        action="{% url 'toggle_favorite' pattern.id %}"
+                        class="fav-form"
+                        data-pattern="{{ pattern.id }}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit"
+                            class="btn btn-link p-0 border-0 fav-btn"
+                            aria-pressed="true"
+                            title="Remove from favorites">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    </form>
+                </div>
+
+                <div class="text-muted small mb-2">
+                    <span class="fav-count" data-pattern="{{ pattern.id }}">
+                    {{ pattern.favorites.count }}
+                    </span> favorites
+                </div>
+
+                <p class="card-text mb-2">{{ pattern.summary }}</p>
+                <p class="mb-0"><strong>Difficulty:</strong> {{ pattern.difficulty }}</p>
+                <p class="mb-0"><strong>Price:</strong> £{{ pattern.price }}</p>
+                </div>
+
+                <div class="card-footer bg-white text-center">
+                <a href="{% url 'pattern_detail' pattern.pk %}" class="btn view-button btn-sm">View Pattern</a>
+                </div>
+            </div>
+            </div>
+            {% endwith %}
+        {% endfor %}
+        </div>
+        {% if is_paginated %}
+        <nav class="mt-4 d-flex justify-content-between align-items-center">
+            <div>
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-secondary" href="?page={{ page_obj.previous_page_number }}">‹ Prev</a>
+            {% else %}
+                <span class="btn btn-outline-secondary disabled">‹ Prev</span>
+            {% endif %}
+            </div>
+
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            <div>
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-secondary" href="?page={{ page_obj.next_page_number }}">Next ›</a>
+            {% else %}
+                <span class="btn btn-outline-secondary disabled">Next ›</span>
+            {% endif %}
+            </div>
+        </nav>
+    {% endif %}
+    {% else %}
+        <div class="text-center py-5">
+        <p class="lead mb-3">You haven’t added any favorites yet.</p>
+        <a class="btn btn-primary" href="{% url 'pattern_list' %}">Explore patterns</a>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

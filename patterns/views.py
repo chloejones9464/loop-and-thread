@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Pattern, Favorite
 from django.http import JsonResponse
 from .forms import PatternForm
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -183,10 +183,29 @@ def toggle_favorite(request, pattern_id):
 
 @login_required
 def my_favorites(request):
-    items = (
+    qs = (
         Favorite.objects
         .filter(user=request.user)
         .select_related("pattern")
         .order_by("-created_at")
     )
-    return render(request, "patterns/my_favorites.html", {"items": items})
+    paginator = Paginator(qs, 12)
+    page = request.GET.get("page")
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+
+    favorite_ids = set(page_obj.object_list.values_list("pattern_id", flat=True))
+    return render(
+        request,
+        "patterns/my_favorites.html",
+        {
+            "items": page_obj.object_list,
+            "favorite_ids": favorite_ids,
+            "page_obj": page_obj,
+            "is_paginated": page_obj.has_other_pages(),
+        },
+    )
