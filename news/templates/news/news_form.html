@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="col">
+        <h2 class="display-4">{% if object %}Edit{% else %}Add{% endif %} News</h2>
+        <hr>
+        </div>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" id="news-form" action="">
+        {% csrf_token %}
+        {{ form.media }}
+
+        <div class="row g-4">
+        <div class="col-12 col-lg-6">
+            <p>Please complete the details below to create your news post:</p>
+
+            <fieldset class="px-2 mb-4">
+            <legend>Post Details</legend>
+            {{ form.title|as_crispy_field }}
+            {{ form.summary|as_crispy_field }}
+            {{ form.image|as_crispy_field }}
+            </fieldset>
+
+            <fieldset class="px-2 mb-4">
+            <legend>Content</legend>
+            {{ form.body|as_crispy_field }}
+            </fieldset>
+
+            <fieldset class="px-2 mb-4">
+            <legend>Publishing</legend>
+            {{ form.status|as_crispy_field }}
+            {{ form.publish_at|as_crispy_field }}
+            </fieldset>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="card border-0 shadow-sm mb-4 rounded-4">
+            <div class="card-header bg-light border-0 rounded-top-4 py-3">
+                <h5 class="mb-0 fw-bold">Layout of news post</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted small mb-1">
+                    Date: {% if object %}{{ object.publish_at|date:"d M, Y" }}{% else %}Will appear after save{% endif %}
+                </p>
+                <h4 class="mb-2">
+                    Post Title
+                </h4>
+                <p class="text-muted small mb-2">
+                Status: Draft
+                </p>
+                <div class="text-muted small mb-3">Image preview will appear after you upload and save.</div>
+                <p class="card-text">
+                "A short summary of your post will appear here after save."
+                </p>
+            </div>
+            </div>
+
+            <div class="text-end">
+            <a href="{% url 'news_list' %}" class="btn bk-button rounded-pill me-2 d-inline-flex align-items-center px-3 py-2">
+                <i class="fas fa-chevron-left me-2"></i>
+                <span class="fw-semibold">Back to News</span>
+            </a>
+            <button type="submit" class="btn btn-success rounded-pill d-inline-flex align-items-center px-4 py-2">
+                <i class="fas fa-save me-2"></i>
+                <span class="fw-bold">{% if object %}Update Post{% else %}Create Post{% endif %}</span>
+            </button>
+            </div>
+        </div>
+        </div>
+    </form>
+    </div>
+{% endblock %}

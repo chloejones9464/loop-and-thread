@@ -669,7 +669,17 @@ Successful Checkout | As a **shopper**, I want **to complete a secure checkout a
 Delete Pattern | As the **owner**, I want **to be able to delete patterns** so that **I can remove patterns from the shop.**||&check;
 Edit Pattern | As the **owner**, I want **to edit patterns** so that **they appear in the shop.**||&check;
 Admin Dashboard | As the **owner**, I want **a dashboard** so that **I can manage catalogue.**||&check;
-
+AWS | As a **developer**, I want **to integrate AWS S3 for media and static file storage** so that **images and static files are stored securely, efficiently, and served quickly from a reliable CDN.**||&check;
+Deployment | As a **developer**, I want **to deploy my Django project to a live server** so that **users can access and use the application online.**||&check;
+Pattern Categories | As the **owner**, I want **categories so that users can browse by type.**||&check;
+Favorite Pattern | As a **registered user**, I want **to favorite a pattern so that I can quickly find and revisit the patterns I like.**||&check;
+Unfavorite Pattern | As a **registered user**, I want **to favorite a pattern** so that **I can quickly find and revisit the patterns I like.**||&check;
+Add News | As a **staff user**, I want **to create a news post** so that **I can share updates and announcements on the site.**||&check;
+Edit News | As a **staff user**, I want **to edit an existing news post** so that **a staff user, I want to edit an existing news post so that I can correct errors or update information.**||&check;
+Delete News | As a **staff user**, I want **to delete a news post** so that **I can remove outdated or incorrect announcements.**||&check;
+Add a review | As a **customer who has purchased a pattern**, I want **to leave a rating and review** so that **other shoppers can trust real, verified feedback.**||&check;
+Edit a review | As a registered user, I want to edit my review so that **I can correct mistakes or update my feedback after posting.**||&check;
+Delete a review | As a **registered user**, I want **to delete my review** so that **I can remove feedback I no longer want to share.**||&check;
 
 
 ## Bugs

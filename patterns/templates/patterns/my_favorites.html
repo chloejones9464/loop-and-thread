@@ -6,10 +6,19 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container justify-content-center">
+        <div>
+            <div class="row">
+                <section id="home-hero">
+                    <h2 class="display-4">My Favorites</h2>              
+                </section>
+            </div>
+        </div>
+    </div>
+
     <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="mb-0">My Favorites</h1>
-        <a class="btn btn-outline-secondary" href="{% url 'pattern_list' %}">Browse all patterns</a>
+        <a class="btn bk-button" href="{% url 'pattern_list' %}">Browse all patterns</a>
     </div>
 
     {% if items %}

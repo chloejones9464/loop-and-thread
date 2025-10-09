@@ -7,11 +7,18 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container justify-content-center mb-4">
+        <div>
+            <div class="row">
+                <section id="home-hero">
+                    <h2 class="display-4">My Account</h2>              
+                </section>
+            </div>
+        </div>
+    </div>
     <div class="row mt-5 justify-content-center">
     <div class="col-10 col-sm-8 col-lg-6">
         <div class="form-bg-color p-4 shadow-sm">
-        <h1 class="h4 text-center mb-3">My Account</h1>
-
         {% if messages %}
             <div class="mb-3">
             {% for message in messages %}

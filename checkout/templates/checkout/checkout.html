@@ -6,20 +6,22 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-    <div class="row">
-        <div class="col">
-        <h2 class="display-4">Checkout</h2>
-        <hr>
+    <div class="container justify-content-center mb-4">
+        <div>
+            <div class="row">
+                <section id="home-hero">
+                    <h2 class="display-4">Checkout</h2>              
+                </section>
+            </div>
         </div>
     </div>
-
+    <div class="container">
     <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
         {% csrf_token %}
 
         <div class="row g-4">
         <div class="col-12 col-lg-6">
-            <p>To complete your order, please fill out this form:</p>
+            <p class="lead fw-bold">To complete your order, please fill out this form:</p>
 
             <fieldset class="px-2 mb-4">
             <legend>Your Details</legend>

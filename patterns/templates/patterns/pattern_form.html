@@ -8,9 +8,17 @@
 
 
 {% block content %}
+  <div class="container justify-content-center">
+        <div>
+            <div class="row">
+                <section id="home-hero">
+                    <h2 class="display-3">{% if mode == 'add' %}Add Pattern{% else %}Edit Pattern{% endif %}</h2>              
+                </section>
+            </div>
+        </div>
+    </div>
 <div class="container py-5">
-  <a href="{% url 'patterns_manage' %}" class="btn btn-outline-secondary mb-3">&larr; Back</a>
-  <h1 class="h4 mb-3">{% if mode == 'add' %}Add Pattern{% else %}Edit Pattern{% endif %}</h1>
+  <a href="{% url 'patterns_manage' %}" class="btn bk-button mb-3">&larr; Back</a>
 
   <form method="post" enctype="multipart/form-data" novalidate>
     {% csrf_token %}
