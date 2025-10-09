@@ -34,14 +34,12 @@
                     <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ pattern.title }}">
                 {% endif %}
                 </a>
-
                 <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start">
                     <h5 class="card-title mb-1">{{ pattern.title }}</h5>
 
-                    {# Heart toggle (AJAX) #}
                     <form method="post"
-                        action="{% url 'toggle_favorite' pattern.id %}"
+                        action="{% url 'toggle_favorite' pattern_id=pattern.pk %}"
                         class="fav-form"
                         data-pattern="{{ pattern.id }}">
                     {% csrf_token %}
@@ -98,7 +96,7 @@
     {% else %}
         <div class="text-center py-5">
         <p class="lead mb-3">You haven’t added any favorites yet.</p>
-        <a class="btn btn-primary" href="{% url 'pattern_list' %}">Explore patterns</a>
+        <a class="btn add-basket" href="{% url 'pattern_list' %}">Explore patterns</a>
         </div>
     {% endif %}
     </div>

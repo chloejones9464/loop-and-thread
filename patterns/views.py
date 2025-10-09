@@ -158,27 +158,28 @@ def delete_pattern(request, pk):
 
 
 @login_required
-@require_POST
 def toggle_favorite(request, pattern_id):
     pattern = get_object_or_404(Pattern, pk=pattern_id)
-    fav, created = Favorite.objects.get_or_create(
-        user=request.user, pattern=pattern
+
+    next_url = (
+        request.POST.get("next")
+        or request.META.get("HTTP_REFERER")
+        or "pattern_list"
     )
 
+    fav, created = Favorite.objects.get_or_create(
+        user=request.user,
+        pattern=pattern,
+    )
     if created:
-        messages.success(request, "Added to favorites.")
-        favorited = True
+        messages.success(
+            request, f'Added “{pattern.title}” to your favorites.')
     else:
         fav.delete()
-        messages.success(request, "Removed from favorites.")
-        favorited = False
+        messages.info(
+            request, f'Removed “{pattern.title}” from your favorites.')
 
-    count = Favorite.objects.filter(pattern=pattern).count()
-
-    if request.headers.get("x-requested-with") != "XMLHttpRequest":
-        return redirect(request.POST.get("next") or "/")
-
-    return JsonResponse({"ok": True, "favorited": favorited, "count": count})
+    return redirect(next_url)
 
 
 @login_required

@@ -58,23 +58,20 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start">
                         <h5 class="card-title mb-1">{{ pattern.title }}</h5>
-                        {% if request.user.is_authenticated %}
-                            <form method="post"
-                                action="{% url 'toggle_favorite' pattern.id %}"
-                                class="fav-form"
-                                data-pattern="{{ pattern.id }}">
+                        {% if request.user.is_authenticated and not request.user.is_superuser %}
+                            <form method="post" action="{% url 'toggle_favorite' pattern_id=pattern.pk %}">
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                            <button type="submit"
-                                    class="btn btn-link p-0 border-0"
-                                    aria-pressed="{% if pattern.id in favorite_ids %}true{% else %}false{% endif %}"
-                                    title="{% if pattern.id in favorite_ids %}Remove from favorites{% else %}Add to favorites{% endif %}">
-                                {% if pattern.id in favorite_ids %}
+
+                            {% if pattern.pk in favorite_ids %}
+                                <button class="btn btn-link p-0" title="Unfavorite" aria-label="Unfavorite">
                                 <i class="fa-solid fa-heart"></i>
-                                {% else %}
+                                </button>
+                            {% else %}
+                                <button class="btn btn-link p-0" title="Add to favorites" aria-label="Add to favorites">
                                 <i class="fa-regular fa-heart"></i>
-                                {% endif %}
-                            </button>
+                                </button>
+                            {% endif %}
                             </form>
                         {% else %}
                             <a class="btn btn-link p-0 fav-btn"
