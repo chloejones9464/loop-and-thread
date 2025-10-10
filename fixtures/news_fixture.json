@@ -1,0 +1,206 @@
+[
+    {
+        "model": "news.newspost",
+        "pk": 1,
+        "fields": {
+        "title": "Pumpkin Patch CAL launches",
+        "slug": "pumpkin-patch-cal-launches",
+        "summary": "A cozy 2-week Crochet-Along featuring mini pumpkins and leaf coasters.",
+        "body": "We’re kicking off our Pumpkin Patch CAL on 2025-10-14. Daily tips, a printable checklist, and a prize draw for finishers! Materials: DK cotton, 3.5mm hook, stuffing.",
+        "image": "news/news_01.webp",
+        "status": "published",
+        "publish_at": "2025-10-09T17:45:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-09T17:45:00Z",
+        "updated_at": "2025-10-09T17:45:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 2,
+        "fields": {
+        "title": "New Pattern: Lavender Ripple Throw",
+        "slug": "new-pattern-lavender-ripple-throw",
+        "summary": "A gentle ripple blanket with lavender accents.",
+        "body": "Beginner-friendly ripple throw in 5 sizes with row counts and a colour planner. Intro price runs for one week.",
+        "image": "news/news_02.webp",
+        "status": "published",
+        "publish_at": "2025-10-08T11:20:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-08T11:20:00Z",
+        "updated_at": "2025-10-08T11:20:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 3,
+        "fields": {
+        "title": "Yarn Substitution Guide (Updated)",
+        "slug": "yarn-substitution-guide-updated",
+        "summary": "Swap yarns without losing drape: fibre, WPI, gauge.",
+        "body": "Learn fibre blends, WPI, gauge swatching, and when to size up your hook. Includes a printable prompt card.",
+        "image": "news/news_03.webp",
+        "status": "published",
+        "publish_at": "2025-10-06T09:05:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-06T09:05:00Z",
+        "updated_at": "2025-10-06T09:05:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 4,
+        "fields": {
+        "title": "Community Spotlight: @HookedOnTea",
+        "slug": "community-spotlight-hookedontea",
+        "summary": "Meet Kira, who turns scrap yarn into pastel bunting.",
+        "body": "We chatted about sustainable stash-busting and her favourite 4mm hook that 'never leaves the project bag.'",
+        "image": "news/news_04.webp",
+        "status": "published",
+        "publish_at": "2025-10-05T14:10:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-05T14:10:00Z",
+        "updated_at": "2025-10-05T14:10:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 5,
+        "fields": {
+        "title": "Site Update: Faster Pattern Search",
+        "slug": "site-update-faster-pattern-search",
+        "summary": "Search is now 2× faster and supports tags + difficulty filters.",
+        "body": "We also added pagination (8 per page) and improved mobile card spacing.",
+        "image": "news/news_05.webp",
+        "status": "published",
+        "publish_at": "2025-10-03T08:30:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-03T08:30:00Z",
+        "updated_at": "2025-10-03T08:30:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 6,
+        "fields": {
+        "title": "Mini Make: Mug Cozy in 20 Minutes",
+        "slug": "mini-make-mug-cozy-in-20-minutes",
+        "summary": "A stash-buster that keeps drinks warm.",
+        "body": "Uses ~15g of DK, 4mm hook, and a single wooden button. Perfect for gifts and markets.",
+        "image": "news/news_06.webp",
+        "status": "published",
+        "publish_at": "2025-10-01T10:00:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-01T10:00:00Z",
+        "updated_at": "2025-10-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 7,
+        "fields": {
+        "title": "New Pattern: Cloud Puff Beanie",
+        "slug": "new-pattern-cloud-puff-beanie",
+        "summary": "Squishy texture, topped with an optional pom.",
+        "body": "Includes baby–adult sizes and a seamless crown shaping video.",
+        "image": "news/news_07.webp",
+        "status": "published",
+        "publish_at": "2025-09-28T16:40:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-09-28T16:40:00Z",
+        "updated_at": "2025-09-28T16:40:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 8,
+        "fields": {
+        "title": "Event Recap: Cozy Makers Market",
+        "slug": "event-recap-cozy-makers-market",
+        "summary": "Thank you for visiting our stall last weekend!",
+        "body": "Top sellers were the Daisy Coaster Sets and Pumpkin Keyrings. Photos now live in the gallery.",
+        "image": "news/news_08.webp",
+        "status": "published",
+        "publish_at": "2025-09-25T18:15:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-09-25T18:15:00Z",
+        "updated_at": "2025-09-25T18:15:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 9,
+        "fields": {
+        "title": "Blocking 101: Make Stitches Bloom",
+        "slug": "blocking-101-make-stitches-bloom",
+        "summary": "Steam vs wet vs spray—when each method shines.",
+        "body": "Includes fibre-safe temperatures and a one-page cheat sheet.",
+        "image": "news/news_09.webp",
+        "status": "published",
+        "publish_at": "2025-09-22T09:00:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-09-22T09:00:00Z",
+        "updated_at": "2025-09-22T09:00:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 10,
+        "fields": {
+        "title": "Sneak Peek: Winter Collection Palette",
+        "slug": "sneak-peek-winter-collection-palette",
+        "summary": "Frosted mint, cloudy lilac, snowfall cream.",
+        "body": "Vote on Instagram for the fourth accent colour!",
+        "image": "news/news_10.webp",
+        "status": "published",
+        "publish_at": "2025-09-20T12:00:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-09-20T12:00:00Z",
+        "updated_at": "2025-09-20T12:00:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 11,
+        "fields": {
+        "title": "⚠️ Draft: Granny Square Jacket (Do Not Publish)",
+        "slug": "draft-granny-square-jacket-do-not-publish",
+        "summary": "Editor note: checking layout breaks and long words-supercalifragilisticexpialidocious.",
+        "body": "This is a hidden draft used to test admin previews, long paragraphs, and emoji rendering 😅.",
+        "image": "news/news_11.webp",
+        "status": "draft",
+        "publish_at": "2025-10-09T17:50:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-09T17:50:00Z",
+        "updated_at": "2025-10-09T17:50:00Z"
+        }
+    },
+    {
+        "model": "news.newspost",
+        "pk": 12,
+        "fields": {
+        "title": "Scheduled: Snow Day Mittens",
+        "slug": "scheduled-snow-day-mittens",
+        "summary": "A snug mitten with a neat thumb gusset.",
+        "body": "This post is scheduled to test future-dated items in lists.",
+        "image": "news/news_12.webp",
+        "status": "published",
+        "publish_at": "2025-11-01T09:00:00Z",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2025-10-09T17:55:00Z",
+        "updated_at": "2025-10-09T17:55:00Z"
+        }
+    }
+]

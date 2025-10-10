@@ -94,3 +94,8 @@ fieldset {
 fieldset > legend { 
     font-weight: 600; margin-bottom: .5rem; 
 }
+
+.news-title > h5 {
+    color: #6b4e71;
+    text-decoration: none;
+}

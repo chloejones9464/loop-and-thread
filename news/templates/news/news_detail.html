@@ -6,21 +6,57 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container py-4 text-center">
-    <p class="text-muted small mb-1">{{ post.publish_at|date:"d M, Y" }}</p>
-    <h1 class="mb-3">{{ post.title }}</h1>
-    <hr>
-    {% if request.user.is_staff %}
-        <p>
-        <a class="btn btn-sm add-news" href="{% url 'news_edit' post.slug %}">Edit</a>
-        <a class="btn btn-sm btn-outline-danger" href="{% url 'news_delete' post.slug %}">Delete</a>
-        </p>
-    {% endif %}
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+            <article class="card shadow-sm border-0 overflow-hidden">
 
-    {% if post.image %}<img src="{{ post.image.url }}" class="img-fluid rounded mb-3" alt="{{ post.title }}">{% endif %}
-    <div class="lead">{{ post.summary }}</div>
-    <div class="mt-3">{{ post.body|linebreaks }}</div>
+                {# Image #}
+                {% if post.image %}
+                <a href="{{ post.image.url }}" target="_blank" rel="noopener" class="d-block">
+                    <img src="{{ post.image.url }}"
+                        class="card-img-top"
+                        alt="{{ post.title }}"
+                        loading="lazy"
+                        style="object-fit:cover; max-height: 420px;">
+                </a>
+                {% endif %}
 
-    <div class="mt-4"><a class=" btn bk-button btn-sm" href="{% url 'news_list' %}">← Back to News</a></div>
+                <div class="card-body p-4">
+                {# Title #}
+                <h1 class="card-title mb-2 h3">{{ post.title }}</h1>
+
+                {# Meta #}
+                <p class="text-muted small mb-3">
+                    <i class="bi bi-calendar3 me-1"></i>{{ post.publish_at|date:"d M, Y" }}
+                </p>
+
+                {# Summary (optional) #}
+                {% if post.summary %}
+                    <p class="lead mb-3">{{ post.summary }}</p>
+                {% endif %}
+
+                {# Body #}
+                <div class="card-text">
+                    {{ post.body|linebreaks }}
+                </div>
+
+                {# Staff actions #}
+                {% if request.user.is_staff %}
+                    <div class="d-flex gap-2 mt-4">
+                    <a class="btn btn-sm btn-dark" href="{% url 'news_edit' post.slug %}">Edit</a>
+                    <a class="btn btn-sm btn-outline-danger" href="{% url 'news_delete' post.slug %}">Delete</a>
+                    </div>
+                {% endif %}
+                </div>
+
+                <div class="card-footer bg-white border-0 pt-0 px-4 pb-4">
+                <a class="btn btn-sm bk-button" href="{% url 'news_list' %}">← Back to News</a>
+                </div>
+
+            </article>
+            </div>
+        </div>
     </div>
+
 {% endblock %}
