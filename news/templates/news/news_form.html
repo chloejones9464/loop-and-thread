@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <form method="post" enctype="multipart/form-data" id="news-form" action="">
+        <form method="post" enctype="multipart/form-data" id="news-form" action="{% url 'news_list' %}">
             {% csrf_token %}
             {{ form.media }}
 

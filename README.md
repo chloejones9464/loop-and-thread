@@ -234,28 +234,38 @@ TESTING! This will always be the core of my anxiety and I'm positive that I'm no
 ### Google's Lighthouse Performance
 Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
+
+#### Supported Browsers
+
+Browsers | Status
+--- | --- |
+Google Chrome | &check; Fully Supported
+Mozilla Firefox | &check; Fully Supported
+Safari | &check; Fully Supported
+Opera | &check; Fully Supported
+
 <details>
 <summary>Chrome</summary>
 
-![Chrome]()
+![Chrome](assets/documentation/chrome-browser.webp)
 </details>
 
 <details>
 <summary>Safari</summary>
 
-![Safari]()
+![Safari](assets/documentation/safari-browser.webp)
 </details>
 
 <details>
 <summary>Firefox</summary>
 
-![Firefox]()
+![Firefox](assets/documentation/firefox-browser.webp)
 </details>
 
 <details>
 <summary>Opera</summary>
 
-![Opera]()
+![Opera](assets/documentation/opera-browser.webp)
 </details>
 
 ### Responsiveness
@@ -263,6 +273,7 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 
 ### Code Validation
 
+#### HTML
 
 <details>
 <summary>Logged in(customer) home page</summary>
@@ -307,24 +318,6 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
-<summary>My patterns(customer)</summary>
-
-![My patterns]()
-</details>
-
-<details>
-<summary>My patterns(owner)</summary>
-
-![My patterns(owner)]()
-</details>
-
-<details>
-<summary>My account(owner)</summary>
-
-![My account(owner)]()
-</details>
-
-<details>
 <summary>My account(customer)</summary>
 
 ![My account(customer)]()
@@ -343,16 +336,118 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
-<summary>Add pattern</summary>
+<summary>Pattern Form</summary>
 
-![Add pattern]()
+![Pattern Form]()
 
 </details>
 
 <details>
-<summary>CSS</summary>
+<summary>Pattern edit</summary>
 
-![CSS]()
+![Pattern Form]()
+
+</details>
+
+<details>
+<summary>Pattern delete</summary>
+
+![Pattern Form]()
+
+</details>
+
+<details>
+<summary>Manage Patterns</summary>
+
+![Manage Patterns]()
+
+</details>
+<details>
+<summary>Pattern list</summary>
+
+![Pattern list]()
+
+</details>
+<details>
+<summary>Pattern detail</summary>
+
+![Pattern detail]()
+
+</details>
+<details>
+<summary>Pattern confirm delete</summary>
+
+![Pattern confirm delete]()
+
+</details>
+<details>
+<summary>My favorites</summary>
+
+![My favorites]()
+
+</details>
+
+<details>
+<summary>Order details</summary>
+
+![Order details]()
+
+</details>
+
+<details>
+<summary>Order list</summary>
+
+![Order list]()
+
+</details>
+
+<details>
+<summary>Bag</summary>
+
+![Bag]()
+
+</details>
+
+<details>
+<summary>News list</summary>
+
+![News list]()
+
+</details>
+
+<details>
+<summary>News form</summary>
+
+![News form]()
+
+</details>
+
+<details>
+<summary>News detail</summary>
+
+![News detail]()
+
+</details>
+
+<details>
+<summary>News confirm delete</summary>
+
+![News confirm delete]()
+
+</details>
+
+#### CSS
+
+<details>
+<summary>bag.css</summary>
+
+![bag.css]()
+</details>
+
+<details>
+<summary>checkout.css</summary>
+
+![bag.css]()
 </details>
 
 ### CI Python Linter
@@ -687,9 +782,72 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <hr>
 
 <details>
+<summary>News</summary>
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>forms.py</summary>
+
+![forms.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
 <summary>manage.py</summary>
 
 ![manage.py linter]()
+</details>
+
+<hr>
+
+<details>
+<summary>custom_storages.py</summary>
+
+![custom_storages.py linter]()
 </details>
 
 <hr>
@@ -859,8 +1017,8 @@ Replace your_project_name with the name of the folder that contains settings.py.
 - Voila! You can hit the Open app and there's your shiny new site in all it's glory.
 
 ## Credits
-List of used resources for your website (text, images, snippets of code, projects....)
   - Code & Text Content
+  I used most of these websites for help on several things!!
    - Crispy forms 
    - Django GitHub docs
    - Pixelied - PNG to WEBP Converter
@@ -871,8 +1029,16 @@ List of used resources for your website (text, images, snippets of code, project
    - ColorSpace
    - ChatGPT
    - Allauth
+   - W3C HTML/CSS Validator
+   - Heroku
+   - Code Institute
+   - W3Schools
+   - StackOverflow
+   - Stripe
 
-  - Media
+  - Media    
+    - YouTube
+    - AWS
   
   - Acknowledgment
     - acknowledgment to mentors, peers, tutors, friends, family, facilitator (who ever contributed and helped with the project)
