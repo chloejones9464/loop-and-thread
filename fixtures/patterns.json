@@ -1,28 +1,290 @@
 [
-{
-  "model": "patterns.category",
-  "pk": 1,
-  "fields": {
-    "name": "Squares",
-    "slug": "squares"
+  {
+    "model": "patterns.pattern",
+    "pk": 1,
+    "fields": {
+      "title": "Classic Granny Square",
+      "slug": "classic-granny-square",
+      "category": null,
+      "summary": "A timeless crochet granny square pattern, perfect for blankets and projects.",
+      "description": "Learn how to crochet a classic granny square using US terms. This easy pattern works in the round with double crochet clusters and chain spaces. Use multiple colors for a patchwork effect, or a single color for a modern look. Great for beginners!",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/classic-granny-square.webp",
+      "file": "patterns/files/classic-granny-square.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 2,
+    "fields": {
+      "title": "Crochet Round Mug Coaster",
+      "slug": "crochet-round-mug-coaster",
+      "category": null,
+      "summary": "A quick and easy round crochet coaster in cotton yarn.",
+      "description": "Crochet this simple and practical round mug coaster using single and double crochet stitches. Made with cotton yarn, it’s durable and washable. Perfect for protecting surfaces while adding a handmade touch to your home.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/round-mug-coaster.webp",
+      "file": "patterns/files/round-mug-coaster.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 3,
+    "fields": {
+      "title": "Chunky Beginner Scarf",
+      "slug": "chunky-beginner-scarf",
+      "category": null,
+      "summary": "A cozy beginner scarf made with super bulky yarn and single crochet.",
+      "description": "This beginner-friendly scarf uses only single crochet stitches and super bulky yarn, making it perfect for first-time crocheters. Quick to work up and super warm, you can add fringe for an extra stylish touch.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/chunky-beginner-scarf.webp",
+      "file": "patterns/files/chunky-beginner-scarf.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 4,
+    "fields": {
+      "title": "Mini Amigurumi Heart",
+      "slug": "mini-amigurumi-heart",
+      "category": null,
+      "summary": "A small, cute stuffed heart, perfect for gifts or keychains.",
+      "description": "Crochet this adorable mini heart using basic amigurumi techniques. Worked in continuous rounds and stuffed with fiberfill, this makes a lovely gift, decoration, or keychain charm. A great beginner introduction to amigurumi.",
+      "difficulty": "intermediate",
+      "price": "0.00",
+      "cover_image": "patterns/mini-amigurumi-heart.webp",
+      "file": "patterns/files/mini-amigurumi-heart.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 5,
+    "fields": {
+      "title": "Simple Crochet Tote Bag",
+      "slug": "simple-crochet-tote-bag",
+      "category": null,
+      "summary": "A stylish and practical crochet tote bag for everyday use.",
+      "description": "This tote bag is made from durable cotton yarn and worked in rounds from a rectangular base. Double crochet stitches build the sides, and sturdy handles are crocheted directly onto the bag. Perfect for shopping, books, or craft projects.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/simple-crochet-tote-bag.webp",
+      "file": "patterns/files/simple-crochet-tote-bag.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 6,
+    "fields": {
+      "title": "Crochet Headband / Ear Warmer",
+      "slug": "crochet-headband-ear-warmer",
+      "category": null,
+      "summary": "A simple and cozy crochet headband to keep ears warm.",
+      "description": "This beginner-friendly crochet headband is made in simple rows and sewn together with an optional twist for a turban style. Great stash buster project and perfect for quick gifts.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/crochet-headband-ear-warmer.webp",
+      "file": "patterns/files/crochet-headband-ear-warmer.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 7,
+    "fields": {
+      "title": "Simple Dishcloth",
+      "slug": "simple-dishcloth",
+      "category": null,
+      "summary": "A quick, practical crochet dishcloth made with cotton yarn.",
+      "description": "This simple dishcloth uses only single crochet stitches, making it an easy and useful beginner project. Made with cotton yarn, it’s eco-friendly and washable.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/simple-dishcloth.webp",
+      "file": "patterns/files/simple-dishcloth.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 8,
+    "fields": {
+      "title": "Crochet Bookmark",
+      "slug": "crochet-bookmark",
+      "category": null,
+      "summary": "A lightweight crochet bookmark with tassel.",
+      "description": "This slim crochet bookmark is made in simple rows of single crochet and finished with a tassel. Perfect for gifts or using up scrap yarn.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/crochet-bookmark.webp",
+      "file": "patterns/files/crochet-bookmark.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 9,
+    "fields": {
+      "title": "Crochet Flower Appliqué",
+      "slug": "crochet-flower-applique",
+      "category": null,
+      "summary": "A cute 5-petal crochet flower to add to projects.",
+      "description": "Quick and fun, this crochet flower is made in a magic ring with double crochets forming petals. Great as an embellishment for clothes, bags, or home decor.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/crochet-flower-applique.webp",
+      "file": "patterns/files/crochet-flower-applique.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 10,
+    "fields": {
+      "title": "Crochet Beanie (Basic Hat)",
+      "slug": "crochet-basic-beanie",
+      "category": null,
+      "summary": "A simple beginner-friendly crochet beanie.",
+      "description": "This beanie is worked from the crown down using double crochet stitches. A versatile pattern you can adapt in size and color for everyone.",
+      "difficulty": "easy",
+      "price": "0.00",
+      "cover_image": "patterns/crochet-basic-beanie.webp",
+      "file": "patterns/files/crochet-basic-beanie.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 11,
+    "fields": {
+      "title": "Crochet Basket",
+      "slug": "crochet-basket",
+      "category": null,
+      "summary": "A sturdy crochet basket for storage and organization.",
+      "description": "Worked in rounds with thick cotton yarn, this basket is strong and practical. Perfect for holding craft supplies, toys, or bathroom essentials.",
+      "difficulty": "intermediate",
+      "price": "0.00",
+      "cover_image": "patterns/crochet-basket.webp",
+      "file": "patterns/files/crochet-basket.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 12,
+    "fields": {
+      "title": "Crochet Baby Booties",
+      "slug": "crochet-baby-booties",
+      "category": null,
+      "summary": "Adorable crochet baby booties with a strap.",
+      "description": "These sweet baby booties are worked from the sole up, shaped with decreases, and finished with a strap closure. A thoughtful handmade gift for new arrivals.",
+      "difficulty": "intermediate",
+      "price": "0.00",
+      "cover_image": "patterns/crochet-baby-booties.webp",
+      "file": "patterns/files/crochet-baby-booties.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 13,
+    "fields": {
+      "title": "Phone Pouch with Button",
+      "slug": "phone-pouch-with-button",
+      "category": null,
+      "summary": "A snug crochet phone pouch with a buttoned flap.",
+      "description": "Worked bottom-up in the round with single crochet for a dense fabric, then split for a flat flap and add a simple button loop. Fits most smartphones; adjust width/height by starting chain and row count.",
+      "difficulty": "easy",
+      "price": "1.00",
+      "cover_image": "patterns/phone-pouch-with-button.webp",
+      "file": "patterns/files/phone-pouch-with-button.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 14,
+    "fields": {
+      "title": "Cup Cozy (Sleeve)",
+      "slug": "cup-cozy-sleeve",
+      "category": null,
+      "summary": "Reusable sleeve to protect hands from hot cups.",
+      "description": "Fast, eco-friendly cozy worked in the round with half double crochet; add a simple rib by working back-loop-only rows. Stretchy and fits standard takeaway cups.",
+      "difficulty": "easy",
+      "price": "0.50",
+      "cover_image": "patterns/cup-cozy-sleeve.webp",
+      "file": "patterns/files/cup-cozy-sleeve.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 15,
+    "fields": {
+      "title": "Plant Pot Cozy",
+      "slug": "plant-pot-cozy",
+      "category": null,
+      "summary": "A textured cozy to dress up plant pots.",
+      "description": "Start with a flat circle base (increases), then work sides without increases. Use waistcoat stitch or regular single crochet for a neat knit-look. Sized for 10–12 cm pots—adjust base diameter for other sizes.",
+      "difficulty": "intermediate",
+      "price": "1.50",
+      "cover_image": "patterns/plant-pot-cozy.webp",
+      "file": "patterns/files/plant-pot-cozy.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 16,
+    "fields": {
+      "title": "Mesh Produce Bag",
+      "slug": "mesh-produce-bag",
+      "category": null,
+      "summary": "Lightweight, stretchy produce bag with drawstring.",
+      "description": "Bottom-up bag using chains and double crochet to form mesh; finished with a sturdy single-crochet band and a chain-cord drawstring. Packs small and carries a surprising amount.",
+      "difficulty": "intermediate",
+      "price": "2.00",
+      "cover_image": "patterns/mesh-produce-bag.webp",
+      "file": "patterns/files/mesh-produce-bag.pdf",
+      "created_by": null,
+      "is_published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    }
   }
-},
-{
-  "model": "patterns.pattern",
-  "pk": 1,
-  "fields": {
-    "title": "Classic Granny Square",
-    "slug": "classic-granny-square",
-    "category": 1,
-    "summary": "A timeless crochet granny square pattern, perfect for blankets and projects.",
-    "description": "Learn how to crochet a classic granny square using US terms. This easy pattern works in the round with double crochet clusters and chain spaces. Use multiple colors for a patchwork effect, or a single color for a modern look. Great for beginners!",
-    "difficulty": "easy",
-    "price": "1.00",
-    "cover_image": "",
-    "file": "patterns/files/granny-square.png",
-    "created_by": 2,
-    "is_published": true,
-    "created_at": "2025-10-06T16:14:39.766Z"
-  }
-}
 ]

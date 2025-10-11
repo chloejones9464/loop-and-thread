@@ -17,7 +17,7 @@ class NewsListView(ListView):
     model = NewsPost
     template_name = "news/news_list.html"
     context_object_name = "posts"
-    paginate_by = 8
+    paginate_by = 9
 
     def get_queryset(self):
         qs = NewsPost.objects.filter(

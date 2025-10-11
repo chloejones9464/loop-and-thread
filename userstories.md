@@ -19,9 +19,9 @@ As a visitor, I want to sign up so that I can purchase and access downloads. | h
 ## Epic 3 - Catalogue Management
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As the owner, I want to be able to delete patterns so that i can remove patterns from the shop. | https://github.com/chloejones9464/loop-and-thread/issues/36 | ![Delete Pattern(desktop)]()
-As the owner, I want to edit patterns so that they appear in the shop. | https://github.com/chloejones9464/loop-and-thread/issues/35 | ![Edit Pattern(desktop)]()
-As the owner, I want to add patterns so that they appear in the shop. | https://github.com/chloejones9464/loop-and-thread/issues/14 | ![Add Pattern(desktop)]()
+As the owner, I want to be able to delete patterns so that i can remove patterns from the shop. | https://github.com/chloejones9464/loop-and-thread/issues/36 | ![Add pattern(mobile)](assets/documentation/add-pattern-mobile.webp) ![Add pattern(tablet)](assets/documentation/add-pattern-tablet.webp)
+As the owner, I want to edit patterns so that they appear in the shop. | https://github.com/chloejones9464/loop-and-thread/issues/35 |![Edit pattern(mobile)](assets/documentation/edit-pattern-mobile.webp) ![Edit pattern(tablet)](assets/documentation/edit-pattern-tablet.webp) Add/edit/delete functionality [![Manage Pattern add/edit/delete(desktop)](https://img.youtube.com/vi/5Sfx54Ja6J4/0.jpg)](https://youtu.be/5Sfx54Ja6J4)
+As the owner, I want to add patterns so that they appear in the shop. | https://github.com/chloejones9464/loop-and-thread/issues/14 | ![Delete pattern(mobile)](assets/documentation/delete-pattern-mobile.webp) ![Delete pattern(tablet)](assets/documentation/delete-pattern-tablet.webp)
 
 
 ## Epic 4 - Search, filter & sort
@@ -36,14 +36,14 @@ User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a visitor, I want to add patterns to a cart so that I can purchase them. | https://github.com/chloejones9464/loop-and-thread/issues/18 | [![Add to cart(mobile)](https://img.youtube.com/vi/8qgQqIKNt4k/0.jpg)](https://youtube.com/shorts/8qgQqIKNt4k) ![Add to cart(tablet)](assets/documentation/add-to-cart-tablet.webp) ![Add to cart(desktop)](assets/documentation/add-to-cart-desktop.webp)
 
-## Epic 6 - Digital Delivery(is time allows)
+## Epic 6 - Digital Delivery(future improvements)
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a buyer, I want access to my purchased PDFs so that I can download them anytime. | https://github.com/chloejones9464/loop-and-thread/issues/20 |
 As a buyer, I want to receive download links in email so that I can access them later. | https://github.com/chloejones9464/loop-and-thread/issues/21 |
 
 
-## Epic 7 - Social Feedback(if time allows)
+## Epic 7 - Social Feedback(future improvements)
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a buyer, I want to leave reviews so that others can make informed choices. | https://github.com/chloejones9464/loop-and-thread/issues/23 |
@@ -71,7 +71,7 @@ As a visitor, I want to view a home page so that I can quickly see featured patt
 ## Epic 11 - Profiles
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a user, I want to manage my profile so that checkout is faster. | https://github.com/chloejones9464/loop-and-thread/issues/13 | ![Manage profile(mobile)]() ![Manage profile(tablet)]() ![Manage profile(desktop)]()
+As a user, I want to manage my profile so that checkout is faster. | https://github.com/chloejones9464/loop-and-thread/issues/13 | ![Manage profile(mobile)](assets/documentation/manage-profile-tablet.webp) ![Manage profile(tablet)](assets/documentation/manage-profile-tablet.webp) [![Manage profile(desktop)](https://img.youtube.com/vi/R7c8BQApeLQ/0.jpg)](https://youtu.be/cdDC39Otigk)
 
 
 ## Epic 12 - Admin
@@ -105,11 +105,11 @@ As a registered user, I want to delete my review so that I can remove feedback I
 ## Epic 16 - Wishlist(future improvement)
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a registered user, I want a wishlist where I can save patterns/products and add them to my bag directly so that I can compare items, come back later, and checkout quickly. | https://github.com/chloejones9464/loop-and-thread/issues/51 | ![Add Wishlist (purchasers only)(mobile)]() ![Add Wishlist (purchasers only)(tablet)]() ![Add Wishlist (purchasers only)(desktop)]()
+As a registered user, I want a wishlist where I can save patterns/products and add them to my bag directly so that I can compare items, come back later, and checkout quickly. | https://github.com/chloejones9464/loop-and-thread/issues/51 | ![Add Wishlist (mobile)]() ![Add Wishlist (tablet)]() ![Add Wishlist (desktop)]()
 
 ## Epic 17 - News
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a staff user, I want to create a news post so that I can share updates and announcements on the site. | https://github.com/chloejones9464/loop-and-thread/issues/52 | ![Add News (purchasers only)(mobile)]() ![Add News (purchasers only)(tablet)]() ![Add News (purchasers only)(desktop)]()
-As a staff user, I want to edit an existing news post so thatAs a staff user, I want to edit an existing news post so that I can correct errors or update information. | https://github.com/chloejones9464/loop-and-thread/issues/53 | ![Edit News (purchasers only)(mobile)]() ![Edit News (purchasers only)(tablet)]() ![Edit News (purchasers only)(desktop)]()
-As a staff user, I want to delete a news post so that I can remove outdated or incorrect announcements. | https://github.com/chloejones9464/loop-and-thread/issues/54 | ![Delete News (purchasers only)(mobile)]() ![Delete News (purchasers only)(tablet)]() ![Delete News (purchasers only)(desktop)]()
+As a staff user, I want to create a news post so that I can share updates and announcements on the site. | https://github.com/chloejones9464/loop-and-thread/issues/52 | [![Add News (staff only)(mobile)](https://img.youtube.com/vi/XguLTy8FMus/0.jpg)](https://youtube.com/shorts/XguLTy8FMus) [![Add News (staff only)(tablet)](https://img.youtube.com/vi/KcmcdnSm6Vk/0.jpg)](https://youtu.be/KcmcdnSm6Vk) [![Add News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
+As a staff user, I want to edit an existing news post so thatAs a staff user, I want to edit an existing news post so that I can correct errors or update information. | https://github.com/chloejones9464/loop-and-thread/issues/53 | [![Edit News (staff only)(mobile)](https://img.youtube.com/vi/Q_mnrtoAHv0/0.jpg)](https://youtube.com/shorts/Q_mnrtoAHv0) [![Edit News (staff only)(tablet)](https://img.youtube.com/vi/AwfYC1Uw7iw/0.jpg)](https://youtu.be/AwfYC1Uw7iw) [![Edit News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
+As a staff user, I want to delete a news post so that I can remove outdated or incorrect announcements. | https://github.com/chloejones9464/loop-and-thread/issues/54 | ![Delete News (staff only)(mobile)](assets/documentation/delete-news-mobile.webp) ![Delete News (staff only)(tablet)](assets/documentation/delete-news-tablet.webp) [![Delete News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)

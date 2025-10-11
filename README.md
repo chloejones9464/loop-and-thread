@@ -33,7 +33,8 @@ This page contains links to my user stories in my GitHub project and will have c
 [Click here](wireframes.md) to view all the wireframes for this project.
 
 ### Typography
-Explain font you've used for your project
+For this project I've gone for the Crafty Girl font from the Google Fonts site. I felt that this really fits the vibe of crocheting and allows for a relaxed but fun feel.
+
 ### Colour Scheme
 
 I used the page's Eye Dropper extention to find a color that I could bounce off.
@@ -169,6 +170,54 @@ For a mobile, I've placed a burger menu that drops down to reveal the menu conte
 - Desktop
 
 [![Delete Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
+</details>
+
+
+<details>
+<summary>Add News(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Add News (staff only)(mobile)](https://img.youtube.com/vi/XguLTy8FMus/0.jpg)](https://youtube.com/shorts/XguLTy8FMus)
+
+- Tablet
+
+[![Add News (staff only)(tablet)](https://img.youtube.com/vi/KcmcdnSm6Vk/0.jpg)](https://youtu.be/KcmcdnSm6Vk)
+
+- Desktop
+
+[![Add News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
+</details>
+
+<details>
+<summary>Edit News(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+[![Edit News (staff only)(mobile)](https://img.youtube.com/vi/Q_mnrtoAHv0/0.jpg)](https://youtube.com/shorts/Q_mnrtoAHv0)
+
+- Tablet
+
+[![Edit News (staff only)(tablet)](https://img.youtube.com/vi/AwfYC1Uw7iw/0.jpg)](https://youtu.be/AwfYC1Uw7iw)
+
+- Desktop
+
+[![Edit News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
+</details>
+
+<details>
+<summary>Delete News(mobile/tablet/desktop)</summary>
+
+- Mobile
+
+![Delete News (staff only)(mobile)](assets/documentation/delete-news-mobile.webp)
+
+- Tablet
+
+![Delete News (staff only)(tablet)](assets/documentation/delete-news-tablet.webp)
+
+- Desktop
+[![Delete News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
 </details>
 
 ## Technologies Used
