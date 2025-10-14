@@ -57,23 +57,69 @@ Then from that selection I used Colorspace to create a palette for my site.
 </details>
 
 ## Features:
-Here are the feature for the website. Very minimal as I wanted to create a website that was easy to use and easy to look at.
-### Navigation
-Navigation is simple but effective. There is a link for the Home page, the customer/owner account and the basket.
+Here are the features for the website. Very minimal as I wanted to create a website that was easy to use and easy to look at.
+
+<details> 
+<summary>Navigation</summary>
+
+Navigation throughout Loop & Thread is designed to be simple, intuitive, and consistent across all devices.
+The main navigation bar provides quick access to the Home page, the My Account section (for both customers and store owners), and the Basket, ensuring users can find what they need in just one click.
+
+#### Key Features
+
+- A clean, minimal design that complements the soft color palette of the site
+
+- Smooth transition between desktop and mobile layouts
+
+- Clearly labelled links and icons for effortless browsing
+
+- The basket icon dynamically updates, giving a visual cue of items added
+
 <details>
 <summary>Mobile navigation</summary>
-For a mobile, I've placed a burger menu that drops down to reveal the menu content.
+On smaller screens, navigation neatly condenses into a burger-menu in the top-right corner.
+When tapped, it expands to reveal the full set of menu links in a soft drop-down panel, maintaining both clarity and style.
 
 ![Mobile Navigation](assets/documentation/mobile-navbar.webp)
 </details>
 
 <details>
 <summary>Desktop navigation</summary>
+On larger screens, navigation is displayed across the top in a tidy horizontal layout, allowing instant access to all key areas without clutter.
 
 ![Desktop navigation](assets/documentation/desktop-navbar.webp)
 </details>
+</details>
 
 ### Other features
+
+<details>
+<summary>Single-Purchase Pattern Validation</summary>
+
+To provide a smooth and logical shopping experience, each crochet pattern can only be purchased once per order. Because Loop & Thread patterns are digital downloads, allowing multiple copies of the same item in the bag would be unnecessary and potentially confusing at checkout.
+
+##### How It Works
+
+- When a customer clicks “Add to bag”, the app checks whether that pattern already exists in the session bag.
+
+- If the same pattern is detected, the system prevents duplication and triggers a Bootstrap toast pop-up message that reads:
+
+  - “You already have this in your bag.”
+
+- If the pattern is not yet in the bag, it’s added successfully, followed by a green success toast confirming the addition.
+
+##### Why It Matters
+
+- Prevents users from accidentally purchasing the same pattern multiple times
+
+- Keeps the bag and checkout process clean and accurate
+
+- Improves overall user experience for digital products
+
+##### Outcome:
+Customers receive clear, instant feedback and can only ever purchase one copy of each digital pattern — ensuring a neat, intentional checkout flow.
+</details>
+
 #### Forms
 <details>
 <summary>Log in(mobile/tablet/desktop)</summary>
