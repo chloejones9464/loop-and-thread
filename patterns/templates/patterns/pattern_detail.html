@@ -8,17 +8,15 @@
 {% block content %}
     <section class="container py-4">
         <div class="row g-4 align-items-center">
-            <div class="col-md-6">
-                <div class="d-flex justify-content-center mb-3">
-                    <h1 class="h2 m-0">{{ pattern.title }}</h1>
-                </div>
-            {% if pattern.cover_image %}
-                <img src="{{ pattern.cover_image.url }}" alt="{{ pattern.title }}" class="img-fluid rounded shadow-sm">
-            {% else %}
-                <div class="border rounded d-flex align-items-center justify-content-center" style="aspect-ratio: 4/3;">
-                    <span class="text-muted">No image</span>
-                </div>
-            {% endif %}
+            <div class="col-md-6 text-center">
+                    <h1 class="h2 mb-3">{{ pattern.title }}</h1>                
+                    {% if pattern.cover_image %}
+                        <img src="{{ pattern.cover_image.url }}" alt="{{ pattern.title }}" class="img-fluid rounded shadow-sm">
+                    {% else %}
+                        <div class="border rounded d-flex align-items-center justify-content-center" style="aspect-ratio: 4/3;">
+                            <span class="text-muted">No image</span>
+                        </div>
+                    {% endif %}
             </div>
 
             <div class="col-md-6">
@@ -44,6 +42,48 @@
                         <a href="{% url 'pattern_list' %}" class="btn bk-button btn-sm">← Back to Patterns</a>
                     </div>
                 </form>
+
+                {% if request.user.is_authenticated and has_purchased %}
+                <a class="btn review-btn btn-sm mt-4" href="{% url 'create_review' pattern.id %}">
+                    Write a review
+                </a>
+                {% elif not request.user.is_authenticated %}
+                <a class="btn review-btn btn-sm" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                    Log in to review
+                </a>
+                {% endif %}
+
+                {% if rating_count %}
+                <p class="mt-3">
+                    ⭐ {{ rating_avg|floatformat:1 }}/5 ({{ rating_count }} review{{ rating_count|pluralize }})
+                </p>
+                {% endif %}
+
+                <div class="mt-3">
+                {% for r in reviews %}
+                    <div class="border rounded p-3 mb-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>{{ r.user_profile.display_name|default:"Anonymous" }}</strong>
+                        <span>⭐ {{ r.rating }}/5</span>
+                    </div>
+                    {% if r.verified_purchase %}
+                        <span class="badge text-bg-success mt-1">Verified purchase</span>
+                    {% endif %}
+                    {% if r.title %}<h6 class="mt-2 mb-1">{{ r.title }}</h6>{% endif %}
+                    <p class="mb-2">{{ r.body }}</p>
+                    <small class="text-muted">Posted {{ r.created_at|date:"M j, Y" }}</small>
+
+                    {% if request.user.is_authenticated and r.user_profile == request.user.profile %}
+                        <div class="mt-2">
+                        <a class="btn btn-sm btn-outline-secondary" href="{% url 'edit_review' r.id %}">Edit</a>
+                        <a class="btn btn-sm btn-outline-danger" href="{% url 'delete_review' r.id %}">Delete</a>
+                        </div>
+                    {% endif %}
+                    </div>
+                {% empty %}
+                    <p class="text-muted">No reviews yet.</p>
+                {% endfor %}
+                </div>
 
             </div>
         </div>

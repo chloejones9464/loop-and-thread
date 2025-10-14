@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container justify-content-center">
+        <div class="row">
+            <section id="home-hero">
+                <h2 class="display-3">{% if is_edit %}Edit your review{% else %}Write a review{% endif %}</h2>
+            </section>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <form method="post" class="card p-3">
+            {% csrf_token %}
+            <h3 class="text-center">Share your thoughts on the {{ pattern.title }} pattern</h3>
+            {{ form|crispy}}
+
+            <div class="d-flex gap-2">
+            <button class="btn review-btn" type="submit">
+                {% if is_edit %}Save changes{% else %}Submit review{% endif %}
+            </button>
+            <a class="btn btn-outline-secondary" href="{% url 'pattern_detail' pattern.id %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

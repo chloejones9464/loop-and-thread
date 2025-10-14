@@ -48,7 +48,7 @@
             {% for pattern in patterns %}
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card h-100 shadow-sm">
-                <a href="{% url 'pattern_detail' pattern.pk %}">
+                <a href="{% url 'pattern_detail' pk=pattern.id %}">
                 {% if pattern.cover_image %}
                     <img src="{{ pattern.cover_image.url }}" class="card-img-top" alt="{{ pattern.title }}">
                 {% else %}
@@ -90,7 +90,7 @@
                     <p class="mb-0"><strong>Price:</strong> £{{ pattern.price }}</p>
                 </div>
                 <div class="card-footer bg-white text-center">
-                    <a href="{% url 'pattern_detail' pattern.pk %}" class="btn view-button btn-sm">View Pattern</a>
+                    <a href="{% url 'pattern_detail' pk=pattern.id %}" class="btn view-button btn-sm">View Pattern</a>
                 </div>
                 </div>
             </div>

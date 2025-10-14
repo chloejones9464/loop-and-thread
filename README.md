@@ -850,6 +850,61 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <hr>
 
 <details>
+<summary>Reviews</summary>
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter]()
+</details>
+
+<details>
+<summary>__init__.py</summary>
+
+![__init__.py linter]()
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter]()
+</details>
+
+<details>
+<summary>forms.py</summary>
+
+![forms.py linter]()
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter]()
+</details>
+
+<details>
+<summary>tests.py</summary>
+
+![tests.py linter]()
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter]()
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter]()
+</details>
+
+</details>
+
+<hr>
+
+<details>
 <summary>News</summary>
 
 <details>

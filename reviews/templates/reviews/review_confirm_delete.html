@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container py-4" style="max-width:720px">
+        <h3>Delete review</h3>
+        <p>Are you sure you want to delete your review for <strong>{{ review.pattern.title }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger">Delete</button>
+            <a class="btn btn-outline-secondary" href="{% url 'pattern_detail' review.pattern.id %}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

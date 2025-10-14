@@ -104,3 +104,8 @@ h2 {
     border: #5c4743 solid 1px;
     color: #ffffff;
 }
+
+/* from crispy forms docs */
+.asteriskField {
+    display: none;
+}

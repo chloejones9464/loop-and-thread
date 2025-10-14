@@ -6,7 +6,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Avg, Count
 from django.views.decorators.http import require_POST
+from checkout.models import OrderLineItem
 
 
 def pattern_list(request):
@@ -60,11 +62,26 @@ def pattern_list(request):
 
 def pattern_detail(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
-    return render(
-                request,
-                "patterns/pattern_detail.html",
-                {"pattern": pattern},
-                )
+
+    profile = getattr(request.user, "profile", None) if request.user.is_authenticated else None
+
+    has_purchased = False
+    if profile:
+        has_purchased = OrderLineItem.objects.filter(
+            order__user_profile=profile,
+            pattern=pattern
+        ).exists()
+
+    reviews_qs = pattern.reviews.select_related("user_profile")
+    agg = reviews_qs.aggregate(avg=Avg("rating"), count=Count("id"))
+
+    return render(request, "patterns/pattern_detail.html", {
+        "pattern": pattern,
+        "reviews": reviews_qs,
+        "has_purchased": has_purchased,
+        "rating_avg": agg["avg"] or 0,
+        "rating_count": agg["count"] or 0,
+    })
 
 
 def _superuser_only(request):
@@ -199,7 +216,8 @@ def my_favorites(request):
     except EmptyPage:
         page_obj = paginator.page(paginator.num_pages)
 
-    favorite_ids = set(page_obj.object_list.values_list("pattern_id", flat=True))
+    favorite_ids = set(
+        page_obj.object_list.values_list("pattern_id", flat=True))
     return render(
         request,
         "patterns/my_favorites.html",
