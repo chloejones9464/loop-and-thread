@@ -1,5 +1,6 @@
 # Loop and Thread
-(image) <br>
+![Hero Image - Responsive image for Loop and Thread](assets/documentation/hero-readme.webp)
+<br>
 **Loop & Thread** is a cozy and user-friendly e-commerce platform designed for crochet enthusiasts to discover, purchase, and download beautiful handmade crochet patterns. The goal of the project is to provide a seamless browsing and shopping experience, allowing users to explore a curated selection of patterns, manage their accounts, and complete secure purchases with ease. Built with Django and following best practices in full-stack development, Loop & Thread focuses on creating a warm, welcoming space that blends creativity with functionality, celebrating the craft of crochet while offering a smooth and engaging user experience from start to finish.
 
 
@@ -278,49 +279,49 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Logged in(customer) home page</summary>
 
-![Logged in(customer) home page]()
+![Logged in(customer) home page](assets/documentation/home-html-customer.webp)
 </details>
 
 <details>
 <summary>Logged out home page</summary>
 
-![Logged out home page]()
+![Logged out home page](assets/documentation/home-html-not-logged-in.webp)
 </details>
 
 <details>
 <summary>Logged in(owner) home page</summary>
 
-![Logged in(owner) home page]()
+![Logged in(owner) home page](assets/documentation/home-html-owner.webp)
 </details>
 
 <details>
 <summary>Log in page</summary>
 
-![Log in page]()
+![Log in page](assets/documentation/login-html.webp)
 </details>
 
 <details>
 <summary>Log out page</summary>
 
-![Log out page]()
+![Log out page](assets/documentation/logout-html.webp)
 </details>
 
 <details>
 <summary>Sign up page</summary>
 
-![Sign up page]()
+![Sign up page](assets/documentation/signup-html.webp)
 </details>
 
 <details>
 <summary>Pattern detail page</summary>
 
-![Pattern detail page]()
+![Pattern detail page](assets/documentation/pattern-detail-html.webp)
 </details>
 
 <details>
 <summary>My account(customer)</summary>
 
-![My account(customer)]()
+![My account(customer)](assets/documentation/account-html.webp)
 </details>
 
 <details>
@@ -338,52 +339,45 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Pattern Form</summary>
 
-![Pattern Form]()
+![Pattern Form](assets/documentation/pattern-form-html.webp)
 
 </details>
 
 <details>
 <summary>Pattern edit</summary>
 
-![Pattern Form]()
-
-</details>
-
-<details>
-<summary>Pattern delete</summary>
-
-![Pattern Form]()
+![Pattern Form](assets/documentation/pattern-edit.webp)
 
 </details>
 
 <details>
 <summary>Manage Patterns</summary>
 
-![Manage Patterns]()
+![Manage Patterns](assets/documentation/manage-patterns-html.webp)
 
 </details>
 <details>
 <summary>Pattern list</summary>
 
-![Pattern list]()
+![Pattern list](assets/documentation/pattern-list-html.webp)
 
 </details>
 <details>
 <summary>Pattern detail</summary>
 
-![Pattern detail]()
+![Pattern detail](assets/documentation/pattern-detail-html.webp)
 
 </details>
 <details>
 <summary>Pattern confirm delete</summary>
 
-![Pattern confirm delete]()
+![Pattern confirm delete](assets/documentation/pattern-confirm-delete-html.webp)
 
 </details>
 <details>
 <summary>My favorites</summary>
 
-![My favorites]()
+![My favorites](assets/documentation/my-favorites-html.webp)
 
 </details>
 
@@ -411,28 +405,28 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>News list</summary>
 
-![News list]()
+![News list](assets/documentation/news-list-html.webp)
 
 </details>
 
 <details>
 <summary>News form</summary>
 
-![News form]()
+![News form](assets/documentation/news-add.webp)
 
 </details>
 
 <details>
 <summary>News detail</summary>
 
-![News detail]()
+![News detail](assets/documentation/news-detail-html.webp)
 
 </details>
 
 <details>
 <summary>News confirm delete</summary>
 
-![News confirm delete]()
+![News confirm delete](assets/documentation/news-confirm-delete.webp)
 
 </details>
 
@@ -441,13 +435,43 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>bag.css</summary>
 
-![bag.css]()
+![bag.css](assets/documentation/bag-css.webp)
 </details>
 
 <details>
 <summary>checkout.css</summary>
 
-![bag.css]()
+![checkout.css](assets/documentation/checkout-css.webp)
+</details>
+
+<details>
+<summary>news.css</summary>
+
+![news.css](assets/documentation/news-css.webp)
+</details>
+
+<details>
+<summary>pattern-details.css</summary>
+
+![pattern-details.css](assets/documentation/pattern-detail-css.webp)
+</details>
+
+<details>
+<summary>home.css</summary>
+
+![home.css](assets/documentation/home-css.webp)
+</details>
+
+<details>
+<summary>base.css</summary>
+
+![base.css](assets/documentation/base-css.webp)
+</details>
+
+<details>
+<summary>login.css</summary>
+
+![login.css](assets/documentation/login-css.webp)
 </details>
 
 ### CI Python Linter
@@ -1041,4 +1065,6 @@ Replace your_project_name with the name of the folder that contains settings.py.
     - AWS
   
   - Acknowledgment
-    - acknowledgment to mentors, peers, tutors, friends, family, facilitator (who ever contributed and helped with the project)
+    - As usual with all my Code Institute projects:
+      - My family have been absolutely amazing through this project, from my husband having the kids while I work to my kids being patient when waiting for 'mam time'. Thank you all so much, you really don't understand how much you've helped me through this course. I love you all loads!
+      - A HUGE HUGE THANK YOU to Matt, my mentor. You've seen through my idiotic questions, chaotic life stories, banter and stupidity. I can't thank you enough for helping me through this course and project.

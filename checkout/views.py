@@ -10,7 +10,8 @@ from django.contrib import messages
 from django.conf import settings
 import stripe
 import json
-
+from django.utils.crypto import get_random_string
+from decimal import Decimal
 from .forms import OrderForm
 from patterns.models import Pattern
 from .models import Order, OrderLineItem
@@ -75,6 +76,33 @@ def checkout(request):
 
     current_bag = bag_contents(request)
     total = current_bag['grand_total']
+
+    if total == 0:
+        profile_obj = None
+        if request.user.is_authenticated:
+            profile_obj, _ = Profile.objects.get_or_create(user=request.user)
+
+        order = Order.objects.create(
+            order_number=get_random_string(12).upper(),
+            user_profile=profile_obj,
+            order_total=Decimal("0.00"),
+            original_bag=json.dumps(bag),
+            stripe_pid="FREE_ORDER",
+        )
+
+        for item_id in bag.keys():
+            pattern = Pattern.objects.get(pk=item_id)
+            OrderLineItem.objects.create(
+                order=order,
+                pattern=pattern,
+                lineitem_total=Decimal("0.00"),
+            )
+
+        # clear bag & finish
+        request.session["bag"] = {}
+        messages.success(request, "Your free order is complete! 🎉")
+        return redirect("checkout_success", order_number=order.order_number)
+
     stripe_total = int(round(total * 100))
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
@@ -147,7 +175,10 @@ def checkout(request):
         order_form = OrderForm(initial=initial)
 
     if not stripe_public_key:
-        messages.warning(request, "Stripe public key is missing — did you set it in env.py?")
+        messages.warning(
+            request,
+            "Stripe public key is missing — did you set it in env.py?"
+        )
 
     return render(request, 'checkout/checkout.html', {
         'order_form': order_form,
