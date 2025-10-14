@@ -13,10 +13,8 @@
 
     
 2. [Features](#features)
-    * [Navigation](#Navigation)
-    * [Footer](#Footer)
-    * [Home page](#Home-page)
-    * [Other features](#Other-features)
+    * [Navigation](#navigation)
+    * [Other features](#other-features)
 
 3. [Technologies Used](#technologies-used)
 4. [Testing](#testing)
@@ -982,6 +980,36 @@ Delete a review | As a **registered user**, I want **to delete my review** so th
 **Profile relation field mismatch**
 - *Cause*: Model used `default_user` instead of standard user `OneToOneField`, breaking `request.user.profile` and admin filters.
 - *Fix*: Rename field to `user = OneToOneField(User, related_name='profile', on_delete=models.CASCADE)` via migration; update references from `default_user` → `user`.
+
+**NoReverseMatch on favourites toggle**
+- *Cause*: URL tag received an empty id due to variable mismatch (`p.id`/`fav_ids`) and missing keyword arg.
+
+- *Fix*: Use the correct loop var and pass pk as keyword: `{% url 'toggle_favorite' pattern_id=pattern.pk %}`.
+
+**Favorited heart not filling**
+- *Cause*: Template checked `p.id in fav_ids` while context provided `favorite_ids`; also mixed `p` vs `pattern`.
+
+- *Fix*: Standardise to `pattern.pk in favorite_ids` and ensure include passes `pattern=pattern`.
+
+**Stripe “amount below minimum” error**
+- *Cause*: Bag total was £0.00, so creating a PaymentIntent failed (below Stripe minimum).
+
+- *Fix*: Add a free-order branch that skips Stripe when `total == 0` and completes order locally.
+
+**Order() unexpected kwargs (`user`, `total`)**
+- *Cause*: Used field names not present on `Order` model (`user`, `total`).
+
+- *Fix*: Replace with actual fields (`user_profile`, `order_total` or `grand_total`) when creating the order.
+
+**ValueError assigning User to `user_profile`**
+- *Cause*: Assigned `request.user` (User) to `user_profile` (expects Profile).
+
+- *Fix*: Fetch/create Profile and assign: `profile, _ = Profile.objects.get_or_create(user=request.user); order.user_profile = profile`.
+
+**Muted/greyed code after free-order return**
+- *Cause*: Early `return redirect(...)` made the linter flag following lines as unreachable; minor indentation added noise.
+
+- *Fix*: Wrap paid flow in `else`: (or ensure a final `return render(...)`) and fix indentation so both paths are explicit.
 
 ## Deployment
 

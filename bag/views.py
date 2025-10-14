@@ -19,7 +19,11 @@ def add_to_bag(request, item_id):
     pattern = get_object_or_404(Pattern, pk=item_id)
 
     bag = request.session.get("bag", {})
+    if str(item_id) in bag:
+        messages.warning(request, f'“{pattern.title}” is already in your bag.')
+        return redirect(redirect_url)
     bag[str(item_id)] = True
+    
     request.session["bag"] = bag
 
     messages.success(request, f"Added “{pattern.title}” to your bag.")
