@@ -1,0 +1,21 @@
+Hi {{ user.first_name|default:user.username }},
+
+Thanks for your purchase from Loop and Thread!
+
+Order #: {{ order.order_number }}
+{% if order.date %}Date: {{ order.date|date:"M j, Y" }}{% endif %}
+{% if order.order_total %}Order total: £{{ order.order_total|floatformat:2 }}{% endif %}
+{% if order.delivery_cost %}Delivery: £{{ order.delivery_cost|floatformat:2 }}{% endif %}
+{% if order.grand_total %}Grand total: £{{ order.grand_total|floatformat:2 }}{% endif %}
+
+Your items:
+{% for item in items %}- {{ item.title }} — £{{ item.price|floatformat:2 }}
+    Link: {{ item.url }}
+{% endfor %}
+
+You can revisit your pattern anytime with the link(s) above.
+
+Need help? Just reply to this email.
+
+Handmade Warmth, From Hook to Heart,
+The Loop and Thread Team

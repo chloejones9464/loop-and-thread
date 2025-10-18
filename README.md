@@ -59,8 +59,7 @@ Then from that selection I used Colorspace to create a palette for my site.
 ## Features:
 Here are the features for the website. Very minimal as I wanted to create a website that was easy to use and easy to look at.
 
-<details> 
-<summary>Navigation</summary>
+Navigation
 
 Navigation throughout Loop & Thread is designed to be simple, intuitive, and consistent across all devices.
 The main navigation bar provides quick access to the Home page, the My Account section (for both customers and store owners), and the Basket, ensuring users can find what they need in just one click.
@@ -88,7 +87,6 @@ When tapped, it expands to reveal the full set of menu links in a soft drop-down
 On larger screens, navigation is displayed across the top in a tidy horizontal layout, allowing instant access to all key areas without clutter.
 
 ![Desktop navigation](assets/documentation/desktop-navbar.webp)
-</details>
 </details>
 
 ### Other features

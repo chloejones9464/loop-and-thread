@@ -74,40 +74,34 @@ User Story | Link to GitHub | Screenshot/Video of User Story
 As a user, I want to manage my profile so that checkout is faster. | https://github.com/chloejones9464/loop-and-thread/issues/13 | ![Manage profile(mobile)](assets/documentation/manage-profile-tablet.webp) ![Manage profile(tablet)](assets/documentation/manage-profile-tablet.webp) [![Manage profile(desktop)](https://img.youtube.com/vi/R7c8BQApeLQ/0.jpg)](https://youtu.be/cdDC39Otigk)
 
 
-## Epic 12 - Admin
-User Story | Link to GitHub | Screenshot/Video of User Story
---- | --- | ---
-As the owner, I want a dashboard so that I can manage catalogue. | https://github.com/chloejones9464/loop-and-thread/issues/25 | ![Admin Dashboard(mobile)]() ![Admin Dashboard(tablet)]() ![Admin Dashboard(desktop)]()
-
-
-## Epic 13 - Checkout
+## Epic 12 - Checkout
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a shopper, I want to securely enter my details and pay for my order so that I can complete my purchase with confidence. | https://github.com/chloejones9464/loop-and-thread/issues/39 | [![Checkout App(mobile)](https://img.youtube.com/vi/op0X40OQkeU/0.jpg)](https://youtube.com/shorts/op0X40OQkeU) [![Checkout App(tablet)](https://img.youtube.com/vi/MDsZSpiR0-I/0.jpg)](https://youtu.be/MDsZSpiR0-I) [![Checkout App(desktop)](https://img.youtube.com/vi/ReUeXXWSIxA/0.jpg)](https://youtu.be/ReUeXXWSIxA)
 As a shopper, I want to complete a secure checkout and pay for my crochet pattern(s) so that I receive my order confirmation and access to my purchase. | https://github.com/chloejones9464/loop-and-thread/issues/40 |[![Successful Checkout(mobile)](https://img.youtube.com/vi/Gt3Bo5EPw3U/0.jpg)](https://youtube.com/shorts/Gt3Bo5EPw3U?feature=share) ![Successful Checkout(tablet)](assets/documentation/checkout-success-tablet.webp) ![Successful Checkout(desktop)](assets/documentation/checkout-success-desktop.webp)
 
 
-## Epic 14 - Favourite patterns
+## Epic 13 - Favourite patterns
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a registered user, I want to favourite a pattern so that I can quickly find and revisit the patterns I like. | https://github.com/chloejones9464/loop-and-thread/issues/49 | ![Favourite patterns(mobile)](assets/documentation/favorite-page-mobile.webp) ![Favourite patterns(tablet)](assets/documentation/favorite-page-tablet.webp) ! [![Favourite patterns functionality(desktop)](https://img.youtube.com/vi/kbpcJfDz2mg/0.jpg)](https://youtu.be/kbpcJfDz2mg)
 As a registered user, I want to remove a pattern from my favourites so that my saved list stays relevant and clutter-free. | https://github.com/chloejones9464/loop-and-thread/issues/50 |![Unfavourite a Pattern(mobile)](assets/documentation/unfavorite-page-mobile.webp) ![Unfavourite a Pattern(tablet)](assets/documentation/unfavorite-page-tablet.webp) [![Unfavourite patterns functionality(desktop)](https://img.youtube.com/vi/kbpcJfDz2mg/0.jpg)](https://youtu.be/kbpcJfDz2mg)
 
 
-## Epic 15 - Leave Review
+## Epic 14 - Leave Review
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a customer who has purchased a pattern, I want to leave a rating and review so that other shoppers can trust real, verified feedback. | https://github.com/chloejones9464/loop-and-thread/issues/23 | ![Add a Review (purchasers only)(mobile)]() ![Add a Review (purchasers only)(tablet)]() ![Add a Review (purchasers only)(desktop)]()
-As a registered user, I want to edit my review so that I can correct mistakes or update my feedback after posting. | https://github.com/chloejones9464/loop-and-thread/issues/47 |![Edit a Review(mobile)]() ![Edit a Review(tablet)]() ![Edit a Review(desktop)]()
-As a registered user, I want to delete my review so that I can remove feedback I no longer want to share. | https://github.com/chloejones9464/loop-and-thread/issues/48 |![Delete a Review(mobile)]() ![Delete a Review(tablet)]() ![Delete a Review(desktop)]()
+As a customer who has purchased a pattern, I want to leave a rating and review so that other shoppers can trust real, verified feedback. | https://github.com/chloejones9464/loop-and-thread/issues/23 | ![Add a Review (purchasers only)(mobile)](assets/documentation/write-review-mobile.webp) ![Add a Review (purchasers only)(tablet)](assets/documentation/write-review-tablet.webp) Review functionality on desktop(Add/Edit/Delete)[![Review functionality on desktop)](https://img.youtube.com/vi/DLHYLsmstpA/0.jpg)](https://youtu.be/DLHYLsmstpA)
+As a registered user, I want to edit my review so that I can correct mistakes or update my feedback after posting. | https://github.com/chloejones9464/loop-and-thread/issues/47 |![Edit a Review(mobile)](assets/documentation/edit-review-mobile.webp) ![Edit a Review(tablet)](assets/documentation/edit-review-tablet.webp) 
+As a registered user, I want to delete my review so that I can remove feedback I no longer want to share. | https://github.com/chloejones9464/loop-and-thread/issues/48 |![Delete a Review(mobile)](assets/documentation/delete-review-mobile.webp) ![Delete a Review(tablet)](assets/documentation/delete-review-tablet.webp)
 
 
-## Epic 16 - Wishlist(future improvement)
+## Epic 15 - Wishlist(future improvement)
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a registered user, I want a wishlist where I can save patterns/products and add them to my bag directly so that I can compare items, come back later, and checkout quickly. | https://github.com/chloejones9464/loop-and-thread/issues/51 | ![Add Wishlist (mobile)]() ![Add Wishlist (tablet)]() ![Add Wishlist (desktop)]()
 
-## Epic 17 - News
+## Epic 16 - News
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
 As a staff user, I want to create a news post so that I can share updates and announcements on the site. | https://github.com/chloejones9464/loop-and-thread/issues/52 | [![Add News (staff only)(mobile)](https://img.youtube.com/vi/XguLTy8FMus/0.jpg)](https://youtube.com/shorts/XguLTy8FMus) [![Add News (staff only)(tablet)](https://img.youtube.com/vi/KcmcdnSm6Vk/0.jpg)](https://youtu.be/KcmcdnSm6Vk) [![Add News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)

@@ -29,22 +29,36 @@ class ProfileForm(forms.ModelForm):
             "default_street_address1": "Street address 1",
             "default_street_address2": "Street address 2",
             "default_county": "County, state or local area",
-            }
+        }
         widgets = {
             "default_display_name": forms.TextInput(
-                attrs={"placeholder": "Username"}
+                attrs={"placeholder": "Display name"}
             ),
         }
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop("user", None)
-        if self.user is None:
-            self.user = kwargs.pop("user", None)
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_tag = False
         if self.user is not None:
             self.fields["email"].initial = self.user.email
+
+    def save(self, commit=True):
+        """
+        Save Profile fields, and also persist the email to the related User.
+        """
+        profile = super().save(commit=False)
+
+        if self.user is not None and "email" in self.cleaned_data:
+            new_email = self.cleaned_data["email"]
+            if new_email != self.user.email:
+                self.user.email = new_email
+                self.user.save(update_fields=["email"])
+
+        if commit:
+            profile.save()
+        return profile
 
     def clean_email(self):
         email = self.cleaned_data["email"].strip()
@@ -54,12 +68,3 @@ class ProfileForm(forms.ModelForm):
         if qs.exists():
             raise forms.ValidationError("This email is already in use.")
         return email
-
-    def save(self, commit=True):
-        profile = super().save(commit=commit)
-        if self.user and "email" in self.cleaned_data:
-            if self.user.email != self.cleaned_data["email"]:
-                self.user.email = self.cleaned_data["email"]
-                self.user.save(update_fields=["email"])
-
-        return profile
