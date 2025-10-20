@@ -1,0 +1,11 @@
+Hi {{ order.full_name }},
+
+Welcome to Loop & Thread! Please confirm your email to activate your account.
+
+Confirm your email:
+{{ activate_url }}
+
+If you didn’t sign up, you can ignore this message.
+
+Happy crafting,
+Loop & Thread
