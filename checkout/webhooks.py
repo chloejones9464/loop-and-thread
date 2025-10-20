@@ -11,48 +11,22 @@ import stripe
 @require_POST
 @csrf_exempt
 def webhook(request):
-    # Setup
-    wh_secret = settings.STRIPE_WH_SECRET
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-
-    # Getting webhook data and verifying signature
+    print("[WH] entered /checkout/wh/")
     payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    event = None
+    sig_header = request.META.get("HTTP_STRIPE_SIGNATURE", "")
+    wh_secret = settings.STRIPE_WH_SECRET
 
     try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, wh_secret
-        )
+        event = stripe.Webhook.construct_event(payload, sig_header, wh_secret)
     except ValueError as e:
-        # Invalid payload
-        print('Error parsing payload: {}'.format(str(e)))
-        return HttpResponse(status=400)
+        print("[WH] invalid payload:", e); return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
-        # Invalid signature
-        print('Error verifying webhook signature: {}'.format(str(e)))
-        return HttpResponse(status=400)
-    except Exception as e:
-        return HttpResponse(content=e, status=400)
+        print("[WH] bad signature:", e); return HttpResponse(status=400)
 
-    # Setting up a webhook handler
+    print("[WH] event type:", event.get("type"))
     handler = StripeWH_Handler(request)
-
-    # Map webhook events to relevant handler function
     event_map = {
-        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
-        'payment_intent.payment_failed': (
-            handler.handle_payment_intent_failed
-        ),
+        "payment_intent.succeeded": handler.handle_payment_intent_succeeded,
+        "payment_intent.payment_failed": handler.handle_payment_intent_failed,
     }
-
-    # Get the webhook type from Stripe
-    event_type = event['type']
-
-    # If there's a handler for it, get it from the event map, otherwise use
-    # the generic handler
-    event_handler = event_map.get(event_type, handler.handle_event)
-
-    # Call the event handler with the event
-    response = event_handler(event)
-    return response
+    return event_map.get(event.get("type"), handler.handle_event)(event)

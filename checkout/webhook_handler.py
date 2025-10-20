@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.core.mail import get_connection
+from django.template.loader import render_to_string
 from django.conf import settings
 from decimal import Decimal
 from .models import Order, OrderLineItem
@@ -13,6 +16,40 @@ class StripeWH_Handler:
         self.request = request
         stripe.api_key = settings.STRIPE_SECRET_KEY
 
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        cust_email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )        
+
+        cust_email = (order.email or
+                    getattr(getattr(order, "user_profile", None), "user", None).email or "").strip()
+        print(f"[WH] preparing email to: {cust_email or '<EMPTY>'}")
+        if not cust_email:
+            print("[WH] ABORT no recipient"); return 0
+
+        connection = get_connection("django.core.mail.backends.console.EmailBackend")
+
+        subject = render_to_string("checkout/confirmation_emails/confirmation_email_subject.txt",
+                                {"order": order}).strip().replace("\n", " ")
+        body = render_to_string("checkout/confirmation_emails/confirmation_email_body.txt",
+                                {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL})
+        sent = send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email], connection=connection)
+        print("[WH] send_mail returned:", sent)
+        return sent
+
+
     def handle_event(self, event):
         return HttpResponse(
             content=f"Unhandled webhook received : {event['type']}",
@@ -20,6 +57,7 @@ class StripeWH_Handler:
         )
 
     def handle_payment_intent_succeeded(self, event):
+        print("[WH] payment_intent.succeeded received")
         intent = event['data']['object']
         pid = intent['id']
 
@@ -73,6 +111,7 @@ class StripeWH_Handler:
                 time.sleep(1)
 
         if order_exists:
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=(
                     f"Webhook received : {event['type']} | "
@@ -107,7 +146,7 @@ class StripeWH_Handler:
                 content=f"Webhook received : {event['type']} | ERROR: {e}",
                 status=500
             )
-
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=(
                 f"Webhook received : {event['type']} | "

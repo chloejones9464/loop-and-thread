@@ -1,0 +1,16 @@
+Hi {{ order.full_name|default:order.email }},
+
+Thank you so much for your purchase from **Loop & Thread** — where every stitch tells a story. 🧶
+
+✨ **Order Summary**
+Order No: **{{ order.order_number }}**
+{% if order.order_total %}Subtotal: £{{ order.order_total|floatformat:2 }}{% endif %}
+{% if order.grand_total %}Total Paid: £{{ order.grand_total|floatformat:2 }}{% endif %}
+
+Your pattern is now ready! You can download it anytime from **My Orders** on the website or here {{ order.download_url }}.
+
+Need a little help or have a question about your pattern?
+Simply reply to this email or get in touch at **{{ contact_email }}** — we’re always happy to help.
+
+Happy hooking and cozy creating,
+💗 The Loop & Thread Team
