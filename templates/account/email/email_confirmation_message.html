@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Verify your email{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+        <div class="card lnt-card">
+            <div class="card-body p-4 p-md-5 text-center">
+            <div class="lnt-icon-circle mb-3">
+                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+            </div>
+            <h1 class="h4 mb-2">{% trans "Check your email" %}</h1>
+            <p class="text-muted mb-0">
+                {% blocktrans %}We’ve sent a confirmation link to <strong>{{ email }}</strong> (if provided).
+                Please click the link to verify your address and activate your account.{% endblocktrans %}
+            </p>
+
+            <hr class="my-4">
+
+            <div class="d-grid gap-2">
+                <a class="btn btn-primary lnt-btn-pill" href="{% url 'account_email' %}">
+                <i class="fa-regular fa-paper-plane me-1"></i>
+                {% trans "Resend confirmation / change email" %}
+                </a>
+                <a class="btn btn-outline-secondary lnt-btn-pill" href="/">
+                <i class="fa-solid fa-house me-1"></i>
+                {% trans "Return to home" %}
+                </a>
+            </div>
+
+            <div class="mt-4 small text-muted text-start">
+                <strong>Didn’t receive it?</strong>
+                <ul class="mb-0 ms-3">
+                <li>Check your spam or promotions folder.</li>
+                <li>Add <code>{{ DEFAULT_FROM_EMAIL|default:"no-reply@loopandthread.local" }}</code> to your contacts.</li>
+                <li>Use the button above to resend or change your email.</li>
+                </ul>
+            </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

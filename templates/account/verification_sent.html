@@ -1,0 +1,40 @@
+{# templates/account/verification_sent.html #}
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Verify your email" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block inner %}
+    <div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+        <div class="card lnt-card">
+            <div class="card-body p-4 p-md-5 text-center">
+            <div class="lnt-icon-circle mb-3">
+                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+            </div>
+            <h1 class="h4 mb-2">{% trans "Check your email" %}</h1>
+            <p class="text-muted mb-0">
+                {% blocktrans %}We’ve sent a confirmation link to your inbox.
+                Please click the link to verify your address and activate your account.{% endblocktrans %}
+            </p>
+
+            <hr class="my-4">
+
+            <div class="d-grid gap-2">
+                <a class="btn bk-button lnt-btn-pill" href="{% url 'account_login' %}">
+                <i class="fa-solid fa-house me-1"></i>
+                {% trans "Return to login" %}
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

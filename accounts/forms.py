@@ -2,6 +2,7 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from django.contrib.auth import get_user_model
 from .models import Profile
+from allauth.account.forms import SignupForm
 
 User = get_user_model()
 
@@ -63,3 +64,10 @@ class ProfileForm(forms.ModelForm):
                 self.user.save(update_fields=["email"])
 
         return profile
+
+
+class CustomSignupForm(SignupForm):
+    def save(self, request):
+        user = super().save(request)
+        request.session["signup_email"] = self.cleaned_data.get("email")
+        return user

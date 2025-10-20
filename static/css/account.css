@@ -1,0 +1,64 @@
+
+:root {
+    --color-pink: #DEB1A9;
+    --color-brown: #3f312e;
+    --color-mauve: #BEA6A1;
+    --color-sage: #B3C09F;
+    --color-olive: #7E8B6C;
+}
+
+body {
+    background-color: var(--color-mauve);
+}
+
+.navbar {
+    background-color: var(--color-sage);
+}
+
+.navbar a {
+    color: var(--color-brown);
+}
+
+.bk-button {
+    background-color: #53504f;
+    border: #161212 solid 1px;
+    color: #ffffff;
+}
+
+.bk-button:hover {
+    background-color: #222120;
+    border: #161212 solid 1px;
+    color: #ffffff;
+}
+
+.lnt-card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(136, 84, 192, 0.08);
+}
+
+.lnt-icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e9defa, #fbfcdb);
+    color: #4b3f72;
+    font-size: 26px;
+}
+
+.lnt-icon-circle.lnt-success {
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    color: #155724;
+}
+
+.lnt-btn-pill {
+    border-radius: 999px;
+}
+
+/* Helpers if needed */
+.text-muted { color: #6c757d !important; }

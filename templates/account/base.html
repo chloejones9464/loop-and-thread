@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{# Optional: pull in page-specific CSS from child templates #}
+{% block extra_css %}{% endblock %}
+
+{% block content %}
+    {# Child templates will fill this #}
+    {% block inner %}{% endblock %}
+{% endblock %}
