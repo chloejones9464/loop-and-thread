@@ -371,13 +371,13 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Checkout page</summary>
 
-![Checkout page]()
+![Checkout page](assets/documentation/checkout-html.webp)
 </details>
 
 <details>
 <summary>Checkout success page</summary>
 
-![Checkout success page]()
+![Checkout success page](assets/documentation/checkout-success-html.webp)
 </details>
 
 <details>
@@ -428,21 +428,21 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Order details</summary>
 
-![Order details]()
+![Order details](assets/documentation/order-details-html.webp)
 
 </details>
 
 <details>
 <summary>Order list</summary>
 
-![Order list]()
+![Order list](assets/documentation/order-list-html.webp)
 
 </details>
 
 <details>
 <summary>Bag</summary>
 
-![Bag]()
+![Bag](assets/documentation/bag-html.webp)
 
 </details>
 
@@ -461,18 +461,20 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 </details>
 
 <details>
-<summary>News detail</summary>
+<summary>Review Form</summary>
 
-![News detail](assets/documentation/news-detail-html.webp)
+![News detail](assets/documentation/review-form-html.webp)
 
 </details>
 
 <details>
-<summary>News confirm delete</summary>
+<summary>Review confirm delete</summary>
 
-![News confirm delete](assets/documentation/news-confirm-delete.webp)
+![News confirm delete](assets/documentation/review-confirm-delete-html.webp)
 
 </details>
+
+
 
 #### CSS
 

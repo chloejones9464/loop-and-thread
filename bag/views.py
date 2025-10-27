@@ -23,7 +23,7 @@ def add_to_bag(request, item_id):
         messages.warning(request, f'“{pattern.title}” is already in your bag.')
         return redirect(redirect_url)
     bag[str(item_id)] = True
-    
+
     request.session["bag"] = bag
 
     messages.success(request, f"Added “{pattern.title}” to your bag.")

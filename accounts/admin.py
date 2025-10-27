@@ -6,11 +6,13 @@ from .models import Profile
 class AccountAdmin(admin.ModelAdmin):
     list_display = (
         "user",
+        "email_verified",
         "default_display_name",
         "default_phone_number",
         "default_country",
         "default_town_or_city",
     )
+    list_editable = ("email_verified",)
     search_fields = (
         "user__username",
         "default_display_name",

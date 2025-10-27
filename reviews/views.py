@@ -32,14 +32,22 @@ def create_review(request, pattern_id):
         return redirect("account")
 
     if not _has_purchased(profile, pattern):
-        messages.warning(request, "Only customers who purchased this pattern can review it.")
+        messages.warning(
+            request,
+            "Only customers who purchased this pattern can review it."
+            )
         return redirect("pattern_detail", pk=pattern.id)
 
     if Review.objects.filter(pattern=pattern, user_profile=profile).exists():
-        messages.info(request, "You’ve already reviewed this pattern. You can edit your review instead.")
+        messages.info(
+            request,
+            "You’ve already reviewed this pattern."
+            "You can edit your review instead.")
         return redirect(
             "edit_review",
-            review_id=Review.objects.get(pattern=pattern, user_profile=profile).id
+            review_id=Review.objects.get(
+                pattern=pattern,
+                user_profile=profile).id
         )
 
     if request.method == "POST":
@@ -55,7 +63,11 @@ def create_review(request, pattern_id):
     else:
         form = ReviewForm()
 
-    return render(request, "reviews/review_form.html", {"form": form, "pattern": pattern})
+    return render(
+        request,
+        "reviews/review_form.html",
+        {"form": form, "pattern": pattern}
+        )
 
 
 @login_required
@@ -76,7 +88,11 @@ def edit_review(request, review_id):
             return redirect("pattern_detail", pk=review.pattern.id)
         form = ReviewForm(instance=review)
 
-    return render(request, "reviews/review_form.html", {"form": form, "pattern": review.pattern, "is_edit": True})
+    return render(
+        request,
+        "reviews/review_form.html",
+        {"form": form, "pattern": review.pattern, "is_edit": True}
+        )
 
 
 @login_required
@@ -93,4 +109,8 @@ def delete_review(request, review_id):
         messages.success(request, "Your review was deleted.")
         return redirect("pattern_detail", pk=pattern_id)
 
-    return render(request, "reviews/review_confirm_delete.html", {"review": review})
+    return render(
+        request,
+        "reviews/review_confirm_delete.html",
+        {"review": review}
+        )

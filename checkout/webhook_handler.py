@@ -34,13 +34,14 @@ class StripeWH_Handler:
         )
 
         cust_email = (order.email or
-                    getattr(getattr(
-                        order,
-                        "user_profile",
-                        None), "user", None).email or "").strip()
+                      getattr(getattr(
+                            order,
+                            "user_profile",
+                            None), "user", None).email or "").strip()
         print(f"[WH] preparing email to: {cust_email or '<EMPTY>'}")
         if not cust_email:
-            print("[WH] ABORT no recipient"); return 0
+            print("[WH] ABORT no recipient")
+            return 0
 
         connection = get_connection(
             "django.core.mail.backends.console.EmailBackend"
@@ -48,7 +49,7 @@ class StripeWH_Handler:
 
         subject = render_to_string(
             "checkout/confirmation_emails/confirmation_email_subject.txt",
-                                {"order": order}).strip().replace("\n", " ")
+            {"order": order}).strip().replace("\n", " ")
         body = render_to_string(
             "checkout/confirmation_emails/confirmation_email_body.txt",
             {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL})

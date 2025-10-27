@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block title %}Unauthorized access — Loop & Thread{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+    <div class="text-center">
+        <h1 class="display-5 fw-bold">Oops! You’re Not Allowed to Stitch Here 🧵</h1>
+        <p class="lead mb-4">It looks like this page is off-limits. Maybe try going back to the home page and exploring our latest patterns instead!</p>
+
+        <div class="d-flex gap-2 justify-content-center">
+        <a href="{% url 'home' %}" class="btn bk-button px-4">Back to Home</a>
+        <a href="{% url 'pattern_list' %}" class="btn login-btn px-4">Browse Patterns</a>
+        </div>
+
+        <p class="text-muted mt-4 small">Error code: 403</p>
+    </div>
+    </div>
+{% endblock %}

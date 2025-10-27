@@ -12,6 +12,7 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name='profile',
     )
+    email_verified = models.BooleanField(default=False)
     default_display_name = models.CharField(
         max_length=50,
         blank=True

@@ -63,7 +63,10 @@ def pattern_list(request):
 def pattern_detail(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
 
-    profile = getattr(request.user, "profile", None) if request.user.is_authenticated else None
+    profile = getattr(
+        request.user,
+        "profile",
+        None) if request.user.is_authenticated else None
 
     has_purchased = False
     if profile:

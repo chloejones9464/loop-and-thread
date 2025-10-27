@@ -16,7 +16,7 @@ class OrderForm(forms.ModelForm):
             'street_address2',
             'county',
         )
-    
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated labels
