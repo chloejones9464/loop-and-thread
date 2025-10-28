@@ -5,7 +5,7 @@
 
 
 ## Table Of Contents:
-1. [Design & Planning](#design-&-planning)
+1. [Design & Planning](#design-and-planning)
     * [User Stories](#user-stories)
     * [Wireframes](#wireframes)
     * [Typography](#typography)
@@ -18,11 +18,12 @@
 
 3. [Technologies Used](#technologies-used)
 4. [Testing](#testing)
-5. [Bugs](#bugs)
-6. [Deployment](#deployment)
-7. [Credits](#credits)
+5. [Future Improvements](#future-improvements)
+6. [Bugs](#bugs)
+7. [Deployment](#deployment)
+8. [Credits](#credits)
 
-## Design & Planning:
+## Design and Planning:
 
 ### User Stories
 [Here](userstories.md) you'll find the user stories for my project.
@@ -527,55 +528,55 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing there to test
 </details>
 
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/accounts-admin-linter.webp)
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
+![apps.py linter](assets/documentation/accounts-apps-linter.webp)
 </details>
 
 <details>
 <summary>forms.py</summary>
 
-![forms.py linter]()
+![forms.py linter](assets/documentation/accounts-forms-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/accounts-models-linter.webp)
 </details>
 
 <details>
 <summary>signals.py</summary>
 
-![signals.py linter]()
+![signals.py linter](assets/documentation/accounts-signals-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/accounts-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/accounts-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/accounts-views-linter.webp)
 </details>
 
 </details>
@@ -588,55 +589,49 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/bag-admin-linter.webp)
 </details>
 
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing there to test
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
-</details>
-
-<details>
-<summary>forms.py</summary>
-
-![forms.py linter]()
+![apps.py linter](assets/documentation/bag-apps-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/bag-models-linter.webp)
 </details>
 
 <details>
 <summary>contexts.py</summary>
 
-![contexts.py linter]()
+![contexts.py linter](assets/documentation/bag-contexts-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/bag-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/bag-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/bag-views-linter.webp)
 </details>
 
 </details>
@@ -649,67 +644,67 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/checkout-admin-linter.webp)
 </details>
 
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+![__init__.py linter](assets/documentation/checkout-init-linter.webp)
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
+![apps.py linter](assets/documentation/checkout-apps-linter.webp)
 </details>
 
 <details>
 <summary>forms.py</summary>
 
-![forms.py linter]()
+![forms.py linter](assets/documentation/checkout-forms-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/checkout-models-linter.webp)
 </details>
 
 <details>
 <summary>signals.py</summary>
 
-![signals.py linter]()
+![signals.py linter](assets/documentation/checkout-signals-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/checkout-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/checkout-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/checkout-views-linter.webp)
 </details>
 
 <details>
 <summary>webhooks.py</summary>
 
-![webhooks.py linter]()
+![webhooks.py linter](assets/documentation/checkout-webhooks-linter.webp)
 </details>
 
 <details>
 <summary>webhook_handler.py</summary>
 
-![webhook_handler.py linter]()
+![webhook_handler.py linter](assets/documentation/checkout-webhook-handler-linter.webp)
 </details>
 
 </details>
@@ -722,43 +717,43 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing to test
 </details>
 
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/patterns-admin-linter.webp)
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
+![apps.py linter](assets/documentation/patterns-apps-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/patterns-models-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/patterns-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/patterns-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/patterns-views-linter.webp)
 </details>
 
 </details>
@@ -771,43 +766,43 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing to test here
 </details>
 
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/store-admin-linter.webp)
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
+![apps.py linter](assets/documentation/store-apps-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/store-models-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/store-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/store-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/store-views-linter.webp)
 </details>
 
 </details>
@@ -820,31 +815,31 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing to test here
 </details>
 
 <details>
 <summary>wsgi.py</summary>
 
-![wsgi.py linter]()
+![wsgi.py linter](assets/documentation/loopandthread-wsgi-linter.webp)
 </details>
 
 <details>
 <summary>asgi.py</summary>
 
-![asgi.py linter]()
+![asgi.py linter](assets/documentation/loopandthread-asgi-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/loopandthread-urls-linter.webp)
 </details>
 
 <details>
 <summary>settings.py</summary>
 
-![settings.py linter]()
+![settings.py linter](assets/documentation/loopandthread-settings-linter.webp)
 </details>
 
 </details>
@@ -857,49 +852,49 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/reviews-admin-linter.webp)
 </details>
 
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing to test here
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
+![apps.py linter](assets/documentation/reviews-apps-linter.webp)
 </details>
 
 <details>
 <summary>forms.py</summary>
 
-![forms.py linter]()
+![forms.py linter](assets/documentation/reviews-forms-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/reviews-models-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/reviews-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/reviews-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/reviews-views-linter.webp)
 </details>
 
 </details>
@@ -912,49 +907,43 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>admin.py</summary>
 
-![admin.py linter]()
+![admin.py linter](assets/documentation/news-admin-linter.webp)
 </details>
 
 <details>
 <summary>__init__.py</summary>
 
-![__init__.py linter]()
+Nothing to test here
 </details>
 
 <details>
 <summary>apps.py</summary>
 
-![apps.py linter]()
-</details>
-
-<details>
-<summary>forms.py</summary>
-
-![forms.py linter]()
+![apps.py linter](assets/documentation/news-apps-linter.webp)
 </details>
 
 <details>
 <summary>models.py</summary>
 
-![models.py linter]()
+![models.py linter](assets/documentation/news-models-linter.webp)
 </details>
 
 <details>
 <summary>tests.py</summary>
 
-![tests.py linter]()
+![tests.py linter](assets/documentation/news-tests-linter.webp)
 </details>
 
 <details>
 <summary>urls.py</summary>
 
-![urls.py linter]()
+![urls.py linter](assets/documentation/news-urls-linter.webp)
 </details>
 
 <details>
 <summary>views.py</summary>
 
-![views.py linter]()
+![views.py linter](assets/documentation/news-views-linter.webp)
 </details>
 
 </details>
@@ -964,7 +953,7 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>manage.py</summary>
 
-![manage.py linter]()
+![manage.py linter](assets/documentation/manage-linter.webp)
 </details>
 
 <hr>
@@ -972,47 +961,53 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>custom_storages.py</summary>
 
-![custom_storages.py linter]()
+![custom_storages.py linter](assets/documentation/custom_storages-linter.webp)
 </details>
 
 <hr>
 
 
 ### Manual Testing user stories or/and features
-User Story Title | User Story |  Test | Pass
---- | --- | --- | :---:
-Add Patterns | As the **owner**, I want **to add patterns** so that **they appear in the shop.** || &check;
-Manage Profile | As a **user**, I want **to manage my profile** so that **checkout is faster.** ||&check;
-Browse Home Page | As a **visitor**, I want **to view a home page** so that **I can quickly see featured patterns.** ||&check;
-Browse All Patterns | As a **visitor**, I want **to browse all patterns** so that **I can explore options.** ||&check;
-Mobile Menu (Burger + Drawer) | As a **mobile visitor**, I want **a collapsible menu** so that **I can navigate to key pages on small screens.** ||&check;
-Checkout app | As a **shopper**, I want **to securely enter my details and pay for my order** so that **I can complete my purchase with confidence.** ||&check;
-Keyword Search | As a **visitor**, I want **to search by keyword** so that **I can find patterns quickly.** ||&check;
-Filter & Sort | As a **visitor**, I want **to filter and sort results** so that **I can narrow down choices.** ||&check;
-Add to Cart | As a **visitor**, I want **to add patterns to a cart** so that **I can purchase them.** ||&check;
-Primary Navigation(Desktop) | As a **visitor**, I want **to use a navigation menu** so that **I can access Shop, Categories, and Sign in/up easily.** ||&check;
-Sign up page | As a **visitor**, I want **to sign up** so that **I can purchase and access downloads.** ||&check;
-Log in page | As a **visitor**, I want **to log in** so that **I can purchase and access downloads.** ||&check;
-Log out | As a **user**, I want **to sign out** so that **no-one can access my account**||&check;
-Accessibility & Responsiveness | As a **visitor**, I want **the site to be accessible** so that **everyone can use it.**||&check;
-Order History | As a **user**, I want **to see my past orders** so that **I can re-download purchased patterns.**||&check;
-Security & Privacy | As the **owner**, I want **secure handling of payments and downloads** so that **user data is protected.**||&check;
-Successful Checkout | As a **shopper**, I want **to complete a secure checkout and pay for my crochet pattern(s)** so that **I receive my order confirmation and access to my purchase.**||&check;
-Delete Pattern | As the **owner**, I want **to be able to delete patterns** so that **I can remove patterns from the shop.**||&check;
-Edit Pattern | As the **owner**, I want **to edit patterns** so that **they appear in the shop.**||&check;
-Admin Dashboard | As the **owner**, I want **a dashboard** so that **I can manage catalogue.**||&check;
-AWS | As a **developer**, I want **to integrate AWS S3 for media and static file storage** so that **images and static files are stored securely, efficiently, and served quickly from a reliable CDN.**||&check;
-Deployment | As a **developer**, I want **to deploy my Django project to a live server** so that **users can access and use the application online.**||&check;
-Pattern Categories | As the **owner**, I want **categories so that users can browse by type.**||&check;
-Favorite Pattern | As a **registered user**, I want **to favorite a pattern so that I can quickly find and revisit the patterns I like.**||&check;
-Unfavorite Pattern | As a **registered user**, I want **to favorite a pattern** so that **I can quickly find and revisit the patterns I like.**||&check;
-Add News | As a **staff user**, I want **to create a news post** so that **I can share updates and announcements on the site.**||&check;
-Edit News | As a **staff user**, I want **to edit an existing news post** so that **a staff user, I want to edit an existing news post so that I can correct errors or update information.**||&check;
-Delete News | As a **staff user**, I want **to delete a news post** so that **I can remove outdated or incorrect announcements.**||&check;
-Add a review | As a **customer who has purchased a pattern**, I want **to leave a rating and review** so that **other shoppers can trust real, verified feedback.**||&check;
-Edit a review | As a registered user, I want to edit my review so that **I can correct mistakes or update my feedback after posting.**||&check;
-Delete a review | As a **registered user**, I want **to delete my review** so that **I can remove feedback I no longer want to share.**||&check;
+User Story Title | User Story | Pass
+--- | --- | :---:
+Add Patterns | As the **owner**, I want **to add patterns** so that **they appear in the shop.** | &check;
+Manage Profile | As a **user**, I want **to manage my profile** so that **checkout is faster.** |&check;
+Browse Home Page | As a **visitor**, I want **to view a home page** so that **I can quickly see featured patterns.** |&check;
+Browse All Patterns | As a **visitor**, I want **to browse all patterns** so that **I can explore options.** |&check;
+Mobile Menu (Burger + Drawer) | As a **mobile visitor**, I want **a collapsible menu** so that **I can navigate to key pages on small screens.** |&check;
+Checkout app | As a **shopper**, I want **to securely enter my details and pay for my order** so that **I can complete my purchase with confidence.** |&check;
+Keyword Search | As a **visitor**, I want **to search by keyword** so that **I can find patterns quickly.** |&check;
+Filter & Sort | As a **visitor**, I want **to filter and sort results** so that **I can narrow down choices.** |&check;
+Add to Cart | As a **visitor**, I want **to add patterns to a cart** so that **I can purchase them.** |&check;
+Primary Navigation(Desktop) | As a **visitor**, I want **to use a navigation menu** so that **I can access Shop, Categories, and Sign in/up easily.** |&check;
+Sign up page | As a **visitor**, I want **to sign up** so that **I can purchase and access downloads.** |&check;
+Log in page | As a **visitor**, I want **to log in** so that **I can purchase and access downloads.** |&check;
+Log out | As a **user**, I want **to sign out** so that **no-one can access my account**|&check;
+Accessibility & Responsiveness | As a **visitor**, I want **the site to be accessible** so that **everyone can use it.**|&check;
+Order History | As a **user**, I want **to see my past orders** so that **I can re-download purchased patterns.**|&check;
+Security & Privacy | As the **owner**, I want **secure handling of payments and downloads** so that **user data is protected.**|&check;
+Successful Checkout | As a **shopper**, I want **to complete a secure checkout and pay for my crochet pattern(s)** so that **I receive my order confirmation and access to my purchase.**|&check;
+Delete Pattern | As the **owner**, I want **to be able to delete patterns** so that **I can remove patterns from the shop.**|&check;
+Edit Pattern | As the **owner**, I want **to edit patterns** so that **they appear in the shop.**|&check;
+Admin Dashboard | As the **owner**, I want **a dashboard** so that **I can manage catalogue.**|&check;
+AWS | As a **developer**, I want **to integrate AWS S3 for media and static file storage** so that **images and static files are stored securely, efficiently, and served quickly from a reliable CDN.**|&check;
+Deployment | As a **developer**, I want **to deploy my Django project to a live server** so that **users can access and use the application online.**|&check;
+Pattern Categories | As the **owner**, I want **categories so that users can browse by type.**|&check;
+Favorite Pattern | As a **registered user**, I want **to favorite a pattern so that I can quickly find and revisit the patterns I like.**|&check;
+Unfavorite Pattern | As a **registered user**, I want **to favorite a pattern** so that **I can quickly find and revisit the patterns I like.**|&check;
+Add News | As a **staff user**, I want **to create a news post** so that **I can share updates and announcements on the site.**|&check;
+Edit News | As a **staff user**, I want **to edit an existing news post** so that **a staff user, I want to edit an existing news post so that I can correct errors or update information.**|&check;
+Delete News | As a **staff user**, I want **to delete a news post** so that **I can remove outdated or incorrect announcements.**|&check;
+Add a review | As a **customer who has purchased a pattern**, I want **to leave a rating and review** so that **other shoppers can trust real, verified feedback.**|&check;
+Edit a review | As a registered user, I want to edit my review so that **I can correct mistakes or update my feedback after posting.**|&check;
+Delete a review | As a **registered user**, I want **to delete my review** so that **I can remove feedback I no longer want to share.**|&check;
 
+## Future Improvements
+As Loop and Thread continues to grow, there are several exciting features planned to enhance usability, community interaction, and customer satisfaction. A key focus will be on **digital delivery**, allowing buyers to easily access and re-download their purchased crochet patterns through their account dashboard, as well as receive secure **download links via email** for future reference.
+
+Building on this, the next phase will expand the site’s **social feedback** features — enabling users to **leave detailed reviews** to help others make informed choices, and to **favorite patterns** for quick access later.
+
+Finally, a **wishlist system** will be introduced, allowing registered users to **save patterns** they love, **compare items**, and **add them directly to their bag** when they’re ready to purchase. Together, these improvements aim to make Loop and Thread an even more personal, convenient, and inspiring experience for every crocheter.
 
 ## Bugs
 
@@ -1173,7 +1168,7 @@ Replace your_project_name with the name of the folder that contains settings.py.
 
 ## Credits
   - Code & Text Content
-  I used most of these websites for help on several things!!
+  I used most of these websites for help on several things!! It's crazy to see that others have the same issues and way on thinking.
    - Crispy forms 
    - Django GitHub docs
    - Pixelied - PNG to WEBP Converter
@@ -1190,6 +1185,7 @@ Replace your_project_name with the name of the folder that contains settings.py.
    - W3Schools
    - StackOverflow
    - Stripe
+   - CI Python Linter
 
   - Media    
     - YouTube

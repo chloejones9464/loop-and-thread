@@ -73,45 +73,98 @@ class StripeWH_Handler:
         intent = event['data']['object']
         pid = intent['id']
 
-        bag_json = intent.get('metadata', {}).get('bag', '{}')
-        bag = json.loads(bag_json)
-        save_info = intent.get('metadata', {}).get('save_info')
+        metadata = intent.get('metadata') or {}
+        bag_json = metadata.get('bag') or '{}'
+        try:
+            if isinstance(bag_json, str):
+                bag = json.loads(bag_json)
+            else:
+                bag = bag_json or {}
+        except Exception:
+            print("[WH] Could not parse bag JSON; defaulting to empty.")
+            bag = {}
 
-        stripe_charge = stripe.Charge.retrieve(intent['latest_charge'])
-        billing = stripe_charge['billing_details']
-        amount_decimal = Decimal(stripe_charge['amount']) / Decimal('100')
-        order_total_amount = amount_decimal.quantize(Decimal('0.01'))
+        if not bag:
+            print("[WH] No bag in metadata; skipping order creation.")
+            return HttpResponse(status=200)
+
+        charge = None
+        try:
+            charges = intent.get("charges", {}).get("data", [])
+            if charges:
+                charge = charges[0]
+        except Exception:
+            charge = None
+
+        billing = (charge or {}).get("billing_details", {}) or {}
+        shipping = intent.get("shipping", {}) or {}
+        address_b = billing.get("address", {}) or {}
+        address_s = shipping.get("address", {}) or {}
+
+        name = (
+            billing.get("name")
+            or shipping.get("name")
+            or ""
+        ).strip()
+        email = (billing.get("email") or "").strip()
+        phone = (
+            billing.get("phone")
+            or shipping.get("phone")
+            or ""
+        ).strip()
+
+        country_b = address_b.get("country") or ""
+        country_s = address_s.get("country") or ""
+        country = (country_b or country_s).strip()
+
+        postcode_b = address_b.get("postal_code") or ""
+        postcode_s = address_s.get("postal_code") or ""
+        postcode = (postcode_b or postcode_s).strip()
+
+        city_b = address_b.get("city") or ""
+        city_s = address_s.get("city") or ""
+        city = (city_b or city_s).strip()
+
+        line1_b = address_b.get("line1") or ""
+        line1_s = address_s.get("line1") or ""
+        line1 = (line1_b or line1_s).strip()
+
+        line2_b = address_b.get("line2") or ""
+        line2_s = address_s.get("line2") or ""
+        line2 = (line2_b or line2_s).strip()
+
+        state_b = address_b.get("state") or ""
+        state_s = address_s.get("state") or ""
+        state = (state_b or state_s).strip()
+
+        amount_cents = (charge or {}).get("amount")
+        if amount_cents is None:
+            amount_cents = intent.get("amount", 0) or 0
+        order_total_amount = (
+            Decimal(str(amount_cents)) / Decimal("100")
+        ).quantize(Decimal("0.01"))
+
+        if not name:
+            print(
+                "[WH] Missing name (billing + shipping empty)."
+                " Skipping order creation."
+            )
+            return HttpResponse(status=200)
 
         order_exists = False
         attempt = 1
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=billing.get('name', ''),
-                    email__iexact=billing.get('email', ''),
-                    phone_number__iexact=(
-                        billing.get('phone', '')
-                    ),
-                    country__iexact=(
-                        billing.get('address', {}).get('country', '')
-                    ),
-                    postcode__iexact=(
-                        billing.get('address', {})
-                        .get('postal_code', '')
-                    ),
-                    town_or_city__iexact=(
-                        billing.get('address', {})
-                        .get('city', '')
-                    ),
-                    street_address1__iexact=billing.get('address', {}).get(
-                        'line1', ''
-                    ),
-                    street_address2__iexact=billing.get('address', {}).get(
-                        'line2', ''
-                    ),
-                    county__iexact=billing.get('address', {}).get(
-                        'state', ''
-                    ),
+                    full_name__iexact=name or "",
+                    email__iexact=email or "",
+                    phone_number__iexact=phone or "",
+                    country__iexact=country or "",
+                    postcode__iexact=postcode or "",
+                    town_or_city__iexact=city or "",
+                    street_address1__iexact=line1 or "",
+                    street_address2__iexact=line2 or "",
+                    county__iexact=state or "",
                     order_total=order_total_amount,
                     original_bag=bag_json,
                     stripe_pid=pid,
@@ -124,46 +177,57 @@ class StripeWH_Handler:
 
         if order_exists:
             self._send_confirmation_email(order)
+            message = (
+                f"Webhook received : {event['type']} "
+                f"| Order already in database"
+            )
             return HttpResponse(
-                content=(
-                    f"Webhook received : {event['type']} | "
-                    "Order already in database"
-                ),
+                content=message,
                 status=200
             )
 
         try:
             order = Order.objects.create(
-                full_name=billing.get('name', ''),
-                email=billing.get('email', ''),
-                phone_number=billing.get('phone', ''),
-                country=billing.get('address', {}).get('country', ''),
-                postcode=billing.get('address', {}).get('postal_code', ''),
-                town_or_city=billing.get('address', {}).get('city', ''),
-                street_address1=billing.get('address', {}).get('line1', ''),
-                street_address2=billing.get('address', {}).get('line2', ''),
-                county=billing.get('address', {}).get('state', ''),
+                full_name=name,
+                email=email or "",
+                phone_number=phone,
+                country=country,
+                postcode=postcode,
+                town_or_city=city,
+                street_address1=line1,
+                street_address2=line2,
+                county=state,
                 original_bag=bag_json,
                 stripe_pid=pid,
             )
 
-            for item_id_str, item_data in bag.items():
-                pattern = Pattern.objects.get(pk=int(item_id_str))
+            items_iter = bag.items() if hasattr(bag, "items") else []
+            for item_id_str, item_data in items_iter:
+                try:
+                    pattern = Pattern.objects.get(pk=int(item_id_str))
+                except Pattern.DoesNotExist:
+                    print(
+                        f"[WH] Pattern {item_id_str} not found;"
+                        " skipping line item."
+                    )
+                    continue
                 OrderLineItem.objects.create(order=order, pattern=pattern)
 
         except Exception as e:
             if 'order' in locals():
-                order.delete()
+                try:
+                    order.delete()
+                except Exception:
+                    pass
             return HttpResponse(
                 content=f"Webhook received : {event['type']} | ERROR: {e}",
-                status=500
+                status=200
             )
+
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=(
-                f"Webhook received : {event['type']} | "
-                "SUCCESS: Created order in webhook"
-            ),
+            content=f"Webhook received : {event['type']}"
+            " | SUCCESS: Created order in webhook",
             status=200
         )
 

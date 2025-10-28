@@ -1,4 +1,6 @@
 # User Stories
+This section showcases the full journey of my project’s development, guided by Agile principles. Each user story represents a real feature or enhancement that shaped the final product — from initial ideas and planning through to completed functionality. Below you’ll find a combination of videos and screenshots that demonstrate how each story was implemented, tested, and refined to meet user needs and project goals.
+
 
 ## Epic 1 - Navigation
 
@@ -59,7 +61,7 @@ As a user, I want to see my past orders so that I can re-download purchased patt
 ## Epic 9 - Testing for README
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a visitor, I want the site to be accessible so that everyone can use it. | https://github.com/chloejones9464/loop-and-thread/issues/26 | Responsiveness throughout this page
+As a visitor, I want the site to be accessible so that everyone can use it. | https://github.com/chloejones9464/loop-and-thread/issues/26 | 
 As the owner, I want secure handling of payments and downloads so that user data is protected. | https://github.com/chloejones9464/loop-and-thread/issues/27 | 
 
 
@@ -77,7 +79,7 @@ As a user, I want to manage my profile so that checkout is faster. | https://git
 ## Epic 12 - Admin
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As the owner, I want a dashboard so that I can manage catalogue. | https://github.com/chloejones9464/loop-and-thread/issues/25 | ![Admin Dashboard(mobile)]() ![Admin Dashboard(tablet)]() ![Admin Dashboard(desktop)]()
+As the owner, I want a dashboard so that I can manage catalogue. | https://github.com/chloejones9464/loop-and-thread/issues/25 | [Catalogue Management link](#epic-3---catalogue-management)
 
 
 ## Epic 13 - Checkout
@@ -97,9 +99,9 @@ As a registered user, I want to remove a pattern from my favourites so that my s
 ## Epic 15 - Leave Review
 User Story | Link to GitHub | Screenshot/Video of User Story
 --- | --- | ---
-As a customer who has purchased a pattern, I want to leave a rating and review so that other shoppers can trust real, verified feedback. | https://github.com/chloejones9464/loop-and-thread/issues/23 | ![Add a Review (purchasers only)(mobile)]() ![Add a Review (purchasers only)(tablet)]() ![Add a Review (purchasers only)(desktop)]()
-As a registered user, I want to edit my review so that I can correct mistakes or update my feedback after posting. | https://github.com/chloejones9464/loop-and-thread/issues/47 |![Edit a Review(mobile)]() ![Edit a Review(tablet)]() ![Edit a Review(desktop)]()
-As a registered user, I want to delete my review so that I can remove feedback I no longer want to share. | https://github.com/chloejones9464/loop-and-thread/issues/48 |![Delete a Review(mobile)]() ![Delete a Review(tablet)]() ![Delete a Review(desktop)]()
+As a customer who has purchased a pattern, I want to leave a rating and review so that other shoppers can trust real, verified feedback. | https://github.com/chloejones9464/loop-and-thread/issues/23 | ![Add a Review (purchasers only)(mobile)](assets/documentation/write-review-mobile.webp) ![Add a Review (purchasers only)(tablet)](assets/documentation/write-review-tablet.webp)
+As a registered user, I want to edit my review so that I can correct mistakes or update my feedback after posting. | https://github.com/chloejones9464/loop-and-thread/issues/47 |![Edit a Review(mobile)](assets/documentation/edit-review-mobile.webp) ![Edit a Review(tablet)](assets/documentation/edit-review-tablet.webp) [![Review functionality(desktop)](https://img.youtube.com/vi/kbpcJfDz2mg/0.jpg)](https://youtu.be/DLHYLsmstpA)
+As a registered user, I want to delete my review so that I can remove feedback I no longer want to share. | https://github.com/chloejones9464/loop-and-thread/issues/48 |![Delete a Review(mobile)](assets/documentation/delete-review-mobile.webp) ![Delete a Review(tablet)](assets/documentation/delete-review-tablet.webp)
 
 
 ## Epic 16 - Wishlist(future improvement)
