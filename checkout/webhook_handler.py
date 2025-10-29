@@ -6,9 +6,12 @@ from django.conf import settings
 from decimal import Decimal
 from .models import Order, OrderLineItem
 from patterns.models import Pattern
+import logging
 import time
 import json
 import stripe
+
+logger = logging.getLogger(__name__)
 
 
 class StripeWH_Handler:
@@ -17,50 +20,47 @@ class StripeWH_Handler:
         stripe.api_key = settings.STRIPE_SECRET_KEY
 
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
-        cust_email = order.email
-        subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'order': order})
-        body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        """Send the user a confirmation email (defensive + single send)."""
 
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
-        )
+        user_profile = getattr(order, "user_profile", None)
+        user = getattr(user_profile, "user", None)
+        cust_email = (
+            getattr(order, "email", None)
+            or getattr(user, "email", None)
+            or ""
+        ).strip()
 
-        cust_email = (order.email or
-                      getattr(getattr(
-                            order,
-                            "user_profile",
-                            None), "user", None).email or "").strip()
-        print(f"[WH] preparing email to: {cust_email or '<EMPTY>'}")
+        logger.info(f"[WH] preparing email to: {cust_email or '<EMPTY>'}")
         if not cust_email:
-            print("[WH] ABORT no recipient")
+            logger.info("[WH] ABORT no recipient")
             return 0
 
-        connection = get_connection(
-            "django.core.mail.backends.console.EmailBackend"
+        try:
+            subject = render_to_string(
+                "checkout/confirmation_emails/confirmation_email_subject.txt",
+                {"order": order},
+            ).strip()
+            body = render_to_string(
+                "checkout/confirmation_emails/confirmation_email_body.txt",
+                {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
             )
+        except Exception as e:
+            logger.info(f"[EMAIL TPL] {type(e).__name__}: {e}")
+            return 0
 
-        subject = render_to_string(
-            "checkout/confirmation_emails/confirmation_email_subject.txt",
-            {"order": order}).strip().replace("\n", " ")
-        body = render_to_string(
-            "checkout/confirmation_emails/confirmation_email_body.txt",
-            {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL})
-        sent = send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email],
-            connection=connection)
-        print("[WH] send_mail returned:", sent)
-        return sent
+        try:
+            sent = send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [cust_email],
+                fail_silently=False,
+            )
+            logger.info("[WH] send_mail returned:", sent)
+            return sent
+        except Exception as e:
+            logger.info(f"[WH] Email send failed: {e}")
+            return 0
 
     def handle_event(self, event):
         return HttpResponse(
@@ -69,7 +69,7 @@ class StripeWH_Handler:
         )
 
     def handle_payment_intent_succeeded(self, event):
-        print("[WH] payment_intent.succeeded received")
+        logger.info("[WH] payment_intent.succeeded received")
         intent = event['data']['object']
         pid = intent['id']
 
@@ -81,11 +81,11 @@ class StripeWH_Handler:
             else:
                 bag = bag_json or {}
         except Exception:
-            print("[WH] Could not parse bag JSON; defaulting to empty.")
+            logger.info("[WH] Could not parse bag JSON; defaulting to empty.")
             bag = {}
 
         if not bag:
-            print("[WH] No bag in metadata; skipping order creation.")
+            logger.info("[WH] No bag in metadata; skipping order creation.")
             return HttpResponse(status=200)
 
         charge = None
@@ -106,12 +106,21 @@ class StripeWH_Handler:
             or shipping.get("name")
             or ""
         ).strip()
-        email = (billing.get("email") or "").strip()
         phone = (
             billing.get("phone")
             or shipping.get("phone")
             or ""
         ).strip()
+        
+        billing_email = (billing.get("email") or "").strip()
+        receipt_email = (intent.get("receipt_email") or "").strip()
+        meta_email = (intent.get("metadata", {}).get("email") or "").strip()
+
+        logger.info("[WH] emails -> billing:", billing_email or "<EMPTY>",
+              "| receipt:", receipt_email or "<EMPTY>",
+              "| meta:", meta_email or "<EMPTY>")
+
+        email = billing_email or receipt_email or meta_email
 
         country_b = address_b.get("country") or ""
         country_s = address_s.get("country") or ""
@@ -145,7 +154,7 @@ class StripeWH_Handler:
         ).quantize(Decimal("0.01"))
 
         if not name:
-            print(
+            logger.info(
                 "[WH] Missing name (billing + shipping empty)."
                 " Skipping order creation."
             )
@@ -175,16 +184,8 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
 
-        if order_exists:
-            self._send_confirmation_email(order)
-            message = (
-                f"Webhook received : {event['type']} "
-                f"| Order already in database"
-            )
-            return HttpResponse(
-                content=message,
-                status=200
-            )
+                if order_exists:
+                    return HttpResponse(status=200)
 
         try:
             order = Order.objects.create(
@@ -206,7 +207,7 @@ class StripeWH_Handler:
                 try:
                     pattern = Pattern.objects.get(pk=int(item_id_str))
                 except Pattern.DoesNotExist:
-                    print(
+                    logger.info(
                         f"[WH] Pattern {item_id_str} not found;"
                         " skipping line item."
                     )

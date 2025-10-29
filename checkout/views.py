@@ -17,12 +17,19 @@ from patterns.models import Pattern
 from .models import Order, OrderLineItem
 from bag.contexts import bag_contents
 from accounts.models import Profile
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 @require_POST
 def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
+        email = (request.POST.get("id_email") or "").strip()
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
@@ -31,7 +38,10 @@ def cache_checkout_data(request):
                 request.user.username
                 if request.user.is_authenticated else ""
             ),
-        })
+            'email': email,
+            },
+            receipt_email=email,
+        )
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
@@ -40,7 +50,6 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-
     initial = {}
     profile = None
     if request.user.is_authenticated:
@@ -98,7 +107,6 @@ def checkout(request):
                 lineitem_total=Decimal("0.00"),
             )
 
-        # clear bag & finish
         request.session["bag"] = {}
         messages.success(request, "Your free order is complete! 🎉")
         return redirect("checkout_success", order_number=order.order_number)
@@ -132,6 +140,11 @@ def checkout(request):
             order.original_bag = json.dumps(bag)
             if request.user.is_authenticated:
                 order.user_profile = request.user.profile
+            form_email = (order_form.cleaned_data.get("email") or "").strip()
+            user_email = (getattr(request.user, "email", "") if getattr(request.user, "is_authenticated", False) else "").strip()
+            order.email = (form_email or user_email)
+            logger.info(f"[CHK] form_email='{form_email}' user_email='{user_email}' final_order_email='{order.email}'")
+
             order.save()
 
             for item_id in bag.keys():
@@ -188,18 +201,55 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    '''
-    Handles the successful checkout
-    '''
+    """
+    Handles the successful checkout and sends a confirmation email.
+    This runs after the Order has been saved, so there is no webhook race.
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    try:
+        profile = getattr(order, "user_profile", None)
+        user = getattr(profile, "user", None)
+        cust_email = (
+            (getattr(order, "email", None) or "")
+            or (getattr(user, "email", None) or "")
+        ).strip()
+
+        logger.info(f"[SUCCESS] preparing email to: {cust_email or '<EMPTY>'}")
+
+        if cust_email:
+            subject = render_to_string(
+                "checkout/confirmation_emails/confirmation_email_subject.txt",
+                {"order": order},
+            ).strip()
+
+            body = render_to_string(
+                "checkout/confirmation_emails/confirmation_email_body.txt",
+                {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
+            )
+
+            try:
+                sent = send_mail(
+                    subject,
+                    body,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [cust_email],
+                    fail_silently=False,
+                )
+                logger.info(f"[SUCCESS EMAIL] sent={sent}")
+            except Exception as e:
+                logger.info(f"[SUCCESS EMAIL SEND] {type(e).__name__}: {e}")
+        else:
+            logger.info("[SUCCESS EMAIL] No recipient; skipping send.")
+    except Exception as e:
+        logger.info(f"[SUCCESS EMAIL BLOCK] {type(e).__name__}: {e}")
+
     messages.success(request, "Order has been processed successfully!")
 
     if 'bag' in request.session:
         del request.session['bag']
 
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-    }
+    template = "checkout/checkout_success.html"
+    context = {"order": order}
     return render(request, template, context)

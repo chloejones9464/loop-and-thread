@@ -55,11 +55,21 @@ form.addEventListener('submit', function (ev) {
 
     var saveInfo  = $('#save-info').prop('checked') === true;
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-    var postData = {
-        'csrfmiddlewaretoken': csrfToken,
-        'client_secret': clientSecret,
-        'save_info': saveInfo,
-    };
+    var emailInput =
+        document.getElementById('id_email') ||
+        document.querySelector('input[name="email"]') ||
+        document.querySelector('input[type="email"]');
+
+        var email = emailInput ? $.trim(emailInput.value) : '';
+        console.log('[CHECKOUT] email field found?', !!emailInput, 'value:', email);
+
+        var postData = {
+        csrfmiddlewaretoken: csrfToken,
+        client_secret: clientSecret,
+        save_info: saveInfo,
+        email: email,
+        };
+        console.log('[CHECKOUT] posting to /checkout/cache_checkout_data/', postData);
     $.post('/checkout/cache_checkout_data/', postData).done(function () {
         var fullName = $.trim(form.full_name.value);
         var email    = $.trim(form.email.value);
