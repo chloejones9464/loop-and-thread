@@ -278,7 +278,40 @@ Python |
 ## Testing
 TESTING! This will always be the core of my anxiety and I'm positive that I'm not the only one! <br> Let dive in....!
 ### Google's Lighthouse Performance
-Screenshots of certain pages and scores (mobile and desktop)
+
+#### Lighthouse Performance & Best Practices Note
+
+The Lighthouse scores for Performance and Best Practices are slightly lower due to essential third-party services used in this project — Stripe for secure payments and AWS S3 for static/media delivery.
+
+These external scripts and resource requests are outside of developer control and cannot be deferred or optimised further without breaking security or functionality.
+
+All project-controlled assets (CSS, JS, images) are already compressed and optimised, and the site performs smoothly in real-world use. The score impact is therefore expected when relying on secure payment processing and cloud storage.
+
+<details>
+<summary>Best practice score</summary>
+
+![Best practice score](assets/documentation/home-page-bestpractices-desktop.webp)
+</details>
+
+<details>
+<summary>Home page Lighthouse score</summary>
+
+![Home page Lighthouse score Mobile](assets/documentation/home-page-lighthouse-desktop.webp)
+![Home page Lighthouse score Desktop](assets/documentation/home-page-lighthouse-mobile.webp)
+</details>
+<details>
+<summary>Pattern list Lighthouse score</summary>
+
+![Pattern list Lighthouse score Mobile](assets/documentation/pattern-list-lighthouse-desktop.webp)
+![Pattern list Lighthouse score Desktop](assets/documentation/pattern-list-lighthouse-mobile.webp)
+</details>
+<details>
+<summary>Pattern detail Lighthouse score</summary>
+
+![Pattern detail Lighthouse score Mobile](assets/documentation/pattern-detail-lighthouse-desktop.webp)
+![Pattern detail Lighthouse score Desktop](assets/documentation/pattern-detail-lighthouse-mobile.webp)
+</details>
+
 ### Browser Compatibility
 
 #### Supported Browsers

@@ -35,11 +35,9 @@
                     <div class="d-flex gap-2">
                         {% if user.is_superuser %}
                             <a href="{% url 'pattern_edit' pattern.id %}" class="btn add-basket btn-sm">Edit Pattern</a>
-                        {% elif request.user.is_authenticated %}
+                        {% else %}
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             <button type="submit" class="btn add-basket btn-sm">Add to Basket</button>
-                        {% else %}
-                            <a href="{% url 'account_login' %}?next={{ request.get_full_path }}" class="btn add-basket btn-sm">Log in to purchase</a>
                         {% endif %}
                         <a href="{% url 'pattern_list' %}" class="btn bk-button btn-sm">← Back to Patterns</a>
                     </div>

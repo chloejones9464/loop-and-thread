@@ -22,7 +22,7 @@
                 <div class="input-group-append">
                     <button class="form-control btn" type="submit">
                         <span class="icon">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-magnifying-glass" aria-label="search-bar"></i>
                         </span>
                     </button>
                 </div>
@@ -104,9 +104,9 @@
         <nav class="mt-4 d-flex justify-content-between align-items-center">
             <div>
             {% if page_obj.has_previous %}
-                <a class="btn btn-outline-secondary" href="?page={{ page_obj.previous_page_number }}">‹ Prev</a>
+                <a class="btn bk-button" href="?page={{ page_obj.previous_page_number }}">‹ Prev</a>
             {% else %}
-                <span class="btn btn-outline-secondary disabled">‹ Prev</span>
+                <span class="disabled"></span>
             {% endif %}
             </div>
 
@@ -114,9 +114,9 @@
 
             <div>
             {% if page_obj.has_next %}
-                <a class="btn btn-outline-secondary" href="?page={{ page_obj.next_page_number }}">Next ›</a>
+                <a class="btn bk-button" href="?page={{ page_obj.next_page_number }}">Next ›</a>
             {% else %}
-                <span class="btn btn-outline-secondary disabled">Next ›</span>
+                <span class="btn bk-button disabled">Next ›</span>
             {% endif %}
             </div>
         </nav>
