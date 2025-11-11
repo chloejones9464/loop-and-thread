@@ -1035,6 +1035,47 @@ Add a review | As a **customer who has purchased a pattern**, I want **to leave 
 Edit a review | As a registered user, I want to edit my review so that **I can correct mistakes or update my feedback after posting.**|&check;
 Delete a review | As a **registered user**, I want **to delete my review** so that **I can remove feedback I no longer want to share.**|&check;
 
+### Automated Testing
+
+✅ Automated Testing
+
+Automated tests were created using Django’s built-in test framework.
+
+Each app has at least one view test, checking that key pages load correctly and return the expected template.
+Restricted pages (like reviews) were also tested to ensure only logged-in users can access them.
+
+
+![Example view test](assets/documentation/example_test.webp)
+
+
+Run tests:
+
+python manage.py test
+
+
+All tests passed successfully.
+
+#### Testing Summary
+App / Feature |	Test Type |	Description |	Status
+-- | -- | -- | -- |
+Bag |	View Test |	Confirms that the bag page loads and the correct template renders. |	✅ Passed
+Patterns |	View Test |	Confirms that the patterns page renders successfully. |	✅ Passed
+News |	View Test |	Confirms that the news list page loads correctly. |	✅ Passed
+Checkout |	View Test	| Confirms that the checkout page renders when items exist in the bag. |	✅ Passed
+Accounts (Authentication) |	View Test |	Checks that /accounts/ redirects unauthenticated users (login required). |	✅ Passed
+Reviews |	View Access | Test	Ensures anonymous users cannot access review creation and are redirected. |	✅ Passed
+
+#### Test Results Screenshot
+
+Test Command |	Result | Screenshot
+-- | -- | -- |
+python manage.py accounts |	✅ All tests passed | ![Accounts test screenshot](assets/documentation/accounts-auto-testing.webp)
+python manage.py bag |	✅ All tests passed | ![Bag test screenshot](assets/documentation/bag-auto-testing.webp)
+python manage.py checkout |	✅ All tests passed | ![Checkout test screenshot](assets/documentation/checkout-auto-testing.webp)
+python manage.py news |	✅ All tests passed | ![News test screenshot](assets/documentation/news-auto-testing.webp)
+python manage.py patterns |	✅ All tests passed | ![Patterns test screenshot](assets/documentation/patterns-auto-testing.webp)
+python manage.py reviews |	✅ All tests passed | ![Reviews test screenshot](assets/documentation/reviews-auto-testing.webp)
+
 ## Future Improvements
 As Loop and Thread continues to grow, there are several exciting features planned to enhance usability, community interaction, and customer satisfaction. A key focus will be on **digital delivery**, allowing buyers to easily access and re-download their purchased crochet patterns through their account dashboard, as well as receive secure **download links via email** for future reference.
 
