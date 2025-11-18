@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.core.mail import send_mail
-from django.core.mail import get_connection
 from django.template.loader import render_to_string
 from django.conf import settings
 from decimal import Decimal
@@ -111,14 +110,17 @@ class StripeWH_Handler:
             or shipping.get("phone")
             or ""
         ).strip()
-        
+
         billing_email = (billing.get("email") or "").strip()
         receipt_email = (intent.get("receipt_email") or "").strip()
         meta_email = (intent.get("metadata", {}).get("email") or "").strip()
 
-        logger.info("[WH] emails -> billing:", billing_email or "<EMPTY>",
-              "| receipt:", receipt_email or "<EMPTY>",
-              "| meta:", meta_email or "<EMPTY>")
+        msg = (
+            f"[WH] emails -> billing: {billing_email or '<EMPTY>'} | "
+            f"receipt: {receipt_email or '<EMPTY>'} | "
+            f"meta: {meta_email or '<EMPTY>'}"
+        )
+        logger.info(msg)
 
         email = billing_email or receipt_email or meta_email
 

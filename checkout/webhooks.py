@@ -38,7 +38,6 @@ def webhook(request):
         "payment_intent.payment_failed": handler.handle_payment_intent_failed,
     }
 
-    # 🚨 CRITICAL: Never let exceptions bubble up (they cause 500s)
     try:
         # Select the appropriate handler (fallback to a generic handler)
         callback = event_map.get(event_type, handler.handle_event)
@@ -46,7 +45,10 @@ def webhook(request):
 
         # If a handler forgot to return an HttpResponse, be forgiving
         if not isinstance(resp, HttpResponse):
-            logger.info(f"[WH] handler for {event_type} returned non-HttpResponse; coercing to 200")
+            logger.info(
+                "[WH] %s handler returned non-HttpResponse; returning 200",
+                event_type,
+            )
             return HttpResponse(status=200)
 
         return resp

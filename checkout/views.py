@@ -141,9 +141,17 @@ def checkout(request):
             if request.user.is_authenticated:
                 order.user_profile = request.user.profile
             form_email = (order_form.cleaned_data.get("email") or "").strip()
-            user_email = (getattr(request.user, "email", "") if getattr(request.user, "is_authenticated", False) else "").strip()
+            user_email = ""
+            if getattr(request.user, "is_authenticated", False):
+                user_email = getattr(request.user, "email", "") or ""
+            user_email = user_email.strip()
             order.email = (form_email or user_email)
-            logger.info(f"[CHK] form_email='{form_email}' user_email='{user_email}' final_order_email='{order.email}'")
+            msg = (
+                f"[CHK] form_email='{form_email}' "
+                f"user_email='{user_email}' "
+                f"final_order_email='{order.email}'"
+            )
+            logger.info(msg)
 
             order.save()
 

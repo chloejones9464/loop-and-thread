@@ -3,7 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 from patterns.models import Pattern
 from accounts.models import Profile
-from checkout.models import OrderLineItem, Order
+from checkout.models import OrderLineItem
 
 
 class Review(models.Model):

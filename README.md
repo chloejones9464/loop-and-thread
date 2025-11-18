@@ -1,7 +1,13 @@
 # Loop and Thread
 ![Hero Image - Responsive image for Loop and Thread](assets/documentation/hero-readme.webp)
 <br>
-**Loop & Thread** is a cozy and user-friendly e-commerce platform designed for crochet enthusiasts to discover, purchase, and download beautiful handmade crochet patterns. The goal of the project is to provide a seamless browsing and shopping experience, allowing users to explore a curated selection of patterns, manage their accounts, and complete secure purchases with ease. Built with Django and following best practices in full-stack development, Loop & Thread focuses on creating a warm, welcoming space that blends creativity with functionality, celebrating the craft of crochet while offering a smooth and engaging user experience from start to finish.
+**Loop & Thread** is a modern online crochet boutique offering premium digital crochet patterns, curated designs, and a personalised shopping experience for makers of every skill level.
+
+Created for passionate crocheters who value high-quality patterns, clear instructions, and a supportive creative space, Loop & Thread aims to make pattern shopping effortless, enjoyable, and inspiring.
+
+The platform is designed with both creativity and convenience in mind — allowing customers to browse beautiful patterns, purchase securely, store their orders, leave reviews, and return to their projects at any time.
+
+With a clean interface, instant digital delivery, and a growing catalogue of designs, Loop & Thread strives to become a trusted home for crocheters looking for patterns that feel thoughtful, cosy, and truly handmade.
 
 
 ## Table Of Contents:
@@ -10,6 +16,7 @@
     * [Wireframes](#wireframes)
     * [Typography](#typography)
     * [Colour Scheme](#colour-scheme)
+    * [UX Strategy](#ux-strategy)
 
     
 2. [Features](#features)
@@ -56,6 +63,38 @@ Then from that selection I used Colorspace to create a palette for my site.
 
 ![Colorspace](assets/documentation/colorspace.webp)
 </details>
+
+### ERD
+
+The ERD below illustrates the core data models that power Loop & Thread, including their fields and the relationships between them. It shows how users connect to profiles, how patterns are categorized and purchased, and how orders, reviews, and news posts interact across the platform. This structure supports secure purchasing, verified-buyer reviews, and a scalable pattern catalogue.
+
+<details>
+<summary>ERD Chart</summary>
+
+![ERD Chart](assets/documentation/erd.webp)
+</details>
+
+### UX Strategy
+
+#### Strategy
+
+Loop & Thread aims to provide crocheters with a simple, enjoyable, and reliable way to discover, purchase, and access high-quality digital crochet patterns.
+
+#### Scope
+
+The site delivers essential features including pattern browsing, secure checkout, user accounts, order history, and verified-buyer reviews.
+
+#### Structure
+
+The platform is organised around clear user flows such as browsing patterns, completing checkout, managing orders, and leaving reviews.
+
+#### Skeleton
+
+The interface uses clean navigation, structured layouts, and responsive page designs to guide users smoothly through each feature.
+
+#### Surface
+
+A soft, cosy aesthetic with pastel tones and friendly typography reflects the handmade, creative brand identity of Loop & Thread.
 
 ## Features:
 Here are the features for the website. Very minimal as I wanted to create a website that was easy to use and easy to look at.
@@ -1042,7 +1081,7 @@ Delete a review | As a **registered user**, I want **to delete my review** so th
 Automated tests were created using Django’s built-in test framework.
 
 Each app has at least one view test, checking that key pages load correctly and return the expected template.
-Restricted pages (like reviews) were also tested to ensure only logged-in users can access them.
+Restricted pages (like reviews) were also tested to ensure only logged-in users can access them. 
 
 
 ![Example view test](assets/documentation/example_test.webp)
