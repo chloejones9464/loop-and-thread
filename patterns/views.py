@@ -1,13 +1,11 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Pattern, Favorite
-from django.http import JsonResponse
 from .forms import PatternForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg, Count
-from django.views.decorators.http import require_POST
 from checkout.models import OrderLineItem
 
 

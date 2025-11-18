@@ -1,10 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
 
 from patterns.models import Pattern
-from accounts.models import Profile
 from .models import Review
 from .forms import ReviewForm
 
@@ -86,6 +84,8 @@ def edit_review(request, review_id):
             review.save()
             messages.success(request, "Your review was updated.")
             return redirect("pattern_detail", pk=review.pattern.id)
+        messages.error(request, "Please correct the errors below.")
+    else:
         form = ReviewForm(instance=review)
 
     return render(

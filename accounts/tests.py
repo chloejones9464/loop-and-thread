@@ -1,6 +1,6 @@
 from django.test import TestCase
-from django.urls import reverse
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -18,4 +18,12 @@ class AccountsViewTests(TestCase):
 
     def test_accounts_unauthenticated_user(self):
         response = self.client.get('/accounts/')
+        self.assertEqual(response.status_code, 302)
+
+    def test_orders_list_requires_login(self):
+        response = self.client.get(reverse('orders_list'))
+        self.assertEqual(response.status_code, 302)
+
+    def test_order_detail_requires_login(self):
+        response = self.client.get(reverse('order_detail', args=['ORDER123']))
         self.assertEqual(response.status_code, 302)
