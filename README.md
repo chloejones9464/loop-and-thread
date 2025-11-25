@@ -1352,7 +1352,8 @@ Replace your_project_name with the name of the folder that contains settings.py.
 
 ## Credits
   - Code & Text Content
-  I used most of these websites for help on several things!! It's crazy to see that others have the same issues and way on thinking.
+    
+    I used most of these websites for help on several things!! It's crazy to see that others have the same issues and way on thinking.
    - Crispy forms 
    - Django GitHub docs
    - Pixelied - PNG to WEBP Converter
@@ -1365,11 +1366,12 @@ Replace your_project_name with the name of the folder that contains settings.py.
    - Allauth
    - W3C HTML/CSS Validator
    - Heroku
-   - Code Institute
+   - Code Institute - For the GitHub template and walkthroughs(saved my life on many occasions!)
    - W3Schools
    - StackOverflow
    - Stripe
    - CI Python Linter
+   - Device Frames - For the hero image in the README.
 
   - Media    
     - YouTube
