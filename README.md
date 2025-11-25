@@ -78,23 +78,126 @@ The ERD below illustrates the core data models that power Loop & Thread, includi
 
 #### Strategy
 
-Loop & Thread aims to provide crocheters with a simple, enjoyable, and reliable way to discover, purchase, and access high-quality digital crochet patterns.
+- Product objectives:
+Loop & Thread aims to provide a simple way for crochet lovers to discover, purchase, and download modern crochet patterns from one central, trusted place. The goal is to create a small but realistic e-commerce experience that could be managed by a solo maker.
+
+- User needs:
+The primary users are hobby crocheters who want clear, easy-to-follow patterns and a smooth way to buy and re-access them. They need to quickly find the right pattern for their skill level, pay securely, and be confident they can get back to their digital pattern later.
 
 #### Scope
 
-The site delivers essential features including pattern browsing, secure checkout, user accounts, order history, and verified-buyer reviews.
+- Functional scope:
+
+  The site will allow users to:
+  - Browse and search crochet patterns.
+
+  - View detailed information for each pattern.
+
+  - Add/remove patterns from a shopping bag.
+
+  - Checkout securely using Stripe.
+
+  - Register and log in to manage their profile.
+
+  - View order history and, where implemented, access digital patterns.
+
+  - Favourite patterns and leave reviews as verified buyers.
+
+  - Allow the site owner to manage patterns and orders via the admin panel.
+
+- Content scope:
+
+  The content includes:
+
+  - Pattern information (title, image, description, difficulty, price, materials).
+
+  - Supporting text such as help messages, toasts, and error feedback.
+
+  - Legal/basic information such as brief terms, privacy or policy notes (if included).
+
+  - Marketing copy (hero text, calls-to-action, button labels) that stays friendly and on-brand.
+
+Keeping the scope clearly defined helps prevent “scope creep” and ensures the core user journeys (browse → select → purchase → access) are fully supported and tested.
 
 #### Structure
 
-The platform is organised around clear user flows such as browsing patterns, completing checkout, managing orders, and leaving reviews.
+- Information architecture:
+
+  The site is organised around a small, logical set of pages:
+
+  - Home
+
+  - All Patterns / Category view
+
+  - Pattern Detail
+
+  - Bag
+
+  - Checkout
+
+  - Profile (including Order History)
+
+  - Favorites
+
+  - Login / Signup / Logout
+
+  - Admin (for the owner)
+
+- Key user flows:
+
+  - Guest shopper: Home → Browse patterns → Pattern detail → Add to bag → Checkout → Order confirmation.
+
+  - Returning customer: Login → Profile → View order history → (Revisit pattern details).
+
+  - Engaged user: Login → Browse → Favourite some patterns → Purchase → Leave a review later.
+
+The structure is deliberately simple and linear, reducing the number of clicks needed to move from interest to purchase while still giving users clear ways to navigate back.
 
 #### Skeleton
 
-The interface uses clean navigation, structured layouts, and responsive page designs to guide users smoothly through each feature.
+  This is essentially your layout and navigation decisions.
+
+  - Navigation:
+
+    Global nav includes links to the main areas: Patterns, Favourites (when logged in), Account/Profile, and Bag. The bag icon shows the number of items, giving constant feedback.
+
+- Layout patterns:
+
+  - Consistent header and footer on all pages.
+
+  - Catalogue pages use card grids to present patterns in a scannable way.
+
+  - Forms (checkout, login, registration, profile) are centered with clear labels and validation messages.
+
+  - Toast notifications appear at the top of the page to confirm success or highlight problems.
+
+- Wireframe logic (even if informal):
+
+  The skeleton follows a classic e-commerce layout: logo and nav at the top, main content in the centre, supporting actions (e.g. add to bag, edit, submit) clearly highlighted, and help text near form fields.
+
+By keeping layouts predictable and consistent, users don’t have to relearn how to use the interface on each page, which reduces friction and errors.
 
 #### Surface
 
-A soft, cosy aesthetic with pastel tones and friendly typography reflects the handmade, creative brand identity of Loop & Thread.
+  This is all about visual design and tone.
+
+  - Colour palette:
+
+    A soft, yarn-inspired palette (e.g. pastels) is used to reflect the cosy, handmade nature of crochet. Accent colours are reserved for primary actions like “Add to bag” or “Checkout”, making them stand out.
+
+  - Typography:
+
+    A clean, easy-to-read sans-serif font is used for body text, paired with a slightly more characterful font for headings to give the site a friendly personality without sacrificing legibility.
+
+  - Imagery:
+
+    Pattern images are central to the design. Clear product photos show the finished item so users can imagine the result. Decorative backgrounds and subtle textures support the cosy, handmade brand identity.
+
+  - Tone of voice:
+
+    Copy is encouraging, warm, and approachable – similar to how a friendly crochet tutor might speak. It avoids overly technical jargon and reassures users during payment and form submissions.
+
+The surface layer brings the whole experience together so the site not only works well but also feels consistent with the cosy, crafted world of crochet.
 
 ## Features:
 Here are the features for the website. Very minimal as I wanted to create a website that was easy to use and easy to look at.
@@ -160,150 +263,121 @@ To provide a smooth and logical shopping experience, each crochet pattern can on
 Customers receive clear, instant feedback and can only ever purchase one copy of each digital pattern — ensuring a neat, intentional checkout flow.
 </details>
 
-#### Forms
-<details>
-<summary>Log in(mobile/tablet/desktop)</summary>
+### 1. Home Page
 
-- Mobile
+- Hero section introducing Loop & Thread with a clear value statement (e.g. “Handmade warmth, from hook to heart”).
 
-![Log in mobile](assets/documentation/login-mobile.webp)
+- Featured patterns so users can immediately see popular or seasonal designs.
 
-- Tablet
+- Quick links to browse all patterns, view your account, or go straight to the bag.
 
-![Log in tablet](assets/documentation/login-tablet.webp)
+The home page acts as a welcoming landing space that quickly tells new visitors what the site offers and gives returning customers shortcuts to where they most often want to go.
 
-- Desktop
+### 2. Pattern Catalogue (Store)
 
-![Log in desktop](assets/documentation/login-desktop.webp)
-</details>
+- Grid of all available crochet patterns with image, title, price, and difficulty.
 
-<details>
-<summary>Sign up(mobile/tablet/desktop)</summary>
+- Category filter (e.g. blankets, toys, accessories) and search bar so users can quickly find relevant patterns.
 
-- Mobile
+- Pagination to keep the page fast and easy to scan.
 
-[![Sign up mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)](https://youtube.com/shorts/pGRuWh_NY2Y?feature=share)
+The catalogue lets users scan a lot of products quickly, while filters and search reduce the effort needed to find a specific type of pattern.
 
-- Tablet
+### 3. Pattern Detail Page
 
-[![Sign up tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)](https://youtu.be/OWnNetD_iQ4)
+- Large pattern image, full description, difficulty, materials needed, price.
 
-- Desktop
+- Clear call-to-action to add the pattern to the bag.
 
-[![Sign up desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)](https://youtu.be/phCWSdKeGRY)
-</details>
+- Reviews and ratings from other customers (only available to verified buyers).
 
-<details>
-<summary>Account(mobile/tablet/desktop)</summary>
+- If logged in, the user can add/remove the pattern from their favorites.
 
-- Mobile
+This page provides enough detail for the user to decide whether the pattern suits their skill level, budget, and yarn stash before committing to purchase.
 
-[![Account mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+### 4. Shopping Bag
 
-- Tablet
+- Summary of items added, including image, title, quantity, and line total.
 
-[![Account tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+- Ability to update quantities or remove items from the bag.
 
-- Desktop
+- Display of subtotal, any delivery (if applicable), and grand total.
 
-[![Account desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
-</details>
+- Button to proceed to secure checkout.
 
-<details>
-<summary>Add Pattern(mobile/tablet/desktop)</summary>
+The bag gives users a clear overview of what they are about to buy and allows them to correct mistakes without friction, which is important for trust and conversion.
 
-- Mobile
+### 5. Secure Checkout (Stripe)
 
-[![Add Pattern mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+- Checkout form collecting name, email, and billing details.
 
-- Tablet
+- Stripe card element for secure card payments.
 
-[![Add Pattern tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+- Option for logged-in users to save their details to their profile for faster future checkouts.
 
-- Desktop
+- On success, the user is taken to an order confirmation page and a confirmation email is sent.
 
-[![Add Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
-</details>
+This feature provides a familiar and trusted payment flow using Stripe, reducing user anxiety about entering card details and ensuring payments are processed securely.
 
-<details>
-<summary>Edit Pattern(mobile/tablet/desktop)</summary>
+### 6. User Accounts & Profiles
 
-- Mobile
+- Users can register, log in, and log out using Django Allauth.
 
-[![Edit Pattern mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+- A profile page shows saved delivery details and a list of previous orders.
 
-- Tablet
+- Logged-in users can easily re-download their purchased patterns (if you’ve set this up) or at least see what they’ve bought.
 
-[![Edit Pattern tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+Profiles create a sense of ownership and continuity, allowing users to manage their details and revisit previous orders without having to track emails manually.
 
-- Desktop
+### 7. Favourites / Wishlist
 
-[![Edit Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
-</details>
+- Logged-in users can favourite/unfavourite patterns from the pattern list or detail page.
 
-<details>
-<summary>Delete Pattern(mobile/tablet/desktop)</summary>
+- A dedicated Favourites page shows all saved patterns in one place.
 
-- Mobile
+This helps users keep track of patterns they love or want to buy later, encouraging return visits and future purchases.
 
-[![Delete Pattern mobile](https://img.youtube.com/vi/pGRuWh_NY2Y/0.jpg)]()
+### 8. Reviews & Ratings
 
-- Tablet
+- Only users who have purchased a pattern can leave a review.
 
-[![Delete Pattern tablet](https://img.youtube.com/vi/OWnNetD_iQ4/0.jpg)]()
+- Reviews show rating, title, comment, and reviewer name/date.
 
-- Desktop
+- Pattern detail pages display an average rating and the list of reviews.
 
-[![Delete Pattern desktop](https://img.youtube.com/vi/phCWSdKeGRY/0.jpg)]()
-</details>
+Verified-only reviews increase trust because users know feedback is from real customers who actually bought and used the pattern.
 
+### 9. Admin & Store Management
 
-<details>
-<summary>Add News(mobile/tablet/desktop)</summary>
+- Site owner can add, edit, and delete patterns via the Django admin.
 
-- Mobile
+- Patterns can be assigned to categories, given prices, descriptions, and images.
 
-[![Add News (staff only)(mobile)](https://img.youtube.com/vi/XguLTy8FMus/0.jpg)](https://youtube.com/shorts/XguLTy8FMus)
+- Admin can view orders to support customer queries if needed.
 
-- Tablet
+This supports the business side of the project, making it manageable for a solo owner to maintain the catalogue without touching the codebase.
 
-[![Add News (staff only)(tablet)](https://img.youtube.com/vi/KcmcdnSm6Vk/0.jpg)](https://youtu.be/KcmcdnSm6Vk)
+### 10. Responsive Design, Error Pages & Toasts
 
-- Desktop
+- Fully responsive layout, tested on mobile, tablet, and desktop.
 
-[![Add News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
-</details>
+- Custom 400/403/404/500 pages that keep branding consistent and guide users back to safety.
 
-<details>
-<summary>Edit News(mobile/tablet/desktop)</summary>
+- Toast messages to confirm actions (add to bag, update profile, form errors, etc.).
 
-- Mobile
+These features together improve the overall perceived quality of the site, supporting usability, accessibility and trust on all devices.
 
-[![Edit News (staff only)(mobile)](https://img.youtube.com/vi/Q_mnrtoAHv0/0.jpg)](https://youtube.com/shorts/Q_mnrtoAHv0)
+### 11. News Section
 
-- Tablet
+  - A dedicated page displaying all latest news posts in a clean, easy-to-scan list.
 
-[![Edit News (staff only)(tablet)](https://img.youtube.com/vi/AwfYC1Uw7iw/0.jpg)](https://youtu.be/AwfYC1Uw7iw)
+  - Each post includes a title, image, short summary, and a link to read the full article.
 
-- Desktop
+  - Individual news pages show the full content, image, and publish date.
 
-[![Edit News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
-</details>
+  - Admins can easily add, edit, or delete news posts through the Django admin.
 
-<details>
-<summary>Delete News(mobile/tablet/desktop)</summary>
-
-- Mobile
-
-![Delete News (staff only)(mobile)](assets/documentation/delete-news-mobile.webp)
-
-- Tablet
-
-![Delete News (staff only)(tablet)](assets/documentation/delete-news-tablet.webp)
-
-- Desktop
-[![Delete News (staff only)(desktop)](https://img.youtube.com/vi/gOIuzQyl2ZY/0.jpg)](https://youtu.be/gOIuzQyl2ZY)
-</details>
+The news section keeps the site feeling active and up-to-date, giving users a place to read announcements, new pattern releases, and community updates. It encourages returning visits and supports the overall brand story of Loop & Thread.
 
 ## Technologies Used
 Technologies |
@@ -402,7 +476,7 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Logged out home page</summary>
 
-![Logged out home page](assets/documentation/home-html-not-logged-in.webp)
+[Logged out home page](https://validator.w3.org/nu/?doc=https%3A%2F%2Floop-and-thread-c07cf46398e8.herokuapp.com%2F)
 </details>
 
 <details>
@@ -414,7 +488,7 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Log in page</summary>
 
-![Log in page](assets/documentation/login-html.webp)
+[Log in page](https://validator.w3.org/nu/?doc=https%3A%2F%2Floop-and-thread-c07cf46398e8.herokuapp.com%2Faccounts%2Flogin%2F)
 </details>
 
 <details>
@@ -426,13 +500,13 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Sign up page</summary>
 
-![Sign up page](assets/documentation/signup-html.webp)
+[Sign up page](https://validator.w3.org/nu/?doc=https%3A%2F%2Floop-and-thread-c07cf46398e8.herokuapp.com%2Faccounts%2Fsignup%2F)
 </details>
 
 <details>
 <summary>Pattern detail page</summary>
 
-![Pattern detail page](assets/documentation/pattern-detail-html.webp)
+[Pattern detail page](https://validator.w3.org/nu/?doc=https%3A%2F%2Floop-and-thread-c07cf46398e8.herokuapp.com%2Fpatterns%2F4%2F)
 </details>
 
 <details>
@@ -515,7 +589,7 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <details>
 <summary>Bag</summary>
 
-![Bag](assets/documentation/bag-html.webp)
+[Bag](https://validator.w3.org/nu/?doc=https%3A%2F%2Floop-and-thread-c07cf46398e8.herokuapp.com%2Fbag%2F)
 
 </details>
 
@@ -1082,9 +1156,6 @@ Automated tests were created using Django’s built-in test framework.
 
 Each app has at least one view test, checking that key pages load correctly and return the expected template.
 Restricted pages (like reviews) were also tested to ensure only logged-in users can access them. 
-
-
-![Example view test](assets/documentation/example_test.webp)
 
 
 Run tests:
