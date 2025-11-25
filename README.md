@@ -1295,20 +1295,10 @@ Finally, a **wishlist system** will be introduced, allowing registered users to 
 
 ## Deployment
 
-#### Creating Repository on GitHub
-- First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
-- Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository from template**.
-- Once the repository was created, I clicked the green **gitpod** button to create a workspace in gitpod so that I could write the code for the site.
-#### Deloying on Github
-#### Creating Repository on GitHub
-- First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
-
-- Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository from template**.
-
-#### Deloying on Heroku
+### Deloying on Heroku
 The site was deployed to Heroku using the following method:
 
-##### Preparation
+#### Preparation
 - Go to [Heroku](https://www.heroku.com/) (for me, Heroku Student) and sign in.
 
 - Create a Heroku app with a **unique name**. Choose the correct region (e.g. Europe).
